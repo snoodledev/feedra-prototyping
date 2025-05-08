@@ -1,0 +1,112 @@
+[gd_scene load_steps=11 format=3 uid="uid://e4oqu4618xa7"]
+
+[ext_resource type="Script" uid="uid://1wgmihnc5t1n" path="res://scenes/main_panel/slider_demo/panel_slider_demo.gd" id="1_t86he"]
+[ext_resource type="Texture2D" uid="uid://dxe0muksxt78j" path="res://assets/graphics/old/button_volume_control/FadeTint.png" id="3_b37pa"]
+[ext_resource type="Texture2D" uid="uid://b5g6hnxbikqoj" path="res://assets/graphics/pad/PanelLargeSymbolOneshot.svg" id="3_ckn4g"]
+[ext_resource type="Texture2D" uid="uid://1slnfs57khwt" path="res://assets/graphics/pad/PanelLargeWhite.svg" id="5_05hlx"]
+[ext_resource type="FontFile" uid="uid://dbwjyseo5j4im" path="res://assets/fonts/Hubballi-Regular.ttf" id="6_4xfo6"]
+[ext_resource type="AudioStream" uid="uid://cdfn5lbamdu8h" path="res://assets/audio/ND-MetalNest-amb_int_ominousbass.wav" id="7_05hlx"]
+[ext_resource type="AudioStream" uid="uid://cinap2ie4bts" path="res://assets/audio/ND-MetalNest-amb_int_venthum.wav" id="7_b37pa"]
+[ext_resource type="AudioStream" uid="uid://qgxeljp8aspe" path="res://assets/audio/ND-MetalNest-amb_int_serverdrone.wav" id="8_4xfo6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ytvp3"]
+texture = ExtResource("3_b37pa")
+
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_33uvd"]
+stream_count = 3
+stream_0/stream = ExtResource("7_05hlx")
+stream_0/volume = 0.0
+stream_1/stream = ExtResource("8_4xfo6")
+stream_1/volume = 0.0
+stream_2/stream = ExtResource("7_b37pa")
+stream_2/volume = 0.0
+
+[node name="Panel" type="Control" node_paths=PackedStringArray("button_border", "background_image_layer", "loop_icon", "label")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 202.0
+offset_bottom = 202.0
+script = ExtResource("1_t86he")
+label_text = null
+button_border = NodePath("ButtonBorder")
+background_image_layer = NodePath("BackgroundImage")
+loop_icon = NodePath("LoopIcon")
+label = NodePath("Label")
+
+[node name="BackgroundImage" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 6.0
+offset_right = 197.0
+offset_bottom = 196.0
+mouse_filter = 2
+
+[node name="FadeTintConstant" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0.584314)
+layout_mode = 0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 196.0
+offset_bottom = 196.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ytvp3")
+
+[node name="FadeTint" type="Panel" parent="."]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.705882)
+layout_mode = 0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 196.0
+offset_bottom = 196.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ytvp3")
+
+[node name="LoopIcon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.5
+offset_top = -56.5
+offset_right = 48.5
+offset_bottom = 56.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_ckn4g")
+
+[node name="ButtonBorder" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 202.0
+offset_bottom = 202.0
+mouse_default_cursor_shape = 2
+texture = ExtResource("5_05hlx")
+
+[node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_4xfo6")
+theme_override_font_sizes/font_size = 24
+text = "<null>"
+
+[node name="Audio" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamSynchronized_33uvd")
+volume_db = -80.0
+
+[connection signal="mouse_entered" from="ButtonBorder" to="." method="_on_button_border_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonBorder" to="." method="_on_button_border_mouse_exited"]

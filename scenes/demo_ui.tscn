@@ -1,0 +1,101 @@
+[gd_scene load_steps=8 format=3 uid="uid://bbhaxuj8utvc4"]
+
+[ext_resource type="PackedScene" uid="uid://e4oqu4618xa7" path="res://scenes/main_panel/slider_demo/panel_slider_demo.tscn" id="1_oxcog"]
+[ext_resource type="Texture2D" uid="uid://5kyn0o34rsot" path="res://assets/graphics/temp/PadImage03.png" id="2_584qx"]
+[ext_resource type="Texture2D" uid="uid://c8io7lq4oyiex" path="res://assets/graphics/temp/PadImage01.png" id="2_dt6o7"]
+[ext_resource type="Texture2D" uid="uid://cvkabajpc5xxv" path="res://assets/graphics/temp/PadImage07.png" id="3_lcdda"]
+[ext_resource type="Texture2D" uid="uid://diyh4f2l4idrg" path="res://assets/graphics/temp/PadImage05.png" id="4_lgqmu"]
+[ext_resource type="Texture2D" uid="uid://dw0u6fcr8dfty" path="res://assets/graphics/temp/PadImage06.png" id="5_a78qw"]
+[ext_resource type="Texture2D" uid="uid://bsgtik8xb8ndq" path="res://assets/graphics/temp/PadImage04.png" id="7_8iqq7"]
+
+[node name="DemoUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" parent="." instance=ExtResource("1_oxcog")]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 222.0
+offset_bottom = 222.0
+pad_color = 4
+pad_background_image = ExtResource("2_dt6o7")
+label_text = "Magic Missile"
+
+[node name="Panel2" parent="." instance=ExtResource("1_oxcog")]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 20.0
+offset_right = 442.0
+offset_bottom = 222.0
+pad_color = 0
+pad_background_image = ExtResource("3_lcdda")
+label_text = "Ice Barrage"
+
+[node name="Panel3" parent="." instance=ExtResource("1_oxcog")]
+layout_mode = 0
+offset_left = 460.0
+offset_top = 20.0
+offset_right = 662.0
+offset_bottom = 222.0
+pad_color = 9
+pad_background_image = ExtResource("4_lgqmu")
+label_text = "Angelic Nova"
+
+[node name="Panel4" parent="." instance=ExtResource("1_oxcog")]
+layout_mode = 0
+offset_left = 680.0
+offset_top = 20.0
+offset_right = 882.0
+offset_bottom = 222.0
+pad_color = 2
+pad_background_image = ExtResource("5_a78qw")
+label_text = "Shield Impact"
+
+[node name="Panel5" parent="." instance=ExtResource("1_oxcog")]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 240.0
+offset_right = 222.0
+offset_bottom = 442.0
+pad_color = 6
+is_loop_mode = true
+pad_background_image = ExtResource("2_584qx")
+label_text = "Balrog Theme 1"
+
+[node name="Panel6" parent="." instance=ExtResource("1_oxcog")]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 240.0
+offset_right = 442.0
+offset_bottom = 442.0
+pad_color = 6
+is_loop_mode = true
+pad_background_image = ExtResource("2_584qx")
+label_text = "Balrog Theme 2"
+
+[node name="Panel7" parent="." instance=ExtResource("1_oxcog")]
+layout_mode = 0
+offset_left = 460.0
+offset_top = 240.0
+offset_right = 662.0
+offset_bottom = 442.0
+pad_color = 6
+is_loop_mode = true
+pad_background_image = ExtResource("2_584qx")
+label_text = "Balrog Theme 3"
+
+[node name="Panel8" parent="." instance=ExtResource("1_oxcog")]
+layout_mode = 0
+offset_left = 680.0
+offset_top = 240.0
+offset_right = 882.0
+offset_bottom = 442.0
+pad_color = 5
+is_loop_mode = true
+pad_background_image = ExtResource("7_8iqq7")
+label_text = "Staff Charge"
