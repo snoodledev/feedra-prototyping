@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bbhaxuj8utvc4"]
+[gd_scene load_steps=36 format=3 uid="uid://bbhaxuj8utvc4"]
 
 [ext_resource type="Texture2D" uid="uid://bdtdifnfw5lak" path="res://assets/graphics/WindowBacking-1x2.svg" id="1_dt6o7"]
 [ext_resource type="PackedScene" uid="uid://e4oqu4618xa7" path="res://scenes/main_panel/slider_demo/panel_slider_demo.tscn" id="1_oxcog"]
@@ -28,6 +28,13 @@
 [ext_resource type="AudioStream" uid="uid://dwqxg8grsbks" path="res://assets/audio/scene1scifi/sfx-gun_smg.ogg" id="24_lljj6"]
 [ext_resource type="AudioStream" uid="uid://b5l1lrrc24i8q" path="res://assets/audio/scene1scifi/sfx-tool_scanner_medkit.ogg" id="25_8orxo"]
 [ext_resource type="Texture2D" uid="uid://brv7d7ray4o2v" path="res://assets/graphics/temp/pad tests/medkit.png" id="25_fq1xc"]
+[ext_resource type="AudioStream" uid="uid://q4gegl31380h" path="res://assets/audio/scene1scifi/sfx-gun_blaster.ogg" id="25_segwl"]
+[ext_resource type="AudioStream" uid="uid://dye4xo6xwklu0" path="res://assets/audio/scene1scifi/sfx-gun_shotgun.ogg" id="26_um2t8"]
+[ext_resource type="AudioStream" uid="uid://d27ki55lfwrc1" path="res://assets/audio/scene1scifi/sfx-gun_laser.ogg" id="27_w247h"]
+[ext_resource type="Texture2D" uid="uid://bu82ll3aeodjl" path="res://assets/graphics/temp/pad tests/screen.png" id="30_um2t8"]
+[ext_resource type="AudioStream" uid="uid://dd10rje6k6r37" path="res://assets/audio/scene1scifi/sfx-computer_idle.ogg" id="31_2ts5p"]
+[ext_resource type="AudioStream" uid="uid://ona5rgvb0dyb" path="res://assets/audio/scene1scifi/sfx-computer_success.ogg" id="32_o8tcy"]
+[ext_resource type="AudioStream" uid="uid://davuom5irkyfc" path="res://assets/audio/scene1scifi/sfx-computer_error.ogg" id="33_auj4a"]
 
 [node name="DemoUI" type="Control"]
 layout_mode = 3
@@ -133,26 +140,96 @@ columns = 2
 
 [node name="Panel7" parent="GridContainer/GridContainer" instance=ExtResource("1_oxcog")]
 layout_mode = 2
+pad_color = 0
 pad_background_image = ExtResource("23_vbuwx")
 volume_fade_time = 0.0
-pitch_random = 0.2
+pitch_random = 0.3
 label_text = "SMG"
 audio_layers = Array[AudioStream]([ExtResource("24_lljj6")])
 
-[node name="Panel8" parent="GridContainer/GridContainer" instance=ExtResource("1_oxcog")]
+[node name="Panel9" parent="GridContainer/GridContainer" instance=ExtResource("1_oxcog")]
+layout_mode = 2
+pad_color = 2
+pad_background_image = ExtResource("23_vbuwx")
+volume_fade_time = 0.0
+pitch_random = 0.3
+label_text = "Blaster"
+audio_layers = Array[AudioStream]([ExtResource("25_segwl")])
+
+[node name="Panel10" parent="GridContainer/GridContainer" instance=ExtResource("1_oxcog")]
+layout_mode = 2
+pad_color = 6
+pad_background_image = ExtResource("23_vbuwx")
+volume_fade_time = 0.0
+pitch_random = 0.3
+label_text = "Shotgun"
+audio_layers = Array[AudioStream]([ExtResource("26_um2t8")])
+
+[node name="Panel11" parent="GridContainer/GridContainer" instance=ExtResource("1_oxcog")]
+layout_mode = 2
+pad_color = 1
+pad_background_image = ExtResource("23_vbuwx")
+volume_fade_time = 0.0
+pitch_random = 0.3
+label_text = "Laser"
+audio_layers = Array[AudioStream]([ExtResource("27_w247h")])
+
+[node name="GridContainer2" type="GridContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 2
+
+[node name="Panel8" parent="GridContainer/GridContainer2" instance=ExtResource("1_oxcog")]
 layout_mode = 2
 pad_color = 1
 pad_background_image = ExtResource("25_fq1xc")
 volume_fade_time = 0.1
-pitch_random = 0.2
+pitch_random = 0.3
 label_text = "Medkit"
 audio_layers = Array[AudioStream]([ExtResource("25_8orxo")])
 
-[node name="Panel6" parent="GridContainer/GridContainer" instance=ExtResource("1_oxcog")]
+[node name="Panel9" parent="GridContainer/GridContainer2" instance=ExtResource("1_oxcog")]
+layout_mode = 2
+pad_color = 3
+is_loop_mode = true
+pad_background_image = ExtResource("30_um2t8")
+volume_fade_time = 0.3
+pitch_random = 0.3
+label_text = "Computer Idle"
+audio_layers = Array[AudioStream]([ExtResource("31_2ts5p")])
+
+[node name="Panel10" parent="GridContainer/GridContainer2" instance=ExtResource("1_oxcog")]
+layout_mode = 2
+pad_color = 3
+pad_background_image = ExtResource("30_um2t8")
+volume_fade_time = 0.1
+pitch_random = 0.3
+label_text = "Computer Success"
+audio_layers = Array[AudioStream]([ExtResource("32_o8tcy")])
+
+[node name="Panel11" parent="GridContainer/GridContainer2" instance=ExtResource("1_oxcog")]
+layout_mode = 2
+pad_color = 3
+pad_background_image = ExtResource("30_um2t8")
+volume_fade_time = 0.1
+pitch_random = 0.3
+label_text = "Computer Error"
+audio_layers = Array[AudioStream]([ExtResource("33_auj4a")])
+
+[node name="GridContainer3" type="GridContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 2
+
+[node name="Panel6" parent="GridContainer/GridContainer3" instance=ExtResource("1_oxcog")]
+custom_minimum_size = Vector2(190, 190)
 layout_mode = 2
 pad_color = 6
+is_small = false
 pad_background_image = ExtResource("23_66xfs")
 volume_fade_time = 0.1
 pitch_random = 0.2
-label_text = "Synthetic Ooze"
+label_text = "The Ooze"
 audio_layers = Array[AudioStream]([ExtResource("24_co5m8")])

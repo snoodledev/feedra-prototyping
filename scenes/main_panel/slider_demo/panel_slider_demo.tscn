@@ -99,7 +99,7 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_ytvp3")
 
 [node name="LoopIcon" type="TextureRect" parent="."]
-modulate = Color(1, 1, 1, 0.392157)
+modulate = Color(1, 1, 1, 0.298039)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -146,7 +146,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("6_4xfo6")
 theme_override_font_sizes/font_size = 18
-text = "Label"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
