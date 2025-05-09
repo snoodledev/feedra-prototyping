@@ -76,68 +76,79 @@ theme_override_constants/v_separation = 12
 columns = 4
 
 [node name="Panel" parent="GridContainer" instance=ExtResource("1_oxcog")]
+custom_minimum_size = Vector2(190, 190)
 layout_mode = 2
 pad_color = 0
+is_small = false
 is_loop_mode = true
 pad_background_image = ExtResource("2_50s3l")
-pitch_random = 0.0
 label_text = "Space Port"
 audio_layers = Array[AudioStream]([ExtResource("3_11bop"), ExtResource("3_lgqmu"), ExtResource("5_g52di"), ExtResource("6_jlmhd"), ExtResource("7_t2pq2")])
 
 [node name="Panel2" parent="GridContainer" instance=ExtResource("1_oxcog")]
+custom_minimum_size = Vector2(190, 190)
 layout_mode = 2
 pad_color = 2
+is_small = false
 is_loop_mode = true
 pad_background_image = ExtResource("10_qnhih")
-pitch_random = 0.0
 label_text = "Starship"
 audio_layers = Array[AudioStream]([ExtResource("10_t2pq2"), ExtResource("11_4tfsv"), ExtResource("12_yejfp"), ExtResource("13_qow0f"), ExtResource("14_qnhih"), ExtResource("15_l4n66")])
 
 [node name="Panel3" parent="GridContainer" instance=ExtResource("1_oxcog")]
+custom_minimum_size = Vector2(190, 190)
 layout_mode = 2
 pad_color = 9
+is_small = false
 is_loop_mode = true
 pad_background_image = ExtResource("17_l4n66")
-pitch_random = 0.0
 label_text = "Abandoned Facility"
 audio_layers = Array[AudioStream]([ExtResource("18_ejcf8")])
 
 [node name="Panel4" parent="GridContainer" instance=ExtResource("1_oxcog")]
+custom_minimum_size = Vector2(190, 190)
 layout_mode = 2
 pad_color = 7
+is_small = false
 is_loop_mode = true
 pad_background_image = ExtResource("19_rudaa")
-pitch_random = 0.0
 label_text = "Space Ghost"
 audio_layers = Array[AudioStream]([ExtResource("20_66xfs")])
 
 [node name="Panel5" parent="GridContainer" instance=ExtResource("1_oxcog")]
+custom_minimum_size = Vector2(190, 190)
 layout_mode = 2
 pad_color = 5
+is_small = false
 is_loop_mode = true
 pad_background_image = ExtResource("18_qnhih")
-pitch_random = 0.0
 label_text = "Cosmic Drone"
 audio_layers = Array[AudioStream]([ExtResource("7_50s3l")])
 
-[node name="Panel7" parent="GridContainer" instance=ExtResource("1_oxcog")]
+[node name="GridContainer" type="GridContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 2
+
+[node name="Panel7" parent="GridContainer/GridContainer" instance=ExtResource("1_oxcog")]
 layout_mode = 2
 pad_background_image = ExtResource("23_vbuwx")
 volume_fade_time = 0.0
 pitch_random = 0.2
-label_text = "Fire SMG"
+label_text = "SMG"
 audio_layers = Array[AudioStream]([ExtResource("24_lljj6")])
 
-[node name="Panel8" parent="GridContainer" instance=ExtResource("1_oxcog")]
+[node name="Panel8" parent="GridContainer/GridContainer" instance=ExtResource("1_oxcog")]
 layout_mode = 2
 pad_color = 1
 pad_background_image = ExtResource("25_fq1xc")
 volume_fade_time = 0.1
 pitch_random = 0.2
-label_text = "Use Medkit"
+label_text = "Medkit"
 audio_layers = Array[AudioStream]([ExtResource("25_8orxo")])
 
-[node name="Panel6" parent="GridContainer" instance=ExtResource("1_oxcog")]
+[node name="Panel6" parent="GridContainer/GridContainer" instance=ExtResource("1_oxcog")]
 layout_mode = 2
 pad_color = 6
 pad_background_image = ExtResource("23_66xfs")

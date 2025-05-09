@@ -4,11 +4,11 @@ class_name FeedraPanel
 
 signal oneshot_ended
 
-@onready var fade_tint: Panel = %FadeTint
 @onready var audio_stream_player: AudioStreamPlayer = %AudioStreamPlayer
 
 #@export var is_pad_small: bool = false
 @export var pad_color: PadColors = PadColors.White
+@export var is_small: bool = false
 @export var is_loop_mode: bool = false
 @export var pad_background_image: Texture2D
 @export var volume_fade_time: float = 2
@@ -16,12 +16,14 @@ signal oneshot_ended
 @export var label_text: String = ""
 @export var audio_layers: Array[AudioStream]
 
-@export_category("Internal")
+@export_group("Internal")
 @export var button_border: TextureRect
-@export var background_image_layer: TextureRect
+@export var background_image: TextureRect
 @export var background_image_container: Control
 @export var loop_icon: TextureRect
 @export var label: Label
+@export var fade_tint: Panel
+@export var fade_tint_constant: Panel
 
 var is_mouse_in: bool = false
 var is_current_pad_controlled: bool = false
@@ -34,6 +36,9 @@ var volume_tween: Tween
 var visuals_tween: Tween
 var border_tint: Color
 
+var pad_cursor_offset: float
+var pad_cursor_size: float
+var pad_size: float
 
 enum PadColors {
 	Blue,
@@ -74,8 +79,10 @@ var pad_small_graphics: Dictionary[PadColors, CompressedTexture2D] = {
 	PadColors.Yellow: preload("res://assets/graphics/pad/PanelSmallYellow.svg")
 }
 
-var pad_symbol_loop: CompressedTexture2D = preload("res://assets/graphics/pad/PanelLargeSymbolLoop.svg")
-var pad_symbol_oneshot: CompressedTexture2D = preload("res://assets/graphics/pad/PanelLargeSymbolOneshot.svg")
+var pad_symbol_loop_large: CompressedTexture2D = preload("res://assets/graphics/pad/PanelLargeSymbolLoop.svg")
+var pad_symbol_loop_small: CompressedTexture2D = preload("res://assets/graphics/pad/PanelSmallSymbolLoop.svg")
+var pad_symbol_oneshot_large: CompressedTexture2D = preload("res://assets/graphics/pad/PanelLargeSymbolOneshot.svg")
+var pad_symbol_oneshot_small: CompressedTexture2D = preload("res://assets/graphics/pad/PanelSmallSymbolOneshot.svg")
 
 
 func _ready() -> void:
@@ -85,18 +92,22 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	button_border.texture = pad_large_graphics[pad_color]
-	if is_loop_mode: loop_icon.texture = pad_symbol_loop
-	else: loop_icon.texture = pad_symbol_oneshot
-	background_image_layer.texture = pad_background_image
+	background_image.texture = pad_background_image
 	label.text = label_text
-	background_image_layer.size = Vector2(190, 190)
-	#background_image_container.position = position + Vector2(6, 6)
+
+	
+	if is_small:
+		set_size_small()
+	else:
+		set_size_large()
 	if Engine.is_editor_hint(): return
+
+	var c_start: float = pad_cursor_offset
+	var c_end: float = pad_cursor_offset + pad_cursor_size
 	
 	#label.text = str(snappedf(volume, .01)) # display volume in text
-	fade_tint.size.x = remap(volume, 0, 1, 190, 0)
-	fade_tint.position.x = remap(volume, 0, 1, 6, 196)
+	fade_tint.size.x = remap(volume, 0, 1, pad_cursor_size, 0)
+	fade_tint.position.x = remap(volume, 0, 1, c_start, c_end)
 	audio_stream_player.volume_db = linear_to_db(volume)
 	
 	var activeness_scaled: float = remap(activeness, 0, 1, 0.4, 1)
@@ -126,7 +137,7 @@ func _process(_delta: float) -> void:
 			if activeness == 0 and volume != 0:
 				tween_visuals(1)
 			if volume_tween and volume_tween.is_running(): volume_tween.kill()
-			var volume_target = remap(clamp(get_global_mouse_position().x - global_position.x, 6, 196), 6, 196, 0, 1)
+			var volume_target = remap(clamp(get_global_mouse_position().x - global_position.x, c_start, c_end), c_start, c_end, 0, 1)
 			#volume = lerpf(volume, volume_target, 0.02) # lerp volume (removed)
 			volume = move_toward(volume, volume_target, 0.01)
 		audio_stream_player.stream_paused = bool(!volume)
@@ -142,6 +153,74 @@ func _process(_delta: float) -> void:
 			else:
 				#is_oneshot_playing = false
 				oneshot_ended.emit()
+
+
+func set_size_small() -> void:
+	pad_size = 90
+	pad_cursor_size = 90
+	pad_cursor_offset = 0
+	
+	custom_minimum_size = Vector2.ONE * pad_size
+	size = Vector2.ONE * pad_size
+	button_border.texture = pad_small_graphics[pad_color]
+	
+	fade_tint.size = Vector2.ONE * pad_size
+	fade_tint_constant.size = Vector2.ONE * pad_size
+	loop_icon.size = Vector2(52, 56)
+	button_border.size = Vector2.ONE * pad_size
+	
+	background_image.custom_minimum_size = Vector2.ONE * pad_size
+	background_image.size = Vector2.ONE * pad_size
+	background_image.position = Vector2.ZERO
+	background_image_container.size = Vector2.ONE * pad_size
+	background_image_container.position = Vector2.ZERO
+	
+	fade_tint_constant.position = Vector2.ZERO
+	fade_tint.position = Vector2.ZERO
+	loop_icon.position = Vector2(16, 16)
+	button_border.position = Vector2.ZERO
+	label.position = Vector2(0, 0)
+	label.size = Vector2(90, 90)
+	label.set("theme_override_font_sizes/font_size", 18)
+	
+	if is_loop_mode: 
+		loop_icon.texture = pad_symbol_loop_small
+	else: 
+		loop_icon.texture = pad_symbol_oneshot_small
+
+
+func set_size_large() -> void:
+	pad_size = 190
+	pad_cursor_size = 190
+	pad_cursor_offset = 0
+	
+	custom_minimum_size = Vector2.ONE * pad_size
+	size = Vector2.ONE * pad_size
+	button_border.texture = pad_large_graphics[pad_color]
+	
+	fade_tint.size = Vector2.ONE * pad_size
+	fade_tint_constant.size = Vector2.ONE * pad_size
+	loop_icon.size = Vector2(105, 113)
+	button_border.size = Vector2.ONE * pad_size
+	
+	background_image.custom_minimum_size = Vector2(pad_size, pad_size)
+	background_image.size = Vector2(pad_size, pad_size)
+	background_image.position = Vector2.ZERO
+	background_image_container.size = Vector2(pad_size, pad_size)
+	background_image_container.position = Vector2.ZERO
+
+	fade_tint_constant.position = Vector2.ZERO
+	fade_tint.position = Vector2.ZERO
+	loop_icon.position = Vector2(42.5, 38.5)
+	button_border.position = Vector2.ZERO
+	label.position = Vector2.ZERO
+	label.size = Vector2.ONE * 190
+	label.set("theme_override_font_sizes/font_size", 22)
+	
+	if is_loop_mode: 
+		loop_icon.texture = pad_symbol_loop_large
+	else: 
+		loop_icon.texture = pad_symbol_oneshot_large
 
 
 func tween_volume(override_is_button_active: int = -1) -> void:
