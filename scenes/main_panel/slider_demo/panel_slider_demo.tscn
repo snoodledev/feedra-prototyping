@@ -19,7 +19,6 @@ offset_right = 202.0
 offset_bottom = 202.0
 script = ExtResource("1_t86he")
 volume_fade_time = 5.0
-pitch_random = null
 button_border = NodePath("ButtonBorder")
 background_image_layer = NodePath("BackgroundImageContainer/BackgroundImage")
 background_image_container = NodePath("BackgroundImageContainer")
