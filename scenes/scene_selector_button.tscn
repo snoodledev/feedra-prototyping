@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://cl4dcvwgmwet0"]
+
+[ext_resource type="Script" uid="uid://8j0fjbajj0fv" path="res://scenes/scene_selector_button.gd" id="1_qxq7u"]
+[ext_resource type="PackedScene" uid="uid://cb2o8a3kdq7og" path="res://scenes/feedra_scenes/scene_1_scifi.tscn" id="2_xgxeq"]
+[ext_resource type="PackedScene" uid="uid://bi2glqfyywxqb" path="res://scenes/feedra_scenes/scene_2_fantasy.tscn" id="3_w3d7i"]
+[ext_resource type="FontFile" uid="uid://dbwjyseo5j4im" path="res://assets/fonts/Hubballi-Regular.ttf" id="4_mwkmu"]
+[ext_resource type="Texture2D" uid="uid://cxkaeey00ndil" path="res://assets/graphics/header/DropdownArrow.svg" id="5_mwkmu"]
+
+[node name="SceneSelectorButton" type="Control"]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -170.0
+offset_top = 24.0
+offset_right = 170.0
+offset_bottom = 64.0
+grow_horizontal = 2
+mouse_filter = 2
+script = ExtResource("1_qxq7u")
+scenes = Dictionary[String, PackedScene]({
+"Example 1: Sci Fi": ExtResource("2_xgxeq"),
+"Example 2: Fantasy": ExtResource("3_w3d7i")
+})
+
+[node name="MenuButton" type="MenuButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -162.0
+offset_top = 6.0
+offset_right = 162.0
+offset_bottom = 38.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_mwkmu")
+theme_override_font_sizes/font_size = 24
+text = "This is the example title"
+item_count = 1
+popup/item_0/text = "TEST"
+popup/item_0/id = 0
+
+[node name="ButtonIcon" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 138.0
+offset_top = -8.0
+offset_right = 158.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("5_mwkmu")
+stretch_mode = 3

@@ -12,7 +12,7 @@ signal oneshot_ended
 @export var is_loop_mode: bool = false
 @export var pad_background_image: Texture2D
 @export var volume_fade_time: float = 2
-@export var pitch_random: float = 0
+@export var pitch_random: float
 @export var label_text: String = ""
 @export var audio_layers: Array[AudioStream]
 
@@ -24,6 +24,7 @@ signal oneshot_ended
 @export var label: Label
 @export var fade_tint: Panel
 @export var fade_tint_constant: Panel
+@export var image_border_cover: TextureRect
 
 var is_mouse_in: bool = false
 var is_current_pad_controlled: bool = false
@@ -168,6 +169,7 @@ func set_size_small() -> void:
 	fade_tint_constant.size = Vector2.ONE * pad_size
 	loop_icon.size = Vector2(52, 56)
 	button_border.size = Vector2.ONE * pad_size
+	image_border_cover.scale = Vector2.ONE * 0.475
 	
 	background_image.custom_minimum_size = Vector2.ONE * pad_size
 	background_image.size = Vector2.ONE * pad_size
@@ -202,6 +204,7 @@ func set_size_large() -> void:
 	fade_tint_constant.size = Vector2.ONE * pad_size
 	loop_icon.size = Vector2(105, 113)
 	button_border.size = Vector2.ONE * pad_size
+	image_border_cover.scale = Vector2.ONE
 	
 	background_image.custom_minimum_size = Vector2(pad_size, pad_size)
 	background_image.size = Vector2(pad_size, pad_size)
@@ -224,6 +227,7 @@ func set_size_large() -> void:
 
 
 func tween_volume(override_is_button_active: int = -1) -> void:
+	
 	if volume_tween and volume_tween.is_running(): volume_tween.kill()
 	volume_tween = create_tween()
 	if (!is_button_active or override_is_button_active == 1) and override_is_button_active != 0:
@@ -250,8 +254,8 @@ func init_audio() -> void:
 	audio_stream_player.stream_paused = true
 	var player: AudioStreamPlaybackPolyphonic = audio_stream_player.get_stream_playback()
 	for layer in audio_layers:
-		if layer == null: print("Null layer found!"); continue
-		if !is_loop_mode: 	audio_stream_player.stream_paused = true
+		if !layer: print("Null layer found!"); continue
+		if !is_loop_mode: audio_stream_player.stream_paused = true
 		player.play_stream(layer, randf_range(0, layer.get_length()))
 
 
@@ -260,18 +264,23 @@ func play_oneshot() -> void:
 	tween_visuals(1)
 	tween_volume(1)
 	
-	audio_stream_player.pitch_scale = 1 + randf_range(-pitch_random / 2, pitch_random / 2)
 	var player: AudioStreamPlaybackPolyphonic = audio_stream_player.get_stream_playback()
 	var track_lengths: Array[float]
 	for layer in audio_layers: 
-		player.play_stream(layer)
-		track_lengths.append(layer.get_length())
+		if layer is AudioStreamRandomizer:
+			var picked_layer: AudioStream = layer.get_stream(randi_range(0, layer.streams_count - 1))
+			player.play_stream(picked_layer)
+			track_lengths.append(picked_layer.get_length())
+		else:
+			player.play_stream(layer)
+			track_lengths.append(layer.get_length())
+	audio_stream_player.pitch_scale = 1 + randf_range(-pitch_random / 2, pitch_random / 2)
 	audio_stream_player.stream_paused = false
 	await get_tree().create_timer(track_lengths.max()).timeout
 	oneshot_ended.emit()
-	is_oneshot_playing = false
 	tween_visuals(0)
 	tween_volume(0)
+	is_oneshot_playing = false
 
 
 func _on_button_border_mouse_entered() -> void:

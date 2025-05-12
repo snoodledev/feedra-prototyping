@@ -1,18 +1,19 @@
-[gd_scene load_steps=9 format=3 uid="uid://e4oqu4618xa7"]
+[gd_scene load_steps=10 format=3 uid="uid://e4oqu4618xa7"]
 
 [ext_resource type="Script" uid="uid://1wgmihnc5t1n" path="res://scenes/main_panel/slider_demo/panel_slider_demo.gd" id="1_t86he"]
-[ext_resource type="Texture2D" uid="uid://c8io7lq4oyiex" path="res://assets/graphics/temp/PadImage01.png" id="2_t86he"]
+[ext_resource type="Texture2D" uid="uid://c8io7lq4oyiex" path="res://assets/graphics/temp/pad tests/scene2fantasy/PadImage01.png" id="2_t86he"]
 [ext_resource type="Texture2D" uid="uid://dxe0muksxt78j" path="res://assets/graphics/old/button_volume_control/FadeTint.png" id="3_b37pa"]
 [ext_resource type="Texture2D" uid="uid://dli7232tpqqc5" path="res://assets/graphics/pad/PanelSmallSymbolOneshot.svg" id="3_xc5pq"]
 [ext_resource type="Texture2D" uid="uid://ydoaurt5t8hb" path="res://assets/graphics/pad/PanelSmallWhite.svg" id="4_t86he"]
 [ext_resource type="FontFile" uid="uid://dbwjyseo5j4im" path="res://assets/fonts/Hubballi-Regular.ttf" id="6_4xfo6"]
+[ext_resource type="Texture2D" uid="uid://b0e603nahwm5v" path="res://assets/graphics/temp/corner_fix_large.png" id="6_b37pa"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ytvp3"]
 texture = ExtResource("3_b37pa")
 
 [sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_xc5pq"]
 
-[node name="Panel" type="Control" node_paths=PackedStringArray("button_border", "background_image", "background_image_container", "loop_icon", "label", "fade_tint", "fade_tint_constant")]
+[node name="Panel" type="Control" node_paths=PackedStringArray("button_border", "background_image", "background_image_container", "loop_icon", "label", "fade_tint", "fade_tint_constant", "image_border_cover")]
 custom_minimum_size = Vector2(90, 90)
 layout_mode = 3
 anchors_preset = 0
@@ -29,6 +30,7 @@ loop_icon = NodePath("LoopIcon")
 label = NodePath("Label")
 fade_tint = NodePath("FadeTint")
 fade_tint_constant = NodePath("FadeTintConstant")
+image_border_cover = NodePath("ImageBorderCover")
 
 [node name="BackgroundImageContainer" type="Control" parent="."]
 clip_contents = true
@@ -82,7 +84,7 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_ytvp3")
 
 [node name="FadeTint" type="Panel" parent="."]
-modulate = Color(1, 1, 1, 0.541176)
+modulate = Color(1, 1, 1, 0.741176)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -114,6 +116,14 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("3_xc5pq")
+
+[node name="ImageBorderCover" type="TextureRect" parent="."]
+layout_mode = 1
+offset_right = 190.0
+offset_bottom = 190.0
+scale = Vector2(0.475, 0.475)
+mouse_default_cursor_shape = 2
+texture = ExtResource("6_b37pa")
 
 [node name="ButtonBorder" type="TextureRect" parent="."]
 layout_mode = 1

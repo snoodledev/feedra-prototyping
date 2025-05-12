@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cwl58bco5wtf"]
+
+[ext_resource type="FontFile" uid="uid://dbwjyseo5j4im" path="res://assets/fonts/Hubballi-Regular.ttf" id="1_8ab6e"]
+
+[resource]
+Label/fonts/font = ExtResource("1_8ab6e")
+PopupMenu/font_sizes/font_size = 24
+PopupMenu/fonts/font = ExtResource("1_8ab6e")
