@@ -1,0 +1,82 @@
+[gd_scene load_steps=10 format=3 uid="uid://brhoftla6x825"]
+
+[ext_resource type="Script" uid="uid://ivt2743ki6om" path="res://scenes/layer_editor/layer.gd" id="1_o4fmy"]
+[ext_resource type="Texture2D" uid="uid://dpl0bbmcxrkoy" path="res://assets/graphics/LayerEditor/TempLayerExpanded.svg" id="2_2iby7"]
+[ext_resource type="FontFile" uid="uid://dbwjyseo5j4im" path="res://assets/fonts/Hubballi-Regular.ttf" id="3_7cv4w"]
+[ext_resource type="Texture2D" uid="uid://cyrblxvfkyvi8" path="res://assets/graphics/icons/system/24px/play.svg" id="4_kp8l5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2iby7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kp8l5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bubqm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o4fmy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ckptm"]
+
+[node name="Layer" type="Control"]
+custom_minimum_size = Vector2(855, 44)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 855.0
+offset_bottom = 44.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("1_o4fmy")
+
+[node name="Background" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+offset_right = 855.0
+offset_bottom = 44.0
+texture = ExtResource("2_2iby7")
+
+[node name="LayerName" type="TextEdit" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 52.0
+offset_top = 9.0
+offset_right = 393.0
+offset_bottom = 36.0
+theme_override_fonts/font = ExtResource("3_7cv4w")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2iby7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kp8l5")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_bubqm")
+
+[node name="ButtonCollapse" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 29.0
+offset_top = 11.0
+offset_right = 51.0
+offset_bottom = 34.0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_o4fmy")
+flat = true
+
+[node name="ButtonPlay" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 31.0
+offset_top = 53.0
+offset_right = 56.0
+offset_bottom = 88.0
+mouse_default_cursor_shape = 2
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_ckptm")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ckptm")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_ckptm")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_ckptm")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_ckptm")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ckptm")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_ckptm")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ckptm")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_ckptm")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_o4fmy")
+icon = ExtResource("4_kp8l5")
+flat = true
+
+[node name="AudioPreview" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+bus = &"Preview"

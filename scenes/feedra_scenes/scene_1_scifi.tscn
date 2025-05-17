@@ -1,6 +1,6 @@
 [gd_scene load_steps=34 format=3 uid="uid://cb2o8a3kdq7og"]
 
-[ext_resource type="PackedScene" uid="uid://e4oqu4618xa7" path="res://scenes/main_panel/slider_demo/panel_slider_demo.tscn" id="1_f06e8"]
+[ext_resource type="PackedScene" uid="uid://e4oqu4618xa7" path="res://scenes/main_panel/panel.tscn" id="1_f06e8"]
 [ext_resource type="Texture2D" uid="uid://digudbanrk6a1" path="res://assets/graphics/temp/pad tests/scene1scifi/spaceport.png" id="2_q0l7f"]
 [ext_resource type="AudioStream" uid="uid://cncefv87fbtpq" path="res://assets/audio/scene1scifi/amb-planet_colony-crowd.ogg" id="3_38lc6"]
 [ext_resource type="AudioStream" uid="uid://24bjtxgob3gn" path="res://assets/audio/scene1scifi/amb-planet_colony-hall_tone.ogg" id="4_y0me5"]

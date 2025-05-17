@@ -1,15 +1,21 @@
-[gd_scene load_steps=10 format=3 uid="uid://e4oqu4618xa7"]
+[gd_scene load_steps=14 format=3 uid="uid://e4oqu4618xa7"]
 
-[ext_resource type="Script" uid="uid://1wgmihnc5t1n" path="res://scenes/main_panel/slider_demo/panel_slider_demo.gd" id="1_t86he"]
-[ext_resource type="Texture2D" uid="uid://c8io7lq4oyiex" path="res://assets/graphics/temp/pad tests/scene2fantasy/PadImage01.png" id="2_t86he"]
-[ext_resource type="Texture2D" uid="uid://dxe0muksxt78j" path="res://assets/graphics/old/button_volume_control/FadeTint.png" id="3_b37pa"]
-[ext_resource type="Texture2D" uid="uid://dli7232tpqqc5" path="res://assets/graphics/pad/PanelSmallSymbolOneshot.svg" id="3_xc5pq"]
-[ext_resource type="Texture2D" uid="uid://ydoaurt5t8hb" path="res://assets/graphics/pad/PanelSmallWhite.svg" id="4_t86he"]
-[ext_resource type="FontFile" uid="uid://dbwjyseo5j4im" path="res://assets/fonts/Hubballi-Regular.ttf" id="6_4xfo6"]
-[ext_resource type="Texture2D" uid="uid://b0e603nahwm5v" path="res://assets/graphics/temp/corner_fix_large.png" id="6_b37pa"]
+[ext_resource type="Script" uid="uid://1wgmihnc5t1n" path="res://scenes/main_panel/panel.gd" id="1_yg36g"]
+[ext_resource type="Texture2D" uid="uid://c8io7lq4oyiex" path="res://assets/graphics/temp/pad tests/scene2fantasy/PadImage01.png" id="2_i7swf"]
+[ext_resource type="Texture2D" uid="uid://dxe0muksxt78j" path="res://assets/graphics/old/button_volume_control/FadeTint.png" id="3_m7nfc"]
+[ext_resource type="PackedScene" uid="uid://ctymp454risj5" path="res://scenes/layer_editor/layer_editor.tscn" id="3_ubf5s"]
+[ext_resource type="Texture2D" uid="uid://dli7232tpqqc5" path="res://assets/graphics/pad/PanelSmallSymbolOneshot.svg" id="4_7ihun"]
+[ext_resource type="Texture2D" uid="uid://b0e603nahwm5v" path="res://assets/graphics/temp/corner_fix_large.png" id="5_2wa6b"]
+[ext_resource type="Texture2D" uid="uid://ydoaurt5t8hb" path="res://assets/graphics/pad/PanelSmallWhite.svg" id="6_uajb8"]
+[ext_resource type="FontFile" uid="uid://dbwjyseo5j4im" path="res://assets/fonts/Hubballi-Regular.ttf" id="7_8cvin"]
+[ext_resource type="Texture2D" uid="uid://tl5prwhvcw1p" path="res://assets/graphics/interface/PadEditButton.svg" id="7_13ukx"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ytvp3"]
-texture = ExtResource("3_b37pa")
+texture = ExtResource("3_m7nfc")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ubf5s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_johvu"]
 
 [sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_xc5pq"]
 
@@ -19,10 +25,11 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 90.0
 offset_bottom = 90.0
-script = ExtResource("1_t86he")
+script = ExtResource("1_yg36g")
 is_small = true
-pad_background_image = ExtResource("2_t86he")
+pad_background_image = ExtResource("2_i7swf")
 volume_fade_time = 5.0
+layer_editor_scene = ExtResource("3_ubf5s")
 button_border = NodePath("ButtonBorder")
 background_image = NodePath("BackgroundImageContainer/BackgroundImage")
 background_image_container = NodePath("BackgroundImageContainer")
@@ -62,7 +69,7 @@ offset_bottom = 45.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("2_t86he")
+texture = ExtResource("2_i7swf")
 expand_mode = 3
 stretch_mode = 4
 
@@ -115,7 +122,7 @@ offset_bottom = 29.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("3_xc5pq")
+texture = ExtResource("4_7ihun")
 
 [node name="ImageBorderCover" type="TextureRect" parent="."]
 layout_mode = 1
@@ -123,7 +130,7 @@ offset_right = 190.0
 offset_bottom = 190.0
 scale = Vector2(0.475, 0.475)
 mouse_default_cursor_shape = 2
-texture = ExtResource("6_b37pa")
+texture = ExtResource("5_2wa6b")
 
 [node name="ButtonBorder" type="TextureRect" parent="."]
 layout_mode = 1
@@ -139,7 +146,33 @@ offset_bottom = 45.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
-texture = ExtResource("4_t86he")
+texture = ExtResource("6_uajb8")
+
+[node name="ButtonEdit" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -47.0
+offset_top = -46.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_ubf5s")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ubf5s")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_ubf5s")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_ubf5s")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_ubf5s")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ubf5s")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_ubf5s")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ubf5s")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_ubf5s")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_johvu")
+icon = ExtResource("7_13ukx")
+flat = true
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -154,7 +187,7 @@ offset_right = 45.0
 offset_bottom = 45.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("6_4xfo6")
+theme_override_fonts/font = ExtResource("7_8cvin")
 theme_override_font_sizes/font_size = 18
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -163,6 +196,7 @@ autowrap_mode = 3
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = SubResource("AudioStreamPolyphonic_xc5pq")
+bus = &"Playback"
 
 [connection signal="mouse_entered" from="ButtonBorder" to="." method="_on_button_border_mouse_entered"]
 [connection signal="mouse_exited" from="ButtonBorder" to="." method="_on_button_border_mouse_exited"]

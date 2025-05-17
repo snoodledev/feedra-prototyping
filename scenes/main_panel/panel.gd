@@ -5,9 +5,10 @@ class_name FeedraPanel
 signal oneshot_ended
 
 @onready var audio_stream_player: AudioStreamPlayer = %AudioStreamPlayer
+@onready var button_edit: Button = %ButtonEdit
+@onready var layer_editor_container: MarginContainer = get_tree().get_first_node_in_group("LayerEditorContainer")
 
-#@export var is_pad_small: bool = false
-@export var pad_color: PadColors = PadColors.White
+@export var pad_color: Global.PadColors = Global.PadColors.White
 @export var is_small: bool = false
 @export var is_loop_mode: bool = false
 @export var pad_background_image: Texture2D
@@ -17,6 +18,7 @@ signal oneshot_ended
 @export var audio_layers: Array[AudioStream]
 
 @export_group("Internal")
+@export var layer_editor_scene: PackedScene
 @export var button_border: TextureRect
 @export var background_image: TextureRect
 @export var background_image_container: Control
@@ -41,43 +43,30 @@ var pad_cursor_offset: float
 var pad_cursor_size: float
 var pad_size: float
 
-enum PadColors {
-	Blue,
-	Green,
-	LightBlue,
-	Magenta,
-	Orange,
-	Purple,
-	Red,
-	Teal,
-	White,
-	Yellow
+var pad_large_graphics: Dictionary[Global.PadColors, CompressedTexture2D] = {
+	Global.PadColors.Blue: preload("res://assets/graphics/pad/PanelLargeBlue.svg"),
+	Global.PadColors.Green: preload("res://assets/graphics/pad/PanelLargeGreen.svg"),
+	Global.PadColors.LightBlue: preload("res://assets/graphics/pad/PanelLargeLightBlue.svg"),
+	Global.PadColors.Magenta: preload("res://assets/graphics/pad/PanelLargeMagenta.svg"),
+	Global.PadColors.Orange: preload("res://assets/graphics/pad/PanelLargeOrange.svg"),
+	Global.PadColors.Purple: preload("res://assets/graphics/pad/PanelLargePurple.svg"),
+	Global.PadColors.Red: preload("res://assets/graphics/pad/PanelLargeRed.svg"),
+	Global.PadColors.Teal: preload("res://assets/graphics/pad/PanelLargeTeal.svg"),
+	Global.PadColors.White: preload("res://assets/graphics/pad/PanelLargeWhite.svg"),
+	Global.PadColors.Yellow: preload("res://assets/graphics/pad/PanelLargeYellow.svg")
 }
 
-var pad_large_graphics: Dictionary[PadColors, CompressedTexture2D] = {
-	PadColors.Blue: preload("res://assets/graphics/pad/PanelLargeBlue.svg"),
-	PadColors.Green: preload("res://assets/graphics/pad/PanelLargeGreen.svg"),
-	PadColors.LightBlue: preload("res://assets/graphics/pad/PanelLargeLightBlue.svg"),
-	PadColors.Magenta: preload("res://assets/graphics/pad/PanelLargeMagenta.svg"),
-	PadColors.Orange: preload("res://assets/graphics/pad/PanelLargeOrange.svg"),
-	PadColors.Purple: preload("res://assets/graphics/pad/PanelLargePurple.svg"),
-	PadColors.Red: preload("res://assets/graphics/pad/PanelLargeRed.svg"),
-	PadColors.Teal: preload("res://assets/graphics/pad/PanelLargeTeal.svg"),
-	PadColors.White: preload("res://assets/graphics/pad/PanelLargeWhite.svg"),
-	PadColors.Yellow: preload("res://assets/graphics/pad/PanelLargeYellow.svg")
-}
-
-var pad_small_graphics: Dictionary[PadColors, CompressedTexture2D] = {
-	PadColors.Blue: preload("res://assets/graphics/pad/PanelSmallBlue.svg"),
-	PadColors.Green: preload("res://assets/graphics/pad/PanelSmallGreen.svg"),
-	PadColors.LightBlue: preload("res://assets/graphics/pad/PanelSmallLightBlue.svg"),
-	PadColors.Magenta: preload("res://assets/graphics/pad/PanelSmallMagenta.svg"),
-	PadColors.Orange: preload("res://assets/graphics/pad/PanelSmallOrange.svg"),
-	PadColors.Purple: preload("res://assets/graphics/pad/PanelSmallPurple.svg"),
-	PadColors.Red: preload("res://assets/graphics/pad/PanelSmallRed.svg"),
-	PadColors.Teal: preload("res://assets/graphics/pad/PanelSmallTeal.svg"),
-	PadColors.White: preload("res://assets/graphics/pad/PanelSmallWhite.svg"),
-	PadColors.Yellow: preload("res://assets/graphics/pad/PanelSmallYellow.svg")
+var pad_small_graphics: Dictionary[Global.PadColors, CompressedTexture2D] = {
+	Global.PadColors.Blue: preload("res://assets/graphics/pad/PanelSmallBlue.svg"),
+	Global.PadColors.Green: preload("res://assets/graphics/pad/PanelSmallGreen.svg"),
+	Global.PadColors.LightBlue: preload("res://assets/graphics/pad/PanelSmallLightBlue.svg"),
+	Global.PadColors.Magenta: preload("res://assets/graphics/pad/PanelSmallMagenta.svg"),
+	Global.PadColors.Orange: preload("res://assets/graphics/pad/PanelSmallOrange.svg"),
+	Global.PadColors.Purple: preload("res://assets/graphics/pad/PanelSmallPurple.svg"),
+	Global.PadColors.Red: preload("res://assets/graphics/pad/PanelSmallRed.svg"),
+	Global.PadColors.Teal: preload("res://assets/graphics/pad/PanelSmallTeal.svg"),
+	Global.PadColors.White: preload("res://assets/graphics/pad/PanelSmallWhite.svg"),
+	Global.PadColors.Yellow: preload("res://assets/graphics/pad/PanelSmallYellow.svg")
 }
 
 var pad_symbol_loop_large: CompressedTexture2D = preload("res://assets/graphics/pad/PanelLargeSymbolLoop.svg")
@@ -87,7 +76,10 @@ var pad_symbol_oneshot_small: CompressedTexture2D = preload("res://assets/graphi
 
 
 func _ready() -> void:
-	if Engine.is_editor_hint(): return
+	Global.edit_mode_changed.connect(on_edit_mode_changed)
+	button_edit.pressed.connect(on_button_edit_pressed)
+	toggle_edit_mode()
+	
 	border_tint = button_border.modulate
 	init_audio()
 
@@ -95,7 +87,6 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	background_image.texture = pad_background_image
 	label.text = label_text
-
 	
 	if is_small:
 		set_size_small()
@@ -227,7 +218,6 @@ func set_size_large() -> void:
 
 
 func tween_volume(override_is_button_active: int = -1) -> void:
-	
 	if volume_tween and volume_tween.is_running(): volume_tween.kill()
 	volume_tween = create_tween()
 	if (!is_button_active or override_is_button_active == 1) and override_is_button_active != 0:
@@ -283,6 +273,20 @@ func play_oneshot() -> void:
 	is_oneshot_playing = false
 
 
+func toggle_edit_mode() -> void:
+	if Global.is_edit_mode:
+		button_edit.show()
+	else:
+		button_edit.hide()
+
+
+func open_layer_editor() -> void:
+	if !layer_editor_scene: push_error("Layer Editor scene not assigned to Pad!"); return
+	var layer_editor_instance: FeedraLayerEditor = layer_editor_scene.instantiate()
+	layer_editor_container.add_child(layer_editor_instance)
+	layer_editor_instance.init(audio_layers, pad_color)
+
+
 func _on_button_border_mouse_entered() -> void:
 	if Engine.is_editor_hint(): return
 	is_mouse_in = true
@@ -291,3 +295,11 @@ func _on_button_border_mouse_entered() -> void:
 func _on_button_border_mouse_exited() -> void:
 	if Engine.is_editor_hint(): return
 	is_mouse_in = false
+
+
+func on_edit_mode_changed() -> void:
+	toggle_edit_mode()
+
+
+func on_button_edit_pressed() -> void:
+	open_layer_editor()

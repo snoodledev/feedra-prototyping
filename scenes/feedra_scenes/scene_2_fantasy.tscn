@@ -1,6 +1,6 @@
 [gd_scene load_steps=64 format=3 uid="uid://bi2glqfyywxqb"]
 
-[ext_resource type="PackedScene" uid="uid://e4oqu4618xa7" path="res://scenes/main_panel/slider_demo/panel_slider_demo.tscn" id="1_3p2bx"]
+[ext_resource type="PackedScene" uid="uid://e4oqu4618xa7" path="res://scenes/main_panel/panel.tscn" id="1_3p2bx"]
 [ext_resource type="Texture2D" uid="uid://ckcxd26xma3rw" path="res://assets/graphics/temp/pad tests/scene2fantasy/forest.png" id="2_y83yv"]
 [ext_resource type="AudioStream" uid="uid://dneo0a6wjv2qr" path="res://assets/audio/scene2fantasy/CutleryClatter_LOOP.wav" id="3_q4u8v"]
 [ext_resource type="AudioStream" uid="uid://dhnkr8khi074n" path="res://assets/audio/scene2fantasy/TavernConversation_LOOP.wav" id="4_7gikn"]

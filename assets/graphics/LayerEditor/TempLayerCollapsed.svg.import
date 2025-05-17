@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b21nj3k1ks8vu"
-path="res://.godot/imported/ModeButtonLoop.svg-f0d9274bb040fc9c7d64d0f422ac4680.ctex"
+uid="uid://uwfhtvjg14ab"
+path="res://.godot/imported/TempLayerCollapsed.svg-4f232ca72ff629339d48d4cd54e6f07d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/interface/ModeButtonLoop.svg"
-dest_files=["res://.godot/imported/ModeButtonLoop.svg-f0d9274bb040fc9c7d64d0f422ac4680.ctex"]
+source_file="res://assets/graphics/LayerEditor/TempLayerCollapsed.svg"
+dest_files=["res://.godot/imported/TempLayerCollapsed.svg-4f232ca72ff629339d48d4cd54e6f07d.ctex"]
 
 [params]
 

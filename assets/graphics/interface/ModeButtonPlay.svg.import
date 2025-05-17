@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djt61ps3ynwev"
-path="res://.godot/imported/ModeButtonOneshot.svg-144257cb2cc926a70e5656624c7c3049.ctex"
+uid="uid://x5lb85k8xo8c"
+path="res://.godot/imported/ModeButtonPlay.svg-e6ab7150ec62caf403de45f09e8a5abd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/interface/ModeButtonOneshot.svg"
-dest_files=["res://.godot/imported/ModeButtonOneshot.svg-144257cb2cc926a70e5656624c7c3049.ctex"]
+source_file="res://assets/graphics/interface/ModeButtonPlay.svg"
+dest_files=["res://.godot/imported/ModeButtonPlay.svg-e6ab7150ec62caf403de45f09e8a5abd.ctex"]
 
 [params]
 
