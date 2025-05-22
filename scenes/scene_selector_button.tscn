@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://cl4dcvwgmwet0"]
 
 [ext_resource type="Script" uid="uid://8j0fjbajj0fv" path="res://scenes/scene_selector_button.gd" id="1_qxq7u"]
-[ext_resource type="PackedScene" uid="uid://cb2o8a3kdq7og" path="res://scenes/feedra_scenes/scene_1_scifi.tscn" id="2_xgxeq"]
-[ext_resource type="PackedScene" uid="uid://bi2glqfyywxqb" path="res://scenes/feedra_scenes/scene_2_fantasy.tscn" id="3_w3d7i"]
+[ext_resource type="PackedScene" uid="uid://cb2o8a3kdq7og" path="res://scenes/feedra_scenes/scene_scifi.tscn" id="2_xgxeq"]
+[ext_resource type="PackedScene" uid="uid://bi2glqfyywxqb" path="res://scenes/feedra_scenes/scene_dragon_battle.tscn" id="3_w3d7i"]
 [ext_resource type="FontFile" uid="uid://dbwjyseo5j4im" path="res://assets/fonts/Hubballi-Regular.ttf" id="4_mwkmu"]
 [ext_resource type="Texture2D" uid="uid://cxkaeey00ndil" path="res://assets/graphics/header/DropdownArrow.svg" id="5_mwkmu"]
 

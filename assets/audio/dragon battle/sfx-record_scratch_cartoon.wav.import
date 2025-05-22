@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://byg3j75wet5eb"
+path="res://.godot/imported/sfx-record_scratch_cartoon.wav-a4c3d07f780c70742e6d5d655bba83c6.sample"
+
+[deps]
+
+source_file="res://assets/audio/dragon battle/sfx-record_scratch_cartoon.wav"
+dest_files=["res://.godot/imported/sfx-record_scratch_cartoon.wav-a4c3d07f780c70742e6d5d655bba83c6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

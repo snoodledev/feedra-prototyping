@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bm8ibbum8syh8"
+path="res://.godot/imported/amb-facility-dark_drone.ogg-f57ef70a27f6ba3ecf01456fee3148d9.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/planetary colony/amb-facility-dark_drone.ogg"
+dest_files=["res://.godot/imported/amb-facility-dark_drone.ogg-f57ef70a27f6ba3ecf01456fee3148d9.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

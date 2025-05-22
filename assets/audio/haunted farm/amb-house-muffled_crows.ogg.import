@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c2vt5hfx8rdb1"
+path="res://.godot/imported/amb-house-muffled_crows.ogg-beb36e10097ce50cfc689972b26fe264.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/haunted farm/amb-house-muffled_crows.ogg"
+dest_files=["res://.godot/imported/amb-house-muffled_crows.ogg-beb36e10097ce50cfc689972b26fe264.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

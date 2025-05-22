@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cmboll1ufo3cm"
+path="res://.godot/imported/sfx-tool_medkit.ogg-c34804ba2f3c6b8f3efc603e7a0ecb9e.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/planetary colony/sfx-tool_medkit.ogg"
+dest_files=["res://.godot/imported/sfx-tool_medkit.ogg-c34804ba2f3c6b8f3efc603e7a0ecb9e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

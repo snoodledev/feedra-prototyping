@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://mf2c36y3wgi"
+path="res://.godot/imported/amb-luminous_cavern-drips_reversed.ogg-e903c75a929369802a6bc8fdef80a2c4.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/alien planet/amb-luminous_cavern-drips_reversed.ogg"
+dest_files=["res://.godot/imported/amb-luminous_cavern-drips_reversed.ogg-e903c75a929369802a6bc8fdef80a2c4.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

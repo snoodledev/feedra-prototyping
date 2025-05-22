@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cxf5ni2vs5qgr"
+path="res://.godot/imported/amb-house-creaks.ogg-8b952d8179de110c111cf52b858e94a9.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/haunted farm/amb-house-creaks.ogg"
+dest_files=["res://.godot/imported/amb-house-creaks.ogg-8b952d8179de110c111cf52b858e94a9.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

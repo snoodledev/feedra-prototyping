@@ -1,0 +1,158 @@
+[gd_scene load_steps=11 format=3 uid="uid://cb2o8a3kdq7og"]
+
+[ext_resource type="PackedScene" uid="uid://e4oqu4618xa7" path="res://scenes/main_panel/panel.tscn" id="1_f06e8"]
+[ext_resource type="Texture2D" uid="uid://digudbanrk6a1" path="res://assets/graphics/temp/pad tests/scene1scifi/spaceport.png" id="2_q0l7f"]
+[ext_resource type="Texture2D" uid="uid://buhy4u586de4p" path="res://assets/graphics/temp/pad tests/scene1scifi/starship2.png" id="8_5ruah"]
+[ext_resource type="Texture2D" uid="uid://dnmmnogregkbd" path="res://assets/graphics/temp/pad tests/scene1scifi/facility.png" id="15_i80e2"]
+[ext_resource type="Texture2D" uid="uid://benrdig6gx038" path="res://assets/graphics/temp/pad tests/scene1scifi/ghost.png" id="17_mwlkj"]
+[ext_resource type="Texture2D" uid="uid://cths7lhp2uucu" path="res://assets/graphics/temp/pad tests/scene1scifi/blackhole.png" id="19_7tsv6"]
+[ext_resource type="Texture2D" uid="uid://bkworc0hwrxsj" path="res://assets/graphics/temp/pad tests/scene1scifi/smg.png" id="21_us3mu"]
+[ext_resource type="Texture2D" uid="uid://brv7d7ray4o2v" path="res://assets/graphics/temp/pad tests/scene1scifi/medkit.png" id="26_bwd8n"]
+[ext_resource type="Texture2D" uid="uid://bu82ll3aeodjl" path="res://assets/graphics/temp/pad tests/scene1scifi/screen.png" id="28_m5564"]
+[ext_resource type="Texture2D" uid="uid://bhquhej8rdmmf" path="res://assets/graphics/temp/pad tests/scene1scifi/oozers.png" id="32_vn3y1"]
+
+[node name="Scene1Scifi" type="GridContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -401.0
+offset_top = -187.0
+offset_right = 401.0
+offset_bottom = 207.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 4
+
+[node name="Panel" parent="." instance=ExtResource("1_f06e8")]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+pad_color = 0
+is_small = false
+is_loop_mode = true
+pad_background_image = ExtResource("2_q0l7f")
+label_text = "Space Port"
+
+[node name="Panel2" parent="." instance=ExtResource("1_f06e8")]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+pad_color = 2
+is_small = false
+is_loop_mode = true
+pad_background_image = ExtResource("8_5ruah")
+label_text = "Starship"
+
+[node name="Panel3" parent="." instance=ExtResource("1_f06e8")]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+pad_color = 9
+is_small = false
+is_loop_mode = true
+pad_background_image = ExtResource("15_i80e2")
+label_text = "Abandoned Facility"
+
+[node name="Panel4" parent="." instance=ExtResource("1_f06e8")]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+pad_color = 7
+is_small = false
+is_loop_mode = true
+pad_background_image = ExtResource("17_mwlkj")
+label_text = "Space Ghost"
+
+[node name="Panel5" parent="." instance=ExtResource("1_f06e8")]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+pad_color = 5
+is_small = false
+is_loop_mode = true
+pad_background_image = ExtResource("19_7tsv6")
+label_text = "Cosmic Drone"
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 2
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 2
+
+[node name="Panel7" parent="GridContainer" instance=ExtResource("1_f06e8")]
+layout_mode = 2
+pad_color = 0
+pad_background_image = ExtResource("21_us3mu")
+volume_fade_time = 0.0
+pitch_random = 0.3
+label_text = "SMG"
+
+[node name="Panel9" parent="GridContainer" instance=ExtResource("1_f06e8")]
+layout_mode = 2
+pad_color = 2
+pad_background_image = ExtResource("21_us3mu")
+volume_fade_time = 0.0
+pitch_random = 0.3
+label_text = "Blaster"
+
+[node name="Panel10" parent="GridContainer" instance=ExtResource("1_f06e8")]
+layout_mode = 2
+pad_color = 6
+pad_background_image = ExtResource("21_us3mu")
+volume_fade_time = 0.0
+pitch_random = 0.3
+label_text = "Shotgun"
+
+[node name="Panel11" parent="GridContainer" instance=ExtResource("1_f06e8")]
+layout_mode = 2
+pad_color = 1
+pad_background_image = ExtResource("21_us3mu")
+volume_fade_time = 0.0
+pitch_random = 0.3
+label_text = "Laser"
+
+[node name="GridContainer2" type="GridContainer" parent="."]
+layout_mode = 2
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 2
+
+[node name="Panel8" parent="GridContainer2" instance=ExtResource("1_f06e8")]
+layout_mode = 2
+pad_color = 1
+pad_background_image = ExtResource("26_bwd8n")
+volume_fade_time = 0.1
+pitch_random = 0.3
+label_text = "Medkit"
+
+[node name="Panel9" parent="GridContainer2" instance=ExtResource("1_f06e8")]
+layout_mode = 2
+pad_color = 3
+is_loop_mode = true
+pad_background_image = ExtResource("28_m5564")
+volume_fade_time = 0.3
+pitch_random = 0.3
+label_text = "Computer Idle"
+
+[node name="Panel10" parent="GridContainer2" instance=ExtResource("1_f06e8")]
+layout_mode = 2
+pad_color = 3
+pad_background_image = ExtResource("28_m5564")
+volume_fade_time = 0.1
+pitch_random = 0.3
+label_text = "Computer Success"
+
+[node name="Panel11" parent="GridContainer2" instance=ExtResource("1_f06e8")]
+layout_mode = 2
+pad_color = 3
+pad_background_image = ExtResource("28_m5564")
+volume_fade_time = 0.1
+pitch_random = 0.3
+label_text = "Computer Error"
+
+[node name="Panel6" parent="." instance=ExtResource("1_f06e8")]
+layout_mode = 2
+pad_color = 6
+pad_background_image = ExtResource("32_vn3y1")
+volume_fade_time = 0.1
+pitch_random = 0.2
+label_text = "The Ooze"

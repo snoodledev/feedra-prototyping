@@ -93,7 +93,9 @@ func _process(_delta: float) -> void:
 	else:
 		set_size_large()
 	if Engine.is_editor_hint(): return
-
+	
+	
+	
 	var c_start: float = pad_cursor_offset
 	var c_end: float = pad_cursor_offset + pad_cursor_size
 	
@@ -101,6 +103,7 @@ func _process(_delta: float) -> void:
 	fade_tint.size.x = remap(volume, 0, 1, pad_cursor_size, 0)
 	fade_tint.position.x = remap(volume, 0, 1, c_start, c_end)
 	audio_stream_player.volume_db = linear_to_db(volume)
+	
 	
 	var activeness_scaled: float = remap(activeness, 0, 1, 0.4, 1)
 	button_border.modulate = Color(activeness_scaled, activeness_scaled, activeness_scaled)
@@ -145,6 +148,35 @@ func _process(_delta: float) -> void:
 			else:
 				#is_oneshot_playing = false
 				oneshot_ended.emit()
+
+
+func play_oneshot() -> void:
+	if audio_layers.size() == 0: push_error(self.name + " has no audio layers!"); return
+	
+	is_oneshot_playing = true
+	tween_visuals(1)
+	tween_volume(1)
+	# fixes the double-playback bug
+	audio_stream_player.stop()
+	audio_stream_player.play()
+	
+	var player: AudioStreamPlaybackPolyphonic = audio_stream_player.get_stream_playback()
+	var track_lengths: Array[float]
+	for layer in audio_layers: 
+		if layer is AudioStreamRandomizer:
+			var picked_layer: AudioStream = layer.get_stream(randi_range(0, layer.streams_count - 1))
+			player.play_stream(picked_layer)
+			track_lengths.append(picked_layer.get_length())
+		else:
+			player.play_stream(layer)
+			track_lengths.append(layer.get_length())
+	audio_stream_player.pitch_scale = 1 + randf_range(-pitch_random / 2, pitch_random / 2)
+	audio_stream_player.stream_paused = false
+	await get_tree().create_timer(track_lengths.max()).timeout
+	oneshot_ended.emit()
+	tween_visuals(0)
+	tween_volume(0)
+	is_oneshot_playing = false
 
 
 func set_size_small() -> void:
@@ -247,30 +279,6 @@ func init_audio() -> void:
 		if !layer: print("Null layer found!"); continue
 		if !is_loop_mode: audio_stream_player.stream_paused = true
 		player.play_stream(layer, randf_range(0, layer.get_length()))
-
-
-func play_oneshot() -> void:
-	is_oneshot_playing = true
-	tween_visuals(1)
-	tween_volume(1)
-	
-	var player: AudioStreamPlaybackPolyphonic = audio_stream_player.get_stream_playback()
-	var track_lengths: Array[float]
-	for layer in audio_layers: 
-		if layer is AudioStreamRandomizer:
-			var picked_layer: AudioStream = layer.get_stream(randi_range(0, layer.streams_count - 1))
-			player.play_stream(picked_layer)
-			track_lengths.append(picked_layer.get_length())
-		else:
-			player.play_stream(layer)
-			track_lengths.append(layer.get_length())
-	audio_stream_player.pitch_scale = 1 + randf_range(-pitch_random / 2, pitch_random / 2)
-	audio_stream_player.stream_paused = false
-	await get_tree().create_timer(track_lengths.max()).timeout
-	oneshot_ended.emit()
-	tween_visuals(0)
-	tween_volume(0)
-	is_oneshot_playing = false
 
 
 func toggle_edit_mode() -> void:

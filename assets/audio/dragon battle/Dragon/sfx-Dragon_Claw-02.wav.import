@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ch2t4hw8ko6j"
+path="res://.godot/imported/sfx-Dragon_Claw-02.wav-c7beae3d3fcf2b9f0b68c6ed5cc5e026.sample"
+
+[deps]
+
+source_file="res://assets/audio/dragon battle/Dragon/sfx-Dragon_Claw-02.wav"
+dest_files=["res://.godot/imported/sfx-Dragon_Claw-02.wav-c7beae3d3fcf2b9f0b68c6ed5cc5e026.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

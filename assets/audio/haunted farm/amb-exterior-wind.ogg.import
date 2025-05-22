@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://chuifq4v7lkej"
+path="res://.godot/imported/amb-exterior-wind.ogg-be12041b2b7f41ade2cec4bcbc21a4a2.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/haunted farm/amb-exterior-wind.ogg"
+dest_files=["res://.godot/imported/amb-exterior-wind.ogg-be12041b2b7f41ade2cec4bcbc21a4a2.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

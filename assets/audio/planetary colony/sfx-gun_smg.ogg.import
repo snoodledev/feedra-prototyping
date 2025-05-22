@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dw7vo4iqqsjsl"
+path="res://.godot/imported/sfx-gun_smg.ogg-a4589839306d527e253d335c7793e902.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/planetary colony/sfx-gun_smg.ogg"
+dest_files=["res://.godot/imported/sfx-gun_smg.ogg-a4589839306d527e253d335c7793e902.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

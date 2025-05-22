@@ -1,10 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://ctymp454risj5"]
+[gd_scene load_steps=6 format=3 uid="uid://ctymp454risj5"]
 
 [ext_resource type="Texture2D" uid="uid://dfhy1b8bufcyo" path="res://assets/graphics/LayerEditor/FrameTemp.svg" id="1_8stqy"]
 [ext_resource type="Script" uid="uid://b80d034m0l6b3" path="res://scenes/layer_editor/layer_editor.gd" id="1_rdv2i"]
 [ext_resource type="PackedScene" uid="uid://brhoftla6x825" path="res://scenes/layer_editor/layer.tscn" id="3_8stqy"]
-[ext_resource type="AudioStream" uid="uid://cncefv87fbtpq" path="res://assets/audio/scene1scifi/amb-planet_colony-crowd.ogg" id="3_qu8pm"]
-[ext_resource type="AudioStream" uid="uid://24bjtxgob3gn" path="res://assets/audio/scene1scifi/amb-planet_colony-hall_tone.ogg" id="4_0hcyk"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8stqy"]
 
@@ -19,7 +17,6 @@ offset_right = 60.0
 offset_bottom = 145.0
 script = ExtResource("1_rdv2i")
 layer_scene = ExtResource("3_8stqy")
-test_layers = Array[AudioStream]([ExtResource("3_qu8pm"), ExtResource("4_0hcyk")])
 
 [node name="FrameTemp" type="TextureRect" parent="."]
 layout_mode = 2

@@ -1,0 +1,136 @@
+[gd_scene load_steps=19 format=3 uid="uid://byyf3iw8tlrn1"]
+
+[ext_resource type="PackedScene" uid="uid://e4oqu4618xa7" path="res://scenes/main_panel/panel.tscn" id="1_sis5c"]
+[ext_resource type="Texture2D" uid="uid://ckcxd26xma3rw" path="res://assets/graphics/temp/pad tests/scene2fantasy/forest.png" id="2_rjbb0"]
+[ext_resource type="AudioStream" uid="uid://dwt3ye5dac8ir" path="res://assets/audio/haunted farm/amb-exterior-crows.ogg" id="3_8s77h"]
+[ext_resource type="AudioStream" uid="uid://cbr5fs2xajfd5" path="res://assets/audio/haunted farm/amb-exterior-lowtone.ogg" id="4_cr0ts"]
+[ext_resource type="AudioStream" uid="uid://chuifq4v7lkej" path="res://assets/audio/haunted farm/amb-exterior-wind.ogg" id="5_lrrs8"]
+[ext_resource type="AudioStream" uid="uid://b7cqades8kbjb" path="res://assets/audio/haunted farm/sfx-door_open.ogg" id="6_ulqdd"]
+[ext_resource type="AudioStream" uid="uid://cxf5ni2vs5qgr" path="res://assets/audio/haunted farm/amb-house-creaks.ogg" id="7_qdmjo"]
+[ext_resource type="AudioStream" uid="uid://bltbf6p0bhu2e" path="res://assets/audio/haunted farm/amb-discovery-drone.ogg" id="7_ybamu"]
+[ext_resource type="Texture2D" uid="uid://dt0ex11nol3x2" path="res://assets/graphics/temp/pad tests/scene2fantasy/branch step.png" id="7_yvhnr"]
+[ext_resource type="AudioStream" uid="uid://c2vt5hfx8rdb1" path="res://assets/audio/haunted farm/amb-house-muffled_crows.ogg" id="8_5836h"]
+[ext_resource type="AudioStream" uid="uid://cqv2rb5e6oxxr" path="res://assets/audio/haunted farm/amb-discovery-pianotone.ogg" id="8_ulqdd"]
+[ext_resource type="AudioStream" uid="uid://cehhxtl2d4pgr" path="res://assets/audio/haunted farm/amb-house-muffled_wind.ogg" id="9_mqpej"]
+[ext_resource type="AudioStream" uid="uid://dl5xbfmi3x2fo" path="res://assets/audio/haunted farm/amb-basement-dark_tone.ogg" id="10_5836h"]
+[ext_resource type="AudioStream" uid="uid://b8w128vf3cnoc" path="res://assets/audio/haunted farm/sfx-basement_door_open.ogg" id="10_mqpej"]
+[ext_resource type="AudioStream" uid="uid://pay8vk4maeol" path="res://assets/audio/haunted farm/amb-basement-haunting.ogg" id="11_mqpej"]
+[ext_resource type="AudioStream" uid="uid://dtbxq6ykovai7" path="res://assets/audio/haunted farm/sfx-string_A.ogg" id="16_kn5gu"]
+[ext_resource type="AudioStream" uid="uid://ca7ftmu501gvm" path="res://assets/audio/haunted farm/sfx-string_B.ogg" id="17_lbq4d"]
+[ext_resource type="AudioStream" uid="uid://d0fs7v3ro74yc" path="res://assets/audio/haunted farm/sfx-string_C.ogg" id="18_ae4ul"]
+
+[node name="SceneDragonBattle" type="GridContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -401.0
+offset_top = -187.0
+offset_right = 401.0
+offset_bottom = 207.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 4
+
+[node name="Panel3" parent="." instance=ExtResource("1_sis5c")]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+is_small = false
+is_loop_mode = true
+pad_background_image = ExtResource("2_rjbb0")
+label_text = "Outside"
+audio_layers = Array[AudioStream]([ExtResource("3_8s77h"), ExtResource("4_cr0ts"), ExtResource("5_lrrs8")])
+
+[node name="Panel4" parent="." instance=ExtResource("1_sis5c")]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+pad_color = 9
+is_small = false
+pad_background_image = ExtResource("2_rjbb0")
+volume_fade_time = 0.5
+label_text = "Front Door"
+audio_layers = Array[AudioStream]([ExtResource("6_ulqdd")])
+
+[node name="Panel5" parent="." instance=ExtResource("1_sis5c")]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+pad_color = 4
+is_small = false
+is_loop_mode = true
+pad_background_image = ExtResource("2_rjbb0")
+label_text = "Abandoned Farmhouse"
+audio_layers = Array[AudioStream]([ExtResource("7_qdmjo"), ExtResource("8_5836h"), ExtResource("9_mqpej")])
+
+[node name="Panel6" parent="." instance=ExtResource("1_sis5c")]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+pad_color = 2
+is_small = false
+pad_background_image = ExtResource("2_rjbb0")
+volume_fade_time = 0.5
+label_text = "Basement Door"
+audio_layers = Array[AudioStream]([ExtResource("10_mqpej")])
+
+[node name="Panel7" parent="." instance=ExtResource("1_sis5c")]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+pad_color = 0
+is_small = false
+is_loop_mode = true
+pad_background_image = ExtResource("2_rjbb0")
+label_text = "Basement"
+audio_layers = Array[AudioStream]([ExtResource("10_5836h"), ExtResource("11_mqpej")])
+
+[node name="Panel9" parent="." instance=ExtResource("1_sis5c")]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+pad_color = 5
+is_small = false
+is_loop_mode = true
+pad_background_image = ExtResource("7_yvhnr")
+volume_fade_time = 8.0
+pitch_random = 0.3
+label_text = "Discovery"
+audio_layers = Array[AudioStream]([ExtResource("7_ybamu"), ExtResource("8_ulqdd")])
+
+[node name="GridContainer5" type="GridContainer" parent="."]
+layout_mode = 2
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 2
+
+[node name="Panel10" parent="GridContainer5" instance=ExtResource("1_sis5c")]
+layout_mode = 2
+pad_color = 4
+pad_background_image = ExtResource("7_yvhnr")
+volume_fade_time = 0.5
+pitch_random = 0.3
+label_text = "Sting 1"
+audio_layers = Array[AudioStream]([ExtResource("16_kn5gu")])
+
+[node name="Panel11" parent="GridContainer5" instance=ExtResource("1_sis5c")]
+layout_mode = 2
+pad_color = 4
+pad_background_image = ExtResource("7_yvhnr")
+volume_fade_time = 0.5
+pitch_random = 0.3
+label_text = "Sting 2"
+audio_layers = Array[AudioStream]([ExtResource("17_lbq4d")])
+
+[node name="GridContainer6" type="GridContainer" parent="."]
+layout_mode = 2
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 2
+
+[node name="Panel12" parent="GridContainer6" instance=ExtResource("1_sis5c")]
+layout_mode = 2
+pad_color = 4
+pad_background_image = ExtResource("7_yvhnr")
+volume_fade_time = 0.5
+pitch_random = 0.3
+label_text = "Sting 3"
+audio_layers = Array[AudioStream]([ExtResource("18_ae4ul")])

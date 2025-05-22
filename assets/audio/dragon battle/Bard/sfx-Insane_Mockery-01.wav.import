@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cfpvos5thfu62"
+path="res://.godot/imported/sfx-Insane_Mockery-01.wav-a9585a938c399599e9eec7900a782d10.sample"
+
+[deps]
+
+source_file="res://assets/audio/dragon battle/Bard/sfx-Insane_Mockery-01.wav"
+dest_files=["res://.godot/imported/sfx-Insane_Mockery-01.wav-a9585a938c399599e9eec7900a782d10.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

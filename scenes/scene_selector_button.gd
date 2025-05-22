@@ -19,7 +19,7 @@ func _ready() -> void:
 		menu.add_item(scene)
 	
 	#switch_scene("Example 1: Sci Fi")
-	switch_scene("Example 1: Fantasy")
+	switch_scene("Dragon Battle")
 
 
 func switch_scene(id: String) -> void:

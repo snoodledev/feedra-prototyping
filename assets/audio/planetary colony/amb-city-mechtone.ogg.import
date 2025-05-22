@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dob6gmm0ktmjv"
+path="res://.godot/imported/amb-city-mechtone.ogg-db37326d9cf4eae5c75f3b8eb430b1cc.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/planetary colony/amb-city-mechtone.ogg"
+dest_files=["res://.godot/imported/amb-city-mechtone.ogg-db37326d9cf4eae5c75f3b8eb430b1cc.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

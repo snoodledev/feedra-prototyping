@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cxr4g0j3dsw4q"
+path="res://.godot/imported/amb-luminous_cavern-air_tone.ogg-cbe7bc8facf2aa8e848cc98e73989f0e.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/alien planet/amb-luminous_cavern-air_tone.ogg"
+dest_files=["res://.godot/imported/amb-luminous_cavern-air_tone.ogg-cbe7bc8facf2aa8e848cc98e73989f0e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

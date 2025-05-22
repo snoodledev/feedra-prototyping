@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b1v37gwgvtw2x"
+path="res://.godot/imported/amb-city-crowd.ogg-bb52a077030bfcc7ea12a4c5447757e2.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/planetary colony/amb-city-crowd.ogg"
+dest_files=["res://.godot/imported/amb-city-crowd.ogg-bb52a077030bfcc7ea12a4c5447757e2.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

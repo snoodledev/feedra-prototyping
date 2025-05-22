@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cqv2rb5e6oxxr"
+path="res://.godot/imported/amb-discovery-pianotone.ogg-9cc92407f043726e257fddd22980970b.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/haunted farm/amb-discovery-pianotone.ogg"
+dest_files=["res://.godot/imported/amb-discovery-pianotone.ogg-9cc92407f043726e257fddd22980970b.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

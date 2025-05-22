@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ca7ftmu501gvm"
+path="res://.godot/imported/sfx-string_B.ogg-410b04109fc2766e642ab826a0fbb9c1.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/haunted farm/sfx-string_B.ogg"
+dest_files=["res://.godot/imported/sfx-string_B.ogg-410b04109fc2766e642ab826a0fbb9c1.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

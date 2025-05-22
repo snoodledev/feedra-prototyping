@@ -1,16 +1,27 @@
-[gd_scene load_steps=10 format=3 uid="uid://bbhaxuj8utvc4"]
+[gd_scene load_steps=14 format=3 uid="uid://bbhaxuj8utvc4"]
 
 [ext_resource type="Texture2D" uid="uid://bdtdifnfw5lak" path="res://assets/graphics/WindowBacking-1x2.svg" id="1_dt6o7"]
 [ext_resource type="Script" uid="uid://cc25c6t62gvsh" path="res://scenes/demo_ui.gd" id="1_lgqmu"]
 [ext_resource type="Texture2D" uid="uid://but7qpbfg5cah" path="res://assets/graphics/TopBar-1x2.svg" id="2_lgqmu"]
 [ext_resource type="PackedScene" uid="uid://cl4dcvwgmwet0" path="res://scenes/scene_selector_button.tscn" id="3_g74my"]
-[ext_resource type="PackedScene" uid="uid://bi2glqfyywxqb" path="res://scenes/feedra_scenes/scene_2_fantasy.tscn" id="4_g74my"]
-[ext_resource type="PackedScene" uid="uid://cb2o8a3kdq7og" path="res://scenes/feedra_scenes/scene_1_scifi.tscn" id="5_a2twe"]
+[ext_resource type="PackedScene" uid="uid://bi2glqfyywxqb" path="res://scenes/feedra_scenes/scene_dragon_battle.tscn" id="4_g74my"]
+[ext_resource type="PackedScene" uid="uid://byyf3iw8tlrn1" path="res://scenes/feedra_scenes/scene_haunted_farm.tscn" id="6_lgqmu"]
+[ext_resource type="Texture2D" uid="uid://bkpfq4wk1nf8w" path="res://assets/graphics/interface/MasterVolume.svg" id="7_dt6o7"]
 [ext_resource type="Texture2D" uid="uid://x5lb85k8xo8c" path="res://assets/graphics/interface/ModeButtonPlay.svg" id="8_lgqmu"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a78qw"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8iqq7"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_lgqmu"]
+size = Vector2(0, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dt6o7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a78qw"]
+bg_color = Color(0.91, 0.91, 0.91, 1)
+expand_margin_top = 18.0
+expand_margin_bottom = 18.0
 
 [node name="DemoUI" type="Control"]
 layout_mode = 3
@@ -48,8 +59,8 @@ metadata/_edit_lock_ = true
 [node name="SceneSelectorButton" parent="." node_paths=PackedStringArray("scene_container") instance=ExtResource("3_g74my")]
 layout_mode = 1
 scenes = Dictionary[String, PackedScene]({
-"Example 1: Fantasy": ExtResource("4_g74my"),
-"Example 2: Sci-Fi": ExtResource("5_a2twe")
+"Dragon Battle": ExtResource("4_g74my"),
+"Haunted Farm": ExtResource("6_lgqmu")
 })
 scene_container = NodePath("../Scenes")
 
@@ -95,3 +106,29 @@ offset_left = 20.0
 offset_top = 105.0
 offset_right = 60.0
 offset_bottom = 145.0
+
+[node name="MasterVolumeControl" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 27.0
+offset_right = 217.0
+offset_bottom = 61.0
+theme_override_icons/grabber = SubResource("PlaceholderTexture2D_lgqmu")
+theme_override_icons/grabber_highlight = SubResource("PlaceholderTexture2D_lgqmu")
+theme_override_icons/grabber_disabled = SubResource("PlaceholderTexture2D_lgqmu")
+theme_override_icons/tick = SubResource("PlaceholderTexture2D_lgqmu")
+theme_override_styles/slider = SubResource("StyleBoxEmpty_dt6o7")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_a78qw")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_a78qw")
+max_value = 1.0
+step = 0.01
+value = 0.5
+
+[node name="FrameTexture" type="TextureRect" parent="MasterVolumeControl"]
+layout_mode = 0
+offset_left = -43.0
+offset_top = -5.0
+offset_right = 95.0
+offset_bottom = 39.0
+mouse_filter = 2
+texture = ExtResource("7_dt6o7")

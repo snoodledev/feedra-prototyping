@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bf1noc03uv8ld"
+path="res://.godot/imported/amb-city-wind.ogg-180cd4f4c8ce49ac60a7c2ff9f3fae1d.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/planetary colony/amb-city-wind.ogg"
+dest_files=["res://.godot/imported/amb-city-wind.ogg-180cd4f4c8ce49ac60a7c2ff9f3fae1d.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

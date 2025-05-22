@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dwt3ye5dac8ir"
+path="res://.godot/imported/amb-exterior-crows.ogg-8b8381eb0149df4d6287b71def28dab2.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/haunted farm/amb-exterior-crows.ogg"
+dest_files=["res://.godot/imported/amb-exterior-crows.ogg-8b8381eb0149df4d6287b71def28dab2.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

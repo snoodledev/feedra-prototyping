@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bs8fblv632ixa"
+path="res://.godot/imported/sfx-gun_blaster.ogg-9bde3e243e72c2e0a60bbc2ea4637cfc.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/planetary colony/sfx-gun_blaster.ogg"
+dest_files=["res://.godot/imported/sfx-gun_blaster.ogg-9bde3e243e72c2e0a60bbc2ea4637cfc.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

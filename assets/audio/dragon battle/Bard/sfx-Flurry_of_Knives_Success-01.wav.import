@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bdjxqgu6kwf1n"
+path="res://.godot/imported/sfx-Flurry_of_Knives_Success-01.wav-0a02a6c0f17c95a71c5121abc9d6df43.sample"
+
+[deps]
+
+source_file="res://assets/audio/dragon battle/Bard/sfx-Flurry_of_Knives_Success-01.wav"
+dest_files=["res://.godot/imported/sfx-Flurry_of_Knives_Success-01.wav-0a02a6c0f17c95a71c5121abc9d6df43.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

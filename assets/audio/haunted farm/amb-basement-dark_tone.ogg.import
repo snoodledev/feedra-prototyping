@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dl5xbfmi3x2fo"
+path="res://.godot/imported/amb-basement-dark_tone.ogg-5ac51133cb570235756df2e644f0773f.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/haunted farm/amb-basement-dark_tone.ogg"
+dest_files=["res://.godot/imported/amb-basement-dark_tone.ogg-5ac51133cb570235756df2e644f0773f.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

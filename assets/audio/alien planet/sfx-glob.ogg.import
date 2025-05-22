@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c23haa4f7k0eb"
+path="res://.godot/imported/sfx-glob.ogg-c47977cd482d9fcaac77f5a2f1a7e46b.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/alien planet/sfx-glob.ogg"
+dest_files=["res://.godot/imported/sfx-glob.ogg-c47977cd482d9fcaac77f5a2f1a7e46b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

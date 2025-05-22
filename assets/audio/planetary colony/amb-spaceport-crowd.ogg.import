@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cwc20hrubcr32"
+path="res://.godot/imported/amb-spaceport-crowd.ogg-cb1f6cc1b4a0955aeb8b383132910500.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/planetary colony/amb-spaceport-crowd.ogg"
+dest_files=["res://.godot/imported/amb-spaceport-crowd.ogg-cb1f6cc1b4a0955aeb8b383132910500.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

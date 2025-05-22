@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://pvk5g13b1qr4"
+path="res://.godot/imported/amb-luminous_cavern-resonant_liquid.ogg-bc2c241038eb5342e5672d8437cac19b.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/alien planet/amb-luminous_cavern-resonant_liquid.ogg"
+dest_files=["res://.godot/imported/amb-luminous_cavern-resonant_liquid.ogg-bc2c241038eb5342e5672d8437cac19b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

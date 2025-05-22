@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b8w128vf3cnoc"
+path="res://.godot/imported/sfx-basement_door_open.ogg-48354906f48c15f07c2cec87629e2ac1.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/haunted farm/sfx-basement_door_open.ogg"
+dest_files=["res://.godot/imported/sfx-basement_door_open.ogg-48354906f48c15f07c2cec87629e2ac1.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

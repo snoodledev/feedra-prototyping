@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ddl74pegaicoe"
+path="res://.godot/imported/amb-facility-ventilation.ogg-1721e1e20dbf7d74ff2e4b148134904a.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/planetary colony/amb-facility-ventilation.ogg"
+dest_files=["res://.godot/imported/amb-facility-ventilation.ogg-1721e1e20dbf7d74ff2e4b148134904a.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

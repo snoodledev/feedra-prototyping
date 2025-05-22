@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bc6r1st4xebi6"
+path="res://.godot/imported/sfx-Dragon_Approach-01.wav-119fdb887211f990fc6c1eaac484fd82.sample"
+
+[deps]
+
+source_file="res://assets/audio/dragon battle/Ambience/sfx-Dragon_Approach-01.wav"
+dest_files=["res://.godot/imported/sfx-Dragon_Approach-01.wav-119fdb887211f990fc6c1eaac484fd82.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
