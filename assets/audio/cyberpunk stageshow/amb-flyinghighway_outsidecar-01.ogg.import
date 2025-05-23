@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bh0kw46rdmvt8"
+path="res://.godot/imported/amb-flyinghighway_outsidecar-01.ogg-51e95363041f5760eec79b38d8ebf2dc.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/cyberpunk stageshow/amb-flyinghighway_outsidecar-01.ogg"
+dest_files=["res://.godot/imported/amb-flyinghighway_outsidecar-01.ogg-51e95363041f5760eec79b38d8ebf2dc.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -16,6 +16,7 @@ signal oneshot_ended
 @export var pitch_random: float
 @export var label_text: String = ""
 @export var audio_layers: Array[AudioStream]
+@export var randomise_loop_start: bool = true
 
 @export_group("Internal")
 @export var layer_editor_scene: PackedScene
@@ -94,8 +95,6 @@ func _process(_delta: float) -> void:
 		set_size_large()
 	if Engine.is_editor_hint(): return
 	
-	
-	
 	var c_start: float = pad_cursor_offset
 	var c_end: float = pad_cursor_offset + pad_cursor_size
 	
@@ -106,6 +105,7 @@ func _process(_delta: float) -> void:
 	
 	
 	var activeness_scaled: float = remap(activeness, 0, 1, 0.4, 1)
+	print(activeness_scaled)
 	button_border.modulate = Color(activeness_scaled, activeness_scaled, activeness_scaled)
 	
 	#print(volume)
@@ -278,7 +278,10 @@ func init_audio() -> void:
 	for layer in audio_layers:
 		if !layer: print("Null layer found!"); continue
 		if !is_loop_mode: audio_stream_player.stream_paused = true
-		player.play_stream(layer, randf_range(0, layer.get_length()))
+		if is_loop_mode and randomise_loop_start:
+			player.play_stream(layer, randf_range(0, layer.get_length()))
+		else:
+			player.play_stream(layer)
 
 
 func toggle_edit_mode() -> void:

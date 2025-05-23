@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cnyj0odronl2h"
+path="res://.godot/imported/sfx-hovercar_whizz-03.ogg-0e12b81c6c1863670fa07407b3ff16d3.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/cyberpunk stageshow/sfx-hovercar_whizz-03.ogg"
+dest_files=["res://.godot/imported/sfx-hovercar_whizz-03.ogg-0e12b81c6c1863670fa07407b3ff16d3.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://1uyncthgah71"
+path="res://.godot/imported/amb-street_ambience_inside_car-01.ogg-d78987833681fa2665552b803062fbc6.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/cyberpunk stageshow/amb-street_ambience_inside_car-01.ogg"
+dest_files=["res://.godot/imported/amb-street_ambience_inside_car-01.ogg-d78987833681fa2665552b803062fbc6.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bi68c0xsxqvra"
+path="res://.godot/imported/ambloop-nightclub_outside-music.ogg-3925f837b702554ec0ac84209ae54ade.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/cyberpunk stageshow/ambloop-nightclub_outside-music.ogg"
+dest_files=["res://.godot/imported/ambloop-nightclub_outside-music.ogg-3925f837b702554ec0ac84209ae54ade.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

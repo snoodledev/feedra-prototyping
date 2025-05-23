@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bg6i85ujn3csj"
+path="res://.godot/imported/ambloop-street_ambience-alleynoises.ogg-8f3153ca14d23ecd2ba526e87ff88184.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/cyberpunk stageshow/ambloop-street_ambience-alleynoises.ogg"
+dest_files=["res://.godot/imported/ambloop-street_ambience-alleynoises.ogg-8f3153ca14d23ecd2ba526e87ff88184.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bxgniveakfdj5"
+path="res://.godot/imported/sfx-hovercar_idle-01.ogg-11c4846902bb9b79eff6699c4a63cdb2.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/cyberpunk stageshow/sfx-hovercar_idle-01.ogg"
+dest_files=["res://.godot/imported/sfx-hovercar_idle-01.ogg-11c4846902bb9b79eff6699c4a63cdb2.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

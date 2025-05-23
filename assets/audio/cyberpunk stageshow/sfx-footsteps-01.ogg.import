@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dfsw2fwab6lqq"
+path="res://.godot/imported/sfx-footsteps-01.ogg-d34328cf1fd49c020976f6f1e5217f5d.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/cyberpunk stageshow/sfx-footsteps-01.ogg"
+dest_files=["res://.godot/imported/sfx-footsteps-01.ogg-d34328cf1fd49c020976f6f1e5217f5d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://l13ks1li31fl"
+path="res://.godot/imported/sfx-scan_success-01.ogg-2f7d07847bb3ef5230751c96f70fb54d.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/cyberpunk stageshow/sfx-scan_success-01.ogg"
+dest_files=["res://.godot/imported/sfx-scan_success-01.ogg-2f7d07847bb3ef5230751c96f70fb54d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

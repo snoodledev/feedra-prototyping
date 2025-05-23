@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://7j6xgf5n8kgf"
+path="res://.godot/imported/sfx-electrical_buzz_passby-01.ogg-417b9f02c70417b60c3cd85ea2e77cff.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/cyberpunk stageshow/sfx-electrical_buzz_passby-01.ogg"
+dest_files=["res://.godot/imported/sfx-electrical_buzz_passby-01.ogg-417b9f02c70417b60c3cd85ea2e77cff.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

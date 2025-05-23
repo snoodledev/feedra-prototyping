@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cd5nsfnyd51kl"
+path="res://.godot/imported/sfx-large_car_passby-01.ogg-fa73e66e3a94bd46f684f39d11bb658a.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/cyberpunk stageshow/sfx-large_car_passby-01.ogg"
+dest_files=["res://.godot/imported/sfx-large_car_passby-01.ogg-fa73e66e3a94bd46f684f39d11bb658a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bbhaxuj8utvc4"]
+[gd_scene load_steps=15 format=3 uid="uid://bbhaxuj8utvc4"]
 
 [ext_resource type="Texture2D" uid="uid://bdtdifnfw5lak" path="res://assets/graphics/WindowBacking-1x2.svg" id="1_dt6o7"]
 [ext_resource type="Script" uid="uid://cc25c6t62gvsh" path="res://scenes/demo_ui.gd" id="1_lgqmu"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cl4dcvwgmwet0" path="res://scenes/scene_selector_button.tscn" id="3_g74my"]
 [ext_resource type="PackedScene" uid="uid://bi2glqfyywxqb" path="res://scenes/feedra_scenes/scene_dragon_battle.tscn" id="4_g74my"]
 [ext_resource type="PackedScene" uid="uid://byyf3iw8tlrn1" path="res://scenes/feedra_scenes/scene_haunted_farm.tscn" id="6_lgqmu"]
+[ext_resource type="PackedScene" uid="uid://26pet45rrg6t" path="res://scenes/feedra_scenes/scene_cyberpunk_stageshow.tscn" id="7_a78qw"]
 [ext_resource type="Texture2D" uid="uid://bkpfq4wk1nf8w" path="res://assets/graphics/interface/MasterVolume.svg" id="7_dt6o7"]
 [ext_resource type="Texture2D" uid="uid://x5lb85k8xo8c" path="res://assets/graphics/interface/ModeButtonPlay.svg" id="8_lgqmu"]
 
@@ -59,18 +60,40 @@ metadata/_edit_lock_ = true
 [node name="SceneSelectorButton" parent="." node_paths=PackedStringArray("scene_container") instance=ExtResource("3_g74my")]
 layout_mode = 1
 scenes = Dictionary[String, PackedScene]({
+"Cyberpunk Stageshow": ExtResource("7_a78qw"),
 "Dragon Battle": ExtResource("4_g74my"),
 "Haunted Farm": ExtResource("6_lgqmu")
 })
-scene_container = NodePath("../Scenes")
+scene_container = NodePath("../SceneScrollBox/VBoxContainer/Scenes")
 
-[node name="Scenes" type="Control" parent="."]
+[node name="SceneScrollBox" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(802, 430)
 layout_mode = 2
-anchors_preset = 0
-offset_left = 79.0
-offset_top = 120.0
-offset_right = 79.0
-offset_bottom = 120.0
+offset_left = 7.0
+offset_top = 84.0
+offset_right = 953.0
+offset_bottom = 579.0
+size_flags_vertical = 0
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SceneScrollBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="HeaderSpacing" type="Control" parent="SceneScrollBox/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Scenes" type="MarginContainer" parent="SceneScrollBox/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+theme_override_constants/margin_left = 78
+theme_override_constants/margin_right = 78
 
 [node name="ButtonEdit" type="Button" parent="."]
 unique_name_in_owner = true

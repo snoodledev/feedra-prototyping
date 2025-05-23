@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ce7qov14bo8vl"
+path="res://.godot/imported/sfx-helicopter_passby_01.ogg-b21713343427576ff824c4c973f25e24.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/cyberpunk stageshow/sfx-helicopter_passby_01.ogg"
+dest_files=["res://.godot/imported/sfx-helicopter_passby_01.ogg-b21713343427576ff824c4c973f25e24.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
