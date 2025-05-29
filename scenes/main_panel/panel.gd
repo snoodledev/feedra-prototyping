@@ -19,15 +19,18 @@ signal oneshot_ended
 @export var randomise_loop_start: bool = true
 
 @export_group("Internal")
+@export var is_slider_vertical: bool = false
 @export var layer_editor_scene: PackedScene
 @export var button_border: TextureRect
 @export var background_image: TextureRect
+@export var background_flat_color: ColorRect
 @export var background_image_container: Control
 @export var loop_icon: TextureRect
 @export var label: Label
 @export var fade_tint: Panel
 @export var fade_tint_constant: Panel
 @export var image_border_cover: TextureRect
+@export var divider_line: TextureRect
 
 var is_mouse_in: bool = false
 var is_current_pad_controlled: bool = false
@@ -35,14 +38,20 @@ var is_transitioning: bool = false
 var is_button_active: bool = false
 var is_oneshot_playing: bool = false
 var volume: float = 0
-var activeness: float = 0
+var border_fade_value: float = 0
 var volume_tween: Tween
 var visuals_tween: Tween
+var divider_tween: Tween
+var snap_threshold_lower: float = .1
+var snap_threshold_upper: float = .9
+
 var border_tint: Color
 
 var pad_cursor_offset: float
 var pad_cursor_size: float
 var pad_size: float
+
+var time: float
 
 var pad_large_graphics: Dictionary[Global.PadColors, CompressedTexture2D] = {
 	Global.PadColors.Blue: preload("res://assets/graphics/pad/PanelLargeBlue.svg"),
@@ -77,70 +86,50 @@ var pad_symbol_oneshot_small: CompressedTexture2D = preload("res://assets/graphi
 
 
 func _ready() -> void:
+	if Engine.is_editor_hint(): return
 	Global.edit_mode_changed.connect(on_edit_mode_changed)
 	button_edit.pressed.connect(on_button_edit_pressed)
 	toggle_edit_mode()
+	toggle_divider_state(false, 0)
 	
 	border_tint = button_border.modulate
 	init_audio()
 
+# Cursor start and end pos
+var c_start: float
+var c_end: float
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	background_image.texture = pad_background_image
+	background_flat_color.color = get_border_color_approx(pad_color)
+	background_flat_color.color *= 0.6
 	label.text = label_text
-	
-	if is_small:
-		set_size_small()
-	else:
-		set_size_large()
+	if is_small: set_size_small()
+	else: set_size_large()
 	if Engine.is_editor_hint(): return
 	
-	var c_start: float = pad_cursor_offset
-	var c_end: float = pad_cursor_offset + pad_cursor_size
+	time += delta
 	
-	#label.text = str(snappedf(volume, .01)) # display volume in text
-	fade_tint.size.x = remap(volume, 0, 1, pad_cursor_size, 0)
-	fade_tint.position.x = remap(volume, 0, 1, c_start, c_end)
+	c_start = pad_cursor_offset
+	c_end = pad_cursor_offset + pad_cursor_size
+	# DEBUG: display volume in label
+	#label.text = str(snappedf(volume, .01))
+	
+	if is_slider_vertical:
+		fade_tint.size.y = remap(volume, 0, 1, pad_cursor_size, 0)
+	else:
+		fade_tint.size.x = remap(volume, 0, 1, pad_cursor_size, 0)
+		fade_tint.position.x = remap(volume, 0, 1, c_start, c_end)
+	
 	audio_stream_player.volume_db = linear_to_db(volume)
 	
+	var border_fade_value_scaled: float = remap(border_fade_value, 0, 1, 0.4, 1)
+	button_border.modulate = Color(border_fade_value_scaled, border_fade_value_scaled, border_fade_value_scaled)
 	
-	var activeness_scaled: float = remap(activeness, 0, 1, 0.4, 1)
-	print(activeness_scaled)
-	button_border.modulate = Color(activeness_scaled, activeness_scaled, activeness_scaled)
-	
-	#print(volume)
 	is_button_active = volume > 0
-	# LOOP
+	
 	if is_loop_mode:
-		if Input.is_action_just_pressed("toggle_button") and is_mouse_in:
-			#if is_transitioning: return
-			if Input.is_action_pressed("control_button_volume"): return
-			
-			is_transitioning = true
-			
-			tween_volume()
-			tween_visuals()
-			
-			await volume_tween.finished
-			is_transitioning = false
-		
-		if Input.is_action_just_pressed("control_button_volume") and is_mouse_in:
-			is_current_pad_controlled = true
-		if Input.is_action_just_released("control_button_volume"):
-			is_current_pad_controlled = false
-		if Input.is_action_pressed("control_button_volume") and is_current_pad_controlled:
-			if activeness == 0 and volume != 0:
-				tween_visuals(1)
-			if volume_tween and volume_tween.is_running(): volume_tween.kill()
-			var volume_target = remap(clamp(get_global_mouse_position().x - global_position.x, c_start, c_end), c_start, c_end, 0, 1)
-			#volume = lerpf(volume, volume_target, 0.02) # lerp volume (removed)
-			volume = move_toward(volume, volume_target, 0.01)
-		audio_stream_player.stream_paused = bool(!volume)
-		
-		if volume == 0 and activeness == 1:
-			tween_visuals(0)
-		
-	# ONESHOT
+		handle_loop()
 	else:
 		if Input.is_action_just_pressed("toggle_button") and is_mouse_in:
 			if !is_oneshot_playing:
@@ -148,6 +137,57 @@ func _process(_delta: float) -> void:
 			else:
 				#is_oneshot_playing = false
 				oneshot_ended.emit()
+	
+	var border_pulse_modulate: float = (sin(time * 3) * 0.5 + 0.5) * 2
+	
+	
+	button_border.self_modulate = Color.WHITE + (Color(border_pulse_modulate, border_pulse_modulate, border_pulse_modulate) * 1) * border_fade_value
+	divider_line.global_position.y = clamp(
+		fade_tint.global_position.y + fade_tint.size.y - divider_line.size.y / 2, 
+		fade_tint_constant.global_position.y,
+		fade_tint_constant.global_position.y + fade_tint_constant.size.y - 4,
+		)
+	# if volume != 0: print(divider_line.global_position.y)
+
+
+func handle_loop() -> void:
+	if Input.is_action_just_pressed("toggle_button") and is_mouse_in:
+		if Input.is_action_pressed("control_button_volume"): return
+		
+		is_transitioning = true
+		
+		tween_volume()
+		tween_visuals()
+		
+		await volume_tween.finished
+		is_transitioning = false
+	
+	if Input.is_action_just_pressed("control_button_volume") and is_mouse_in:
+		is_current_pad_controlled = true
+		toggle_divider_state(true)
+	if Input.is_action_just_released("control_button_volume"):
+		is_current_pad_controlled = false
+		if !is_mouse_in:
+			toggle_divider_state(false)
+		if volume <= snap_threshold_lower:
+			volume = 0
+		elif volume >= snap_threshold_upper:
+			volume = 1
+	if Input.is_action_pressed("control_button_volume") and is_current_pad_controlled:
+		if border_fade_value == 0 and volume != 0:
+			tween_visuals(1)
+		if volume_tween and volume_tween.is_running(): volume_tween.kill()
+		var volume_target: float
+		if is_slider_vertical:
+			volume_target = remap(clamp(get_global_mouse_position().y - global_position.y, c_start, c_end), c_start, c_end, 1, 0)
+		else:
+			volume_target = remap(clamp(get_global_mouse_position().x - global_position.x, c_start, c_end), c_start, c_end, 0, 1)
+		#volume = lerpf(volume, volume_target, 0.02) # lerp volume (removed)
+		volume = move_toward(volume, volume_target, 0.01)
+	audio_stream_player.stream_paused = bool(!volume)
+	
+	if volume == 0 and border_fade_value == 1:
+		tween_visuals(0)
 
 
 func play_oneshot() -> void:
@@ -194,9 +234,10 @@ func set_size_small() -> void:
 	button_border.size = Vector2.ONE * pad_size
 	image_border_cover.scale = Vector2.ONE * 0.475
 	
-	background_image.custom_minimum_size = Vector2.ONE * pad_size
 	background_image.size = Vector2.ONE * pad_size
 	background_image.position = Vector2.ZERO
+	background_flat_color.size = Vector2.ONE * pad_size
+	background_flat_color.position = Vector2.ZERO
 	background_image_container.size = Vector2.ONE * pad_size
 	background_image_container.position = Vector2.ZERO
 	
@@ -207,6 +248,8 @@ func set_size_small() -> void:
 	label.position = Vector2(0, 0)
 	label.size = Vector2(90, 90)
 	label.set("theme_override_font_sizes/font_size", 18)
+	
+	divider_line.size.x = 78
 	
 	if is_loop_mode: 
 		loop_icon.texture = pad_symbol_loop_small
@@ -229,10 +272,11 @@ func set_size_large() -> void:
 	button_border.size = Vector2.ONE * pad_size
 	image_border_cover.scale = Vector2.ONE
 	
-	background_image.custom_minimum_size = Vector2(pad_size, pad_size)
-	background_image.size = Vector2(pad_size, pad_size)
+	background_image.size = Vector2.ONE * pad_size
 	background_image.position = Vector2.ZERO
-	background_image_container.size = Vector2(pad_size, pad_size)
+	background_flat_color.size = Vector2.ONE * pad_size
+	background_flat_color.position = Vector2.ZERO
+	background_image_container.size = Vector2.ONE * pad_size
 	background_image_container.position = Vector2.ZERO
 
 	fade_tint_constant.position = Vector2.ZERO
@@ -242,6 +286,8 @@ func set_size_large() -> void:
 	label.position = Vector2.ZERO
 	label.size = Vector2.ONE * 190
 	label.set("theme_override_font_sizes/font_size", 22)
+	
+	divider_line.size.x = 178
 	
 	if is_loop_mode: 
 		loop_icon.texture = pad_symbol_loop_large
@@ -260,14 +306,16 @@ func tween_volume(override_is_button_active: int = -1) -> void:
 		.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
 
 
-func tween_visuals(override_is_button_active: int = -1) -> void:
+func tween_visuals(override_is_button_active: int = -1, duration: float = .4) -> void:
 	if visuals_tween and visuals_tween.is_running(): visuals_tween.kill()
 	visuals_tween = create_tween()
+	## In
 	if (!is_button_active or override_is_button_active == 1) and override_is_button_active != 0:
-		visuals_tween.tween_property(self, "activeness", 1, .4)\
+		visuals_tween.tween_property(self, "border_fade_value", 1, duration)\
 		.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
+	## Out
 	else:
-		visuals_tween.tween_property(self, "activeness", 0, .4)\
+		visuals_tween.tween_property(self, "border_fade_value", 0, duration)\
 		.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
 
 
@@ -291,6 +339,16 @@ func toggle_edit_mode() -> void:
 		button_edit.hide()
 
 
+func toggle_divider_state(is_in: bool = true, duration: float = .4) -> void:
+	if !is_loop_mode: 
+		divider_line.modulate = Color.TRANSPARENT
+		return
+	if divider_tween and divider_tween.is_running(): divider_tween.kill()
+	divider_tween = create_tween()
+	divider_tween.tween_property(divider_line, "modulate", Color.WHITE * int(is_in), duration)\
+	.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
+
+
 func open_layer_editor() -> void:
 	if !layer_editor_scene: push_error("Layer Editor scene not assigned to Pad!"); return
 	var layer_editor_instance: FeedraLayerEditor = layer_editor_scene.instantiate()
@@ -298,14 +356,43 @@ func open_layer_editor() -> void:
 	layer_editor_instance.init(audio_layers, pad_color)
 
 
+func get_border_color_approx(color: Global.PadColors) -> Color:
+	match color:
+		Global.PadColors.Blue:	
+			return Color.BLUE
+		Global.PadColors.Green:	
+			return Color.GREEN
+		Global.PadColors.LightBlue:	
+			return Color.LIGHT_BLUE
+		Global.PadColors.Magenta:	
+			return Color.MAGENTA
+		Global.PadColors.Orange:	
+			return Color.ORANGE
+		Global.PadColors.Purple:	
+			return Color.PURPLE
+		Global.PadColors.Red:	
+			return Color.RED
+		Global.PadColors.Teal:	
+			return Color.TEAL
+		Global.PadColors.White:	
+			return Color.WHITE
+		Global.PadColors.Yellow:	
+			return Color.YELLOW
+		_: return Color.WHITE
+
+
 func _on_button_border_mouse_entered() -> void:
 	if Engine.is_editor_hint(): return
 	is_mouse_in = true
+	#if (volume >= 0.05 and volume <= 0.95):
+	toggle_divider_state(true)
 
 
 func _on_button_border_mouse_exited() -> void:
 	if Engine.is_editor_hint(): return
 	is_mouse_in = false
+	if !Input.is_action_pressed("control_button_volume"):
+		toggle_divider_state(false)
 
 
 func on_edit_mode_changed() -> void:

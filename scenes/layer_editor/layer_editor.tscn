@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ctymp454risj5"]
+[gd_scene load_steps=7 format=3 uid="uid://ctymp454risj5"]
 
 [ext_resource type="Texture2D" uid="uid://dfhy1b8bufcyo" path="res://assets/graphics/LayerEditor/FrameTemp.svg" id="1_8stqy"]
 [ext_resource type="Script" uid="uid://b80d034m0l6b3" path="res://scenes/layer_editor/layer_editor.gd" id="1_rdv2i"]
 [ext_resource type="PackedScene" uid="uid://brhoftla6x825" path="res://scenes/layer_editor/layer.tscn" id="3_8stqy"]
+[ext_resource type="Texture2D" uid="uid://b2jni37u7w0ro" path="res://assets/graphics/interface/PlaybackModeButtonLoop.svg" id="4_rdv2i"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8stqy"]
 
@@ -71,3 +72,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_8stqy")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_8stqy")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_rdv2i")
 flat = true
+
+[node name="PlaybackModeButtonLoop" type="Sprite2D" parent="."]
+position = Vector2(251, 39)
+texture = ExtResource("4_rdv2i")

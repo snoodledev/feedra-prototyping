@@ -1,19 +1,52 @@
-[gd_scene load_steps=15 format=3 uid="uid://26pet45rrg6t"]
+[gd_scene load_steps=43 format=3 uid="uid://26pet45rrg6t"]
 
 [ext_resource type="PackedScene" uid="uid://e4oqu4618xa7" path="res://scenes/main_panel/panel.tscn" id="1_fs2cw"]
-[ext_resource type="Texture2D" uid="uid://ckcxd26xma3rw" path="res://assets/graphics/temp/pad tests/scene2fantasy/forest.png" id="2_amj6x"]
+[ext_resource type="Texture2D" uid="uid://bepllbom1lr16" path="res://assets/graphics/thumbnails/cyberpunk stageshow/FlyingHighwayInsideCar.webp" id="2_xlp6y"]
 [ext_resource type="AudioStream" uid="uid://br5sviuqjaynw" path="res://assets/audio/cyberpunk stageshow/amb-flyinghighway_insidecar-01.ogg" id="3_n66hp"]
 [ext_resource type="AudioStream" uid="uid://bh0kw46rdmvt8" path="res://assets/audio/cyberpunk stageshow/amb-flyinghighway_outsidecar-01.ogg" id="4_0u0h3"]
 [ext_resource type="AudioStream" uid="uid://1uyncthgah71" path="res://assets/audio/cyberpunk stageshow/amb-street_ambience_inside_car-01.ogg" id="4_5yyau"]
 [ext_resource type="AudioStream" uid="uid://bg6i85ujn3csj" path="res://assets/audio/cyberpunk stageshow/ambloop-street_ambience-alleynoises.ogg" id="5_5yyau"]
 [ext_resource type="AudioStream" uid="uid://cu8i3to02cytl" path="res://assets/audio/cyberpunk stageshow/sfx-car_door_open-01.ogg" id="6_5yyau"]
+[ext_resource type="Texture2D" uid="uid://cce58ooixs0jd" path="res://assets/graphics/thumbnails/cyberpunk stageshow/CarDoorOpen.png" id="6_wlani"]
 [ext_resource type="AudioStream" uid="uid://bxgiph6l04bdq" path="res://assets/audio/cyberpunk stageshow/ambloop-street_ambience-streetnoise.ogg" id="6_xjhr8"]
 [ext_resource type="AudioStream" uid="uid://jdp67hncscrn" path="res://assets/audio/cyberpunk stageshow/ambloop-nightclub_outside-chatterexterior.ogg" id="7_35wig"]
 [ext_resource type="AudioStream" uid="uid://d05jlnkgxtsdt" path="res://assets/audio/cyberpunk stageshow/sfx-car_trip_concluded-01.ogg" id="7_xjhr8"]
-[ext_resource type="AudioStream" uid="uid://c2075pnhel5q6" path="res://assets/audio/cyberpunk stageshow/ambloop-nightclub_outside-chatterinterior.ogg" id="8_qmt5e"]
+[ext_resource type="Texture2D" uid="uid://n2lq6ncdu8pl" path="res://assets/graphics/thumbnails/cyberpunk stageshow/Footsteps.jpg" id="8_2vht1"]
+[ext_resource type="AudioStream" uid="uid://dfsw2fwab6lqq" path="res://assets/audio/cyberpunk stageshow/sfx-footsteps-01.ogg" id="8_fl12t"]
 [ext_resource type="AudioStream" uid="uid://bi68c0xsxqvra" path="res://assets/audio/cyberpunk stageshow/ambloop-nightclub_outside-music.ogg" id="9_nvww7"]
+[ext_resource type="Texture2D" uid="uid://hgypjpojxdbu" path="res://assets/graphics/thumbnails/cyberpunk stageshow/FlyingHighwayOutsideCar.png" id="10_51glh"]
 [ext_resource type="AudioStream" uid="uid://dy1ohefsolf1f" path="res://assets/audio/cyberpunk stageshow/ambloop-nightclub_inside-music.ogg" id="10_fs2cw"]
-[ext_resource type="Texture2D" uid="uid://dt0ex11nol3x2" path="res://assets/graphics/temp/pad tests/scene2fantasy/branch step.png" id="13_k3g77"]
+[ext_resource type="AudioStream" uid="uid://tj4gcjnuv80e" path="res://assets/audio/cyberpunk stageshow/sfx-aircon_passby-01.ogg" id="11_nyasg"]
+[ext_resource type="AudioStream" uid="uid://ce7qov14bo8vl" path="res://assets/audio/cyberpunk stageshow/sfx-helicopter_passby_01.ogg" id="12_fl12t"]
+[ext_resource type="Texture2D" uid="uid://deln68n3i7npr" path="res://assets/graphics/thumbnails/cyberpunk stageshow/CityStreet.jpg" id="12_qomvm"]
+[ext_resource type="AudioStream" uid="uid://dwupc7vg0tmyj" path="res://assets/audio/cyberpunk stageshow/sfx-hovercar_whizz-01.ogg" id="13_j1sry"]
+[ext_resource type="AudioStream" uid="uid://cfxb10y3g5trn" path="res://assets/audio/cyberpunk stageshow/sfx-hovercar_whizz-02.ogg" id="14_48xf5"]
+[ext_resource type="AudioStream" uid="uid://cnyj0odronl2h" path="res://assets/audio/cyberpunk stageshow/sfx-hovercar_whizz-03.ogg" id="15_no8fw"]
+[ext_resource type="Texture2D" uid="uid://3twysjwhe48a" path="res://assets/graphics/thumbnails/cyberpunk stageshow/AirconPassby.png" id="15_tifuc"]
+[ext_resource type="AudioStream" uid="uid://c2t7u7d0ml3lx" path="res://assets/audio/cyberpunk stageshow/sfx-ladycrying-01.ogg" id="16_vcoxj"]
+[ext_resource type="AudioStream" uid="uid://7j6xgf5n8kgf" path="res://assets/audio/cyberpunk stageshow/sfx-electrical_buzz_passby-01.ogg" id="17_do3lj"]
+[ext_resource type="AudioStream" uid="uid://cd5nsfnyd51kl" path="res://assets/audio/cyberpunk stageshow/sfx-large_car_passby-01.ogg" id="18_dpl4h"]
+[ext_resource type="Texture2D" uid="uid://w3gy1icllwuf" path="res://assets/graphics/thumbnails/cyberpunk stageshow/HovercarWhizz.jpeg" id="18_udxdr"]
+[ext_resource type="AudioStream" uid="uid://ov0yu854wa6r" path="res://assets/audio/cyberpunk stageshow/sfx-request_id_far-01.ogg" id="21_8e2kd"]
+[ext_resource type="AudioStream" uid="uid://bkgr7oyxq0gww" path="res://assets/audio/cyberpunk stageshow/sfx-request_id_close-01.ogg" id="22_nkxqp"]
+[ext_resource type="Texture2D" uid="uid://33ie3j78nly" path="res://assets/graphics/thumbnails/cyberpunk stageshow/Electical Passby.jpg" id="23_2cy6h"]
+[ext_resource type="AudioStream" uid="uid://l13ks1li31fl" path="res://assets/audio/cyberpunk stageshow/sfx-scan_success-01.ogg" id="23_i2vmm"]
+[ext_resource type="AudioStream" uid="uid://dr11y3bcbpkf7" path="res://assets/audio/cyberpunk stageshow/sfx-robot_welcome-01.ogg" id="24_h1yon"]
+[ext_resource type="Texture2D" uid="uid://3utus1dhs03r" path="res://assets/graphics/thumbnails/cyberpunk stageshow/LargeCarPassby.jpg" id="25_eo0qv"]
+[ext_resource type="AudioStream" uid="uid://ceq4bkxtwwpw2" path="res://assets/audio/cyberpunk stageshow/sfx-nightclub_door_open-01.ogg" id="25_xlp6y"]
+[ext_resource type="AudioStream" uid="uid://bytyf8wiqwj6l" path="res://assets/audio/cyberpunk stageshow/sfx-nightclub_door_close-02.ogg" id="26_wlani"]
+[ext_resource type="Texture2D" uid="uid://c1mn4lm7rawrj" path="res://assets/graphics/thumbnails/cyberpunk stageshow/NightclubOutside.png" id="27_0s72f"]
+[ext_resource type="AudioStream" uid="uid://2robw1f8r444" path="res://assets/audio/cyberpunk stageshow/ambloop-nightclub_inside-chatter.ogg" id="27_2vht1"]
+[ext_resource type="Texture2D" uid="uid://c4i1qjygipryd" path="res://assets/graphics/thumbnails/cyberpunk stageshow/RequestIdFar.webp" id="30_exdgy"]
+[ext_resource type="Texture2D" uid="uid://c17iok0q585uo" path="res://assets/graphics/thumbnails/cyberpunk stageshow/RobotWelcome.jpg" id="32_8kprc"]
+[ext_resource type="Texture2D" uid="uid://dq3obnvoke6dh" path="res://assets/graphics/thumbnails/cyberpunk stageshow/IdScanSuccess.png" id="34_4ogrn"]
+[ext_resource type="Texture2D" uid="uid://ub4qop6c77y7" path="res://assets/graphics/thumbnails/cyberpunk stageshow/NightclubInside.png" id="39_e7o5y"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_51glh"]
+streams_count = 3
+stream_0/stream = ExtResource("13_j1sry")
+stream_1/stream = ExtResource("14_48xf5")
+stream_2/stream = ExtResource("15_no8fw")
 
 [node name="SceneDragonBattle" type="GridContainer"]
 anchors_preset = 8
@@ -36,8 +69,7 @@ custom_minimum_size = Vector2(190, 190)
 layout_mode = 2
 pad_color = 0
 is_small = false
-is_loop_mode = true
-pad_background_image = ExtResource("2_amj6x")
+pad_background_image = ExtResource("2_xlp6y")
 volume_fade_time = 3.0
 label_text = "Flying Highway (Inside Car)"
 audio_layers = Array[AudioStream]([ExtResource("3_n66hp"), ExtResource("4_5yyau")])
@@ -52,7 +84,7 @@ columns = 2
 [node name="Panel13" parent="GridContainer5" instance=ExtResource("1_fs2cw")]
 layout_mode = 2
 pad_color = 2
-pad_background_image = ExtResource("13_k3g77")
+is_loop_mode = false
 volume_fade_time = 0.5
 pitch_random = 0.3
 label_text = "Car Trip Ended"
@@ -61,19 +93,28 @@ audio_layers = Array[AudioStream]([ExtResource("7_xjhr8")])
 [node name="Panel14" parent="GridContainer5" instance=ExtResource("1_fs2cw")]
 layout_mode = 2
 pad_color = 2
-pad_background_image = ExtResource("13_k3g77")
+is_loop_mode = false
+pad_background_image = ExtResource("6_wlani")
 volume_fade_time = 0.5
 pitch_random = 0.3
 label_text = "Car Door Open"
 audio_layers = Array[AudioStream]([ExtResource("6_5yyau")])
+
+[node name="Panel15" parent="GridContainer5" instance=ExtResource("1_fs2cw")]
+layout_mode = 2
+is_loop_mode = false
+pad_background_image = ExtResource("8_2vht1")
+volume_fade_time = 0.5
+pitch_random = 0.3
+label_text = "Footsteps"
+audio_layers = Array[AudioStream]([ExtResource("6_5yyau"), ExtResource("8_fl12t")])
 
 [node name="Panel4" parent="." instance=ExtResource("1_fs2cw")]
 custom_minimum_size = Vector2(190, 190)
 layout_mode = 2
 pad_color = 2
 is_small = false
-is_loop_mode = true
-pad_background_image = ExtResource("2_amj6x")
+pad_background_image = ExtResource("10_51glh")
 label_text = "Flying Highway (Outside Car)"
 audio_layers = Array[AudioStream]([ExtResource("4_0u0h3")])
 
@@ -82,8 +123,7 @@ custom_minimum_size = Vector2(190, 190)
 layout_mode = 2
 pad_color = 7
 is_small = false
-is_loop_mode = true
-pad_background_image = ExtResource("2_amj6x")
+pad_background_image = ExtResource("12_qomvm")
 label_text = "City Street"
 audio_layers = Array[AudioStream]([ExtResource("5_5yyau"), ExtResource("6_xjhr8")])
 
@@ -96,34 +136,40 @@ columns = 2
 [node name="Panel10" parent="GridContainer6" instance=ExtResource("1_fs2cw")]
 layout_mode = 2
 pad_color = 9
-pad_background_image = ExtResource("13_k3g77")
+is_loop_mode = false
+pad_background_image = ExtResource("15_tifuc")
 volume_fade_time = 0.5
 pitch_random = 0.3
 label_text = "Aircon Passby"
-
-[node name="Panel11" parent="GridContainer6" instance=ExtResource("1_fs2cw")]
-layout_mode = 2
-pad_color = 4
-pad_background_image = ExtResource("13_k3g77")
-volume_fade_time = 0.5
-pitch_random = 0.3
-label_text = "Electrical Passby"
+audio_layers = Array[AudioStream]([ExtResource("11_nyasg")])
 
 [node name="Panel12" parent="GridContainer6" instance=ExtResource("1_fs2cw")]
 layout_mode = 2
 pad_color = 2
-pad_background_image = ExtResource("13_k3g77")
+is_loop_mode = false
 volume_fade_time = 0.5
 pitch_random = 0.3
 label_text = "Helicopter Passby"
+audio_layers = Array[AudioStream]([ExtResource("12_fl12t")])
 
 [node name="Panel13" parent="GridContainer6" instance=ExtResource("1_fs2cw")]
 layout_mode = 2
-pad_color = 1
-pad_background_image = ExtResource("13_k3g77")
+pad_color = 4
+is_loop_mode = false
+pad_background_image = ExtResource("18_udxdr")
 volume_fade_time = 0.5
 pitch_random = 0.3
 label_text = "Hovercar Whizz"
+audio_layers = Array[AudioStream]([SubResource("AudioStreamRandomizer_51glh")])
+
+[node name="Panel14" parent="GridContainer6" instance=ExtResource("1_fs2cw")]
+layout_mode = 2
+pad_color = 0
+is_loop_mode = false
+volume_fade_time = 0.5
+pitch_random = 0.3
+label_text = "Crying"
+audio_layers = Array[AudioStream]([ExtResource("16_vcoxj")])
 
 [node name="GridContainer7" type="GridContainer" parent="."]
 layout_mode = 2
@@ -131,37 +177,34 @@ theme_override_constants/h_separation = 12
 theme_override_constants/v_separation = 12
 columns = 2
 
-[node name="Panel10" parent="GridContainer7" instance=ExtResource("1_fs2cw")]
+[node name="Panel12" parent="GridContainer7" instance=ExtResource("1_fs2cw")]
 layout_mode = 2
-pad_color = 4
-pad_background_image = ExtResource("13_k3g77")
-volume_fade_time = 0.5
-pitch_random = 0.3
-label_text = "Crying"
-
-[node name="Panel11" parent="GridContainer7" instance=ExtResource("1_fs2cw")]
-layout_mode = 2
-pad_color = 4
-pad_background_image = ExtResource("13_k3g77")
+pad_color = 1
+is_loop_mode = false
+pad_background_image = ExtResource("23_2cy6h")
 volume_fade_time = 0.5
 pitch_random = 0.3
 label_text = "Electrical Passby"
+audio_layers = Array[AudioStream]([ExtResource("17_do3lj")])
 
-[node name="Panel12" parent="GridContainer7" instance=ExtResource("1_fs2cw")]
+[node name="Panel11" parent="GridContainer7" instance=ExtResource("1_fs2cw")]
 layout_mode = 2
-pad_color = 4
-pad_background_image = ExtResource("13_k3g77")
+pad_color = 6
+is_loop_mode = false
+pad_background_image = ExtResource("25_eo0qv")
 volume_fade_time = 0.5
 pitch_random = 0.3
-label_text = "Helicopter Passby"
+label_text = "Large Car Passby"
+audio_layers = Array[AudioStream]([ExtResource("18_dpl4h")])
 
-[node name="Panel13" parent="GridContainer7" instance=ExtResource("1_fs2cw")]
+[node name="Panel5" parent="." instance=ExtResource("1_fs2cw")]
+custom_minimum_size = Vector2(190, 190)
 layout_mode = 2
-pad_color = 4
-pad_background_image = ExtResource("13_k3g77")
-volume_fade_time = 0.5
-pitch_random = 0.3
-label_text = "Hovercar Whizz"
+pad_color = 5
+is_small = false
+pad_background_image = ExtResource("27_0s72f")
+label_text = "Outside Nightclub"
+audio_layers = Array[AudioStream]([ExtResource("7_35wig"), ExtResource("9_nvww7")])
 
 [node name="GridContainer8" type="GridContainer" parent="."]
 layout_mode = 2
@@ -169,37 +212,45 @@ theme_override_constants/h_separation = 12
 theme_override_constants/v_separation = 12
 columns = 2
 
-[node name="Panel10" parent="GridContainer8" instance=ExtResource("1_fs2cw")]
-layout_mode = 2
-pad_color = 4
-pad_background_image = ExtResource("13_k3g77")
-volume_fade_time = 0.5
-pitch_random = 0.3
-label_text = "Crying"
-
-[node name="Panel11" parent="GridContainer8" instance=ExtResource("1_fs2cw")]
-layout_mode = 2
-pad_color = 4
-pad_background_image = ExtResource("13_k3g77")
-volume_fade_time = 0.5
-pitch_random = 0.3
-label_text = "Electrical Passby"
-
 [node name="Panel12" parent="GridContainer8" instance=ExtResource("1_fs2cw")]
 layout_mode = 2
-pad_color = 4
-pad_background_image = ExtResource("13_k3g77")
+pad_color = 0
+is_loop_mode = false
+pad_background_image = ExtResource("30_exdgy")
 volume_fade_time = 0.5
 pitch_random = 0.3
-label_text = "Helicopter Passby"
+label_text = "Request ID (Far)"
+audio_layers = Array[AudioStream]([ExtResource("21_8e2kd")])
 
 [node name="Panel13" parent="GridContainer8" instance=ExtResource("1_fs2cw")]
 layout_mode = 2
-pad_color = 4
-pad_background_image = ExtResource("13_k3g77")
+pad_color = 2
+is_loop_mode = false
+pad_background_image = ExtResource("32_8kprc")
 volume_fade_time = 0.5
 pitch_random = 0.3
-label_text = "Hovercar Whizz"
+label_text = "Request ID (Close)"
+audio_layers = Array[AudioStream]([ExtResource("22_nkxqp")])
+
+[node name="Panel14" parent="GridContainer8" instance=ExtResource("1_fs2cw")]
+layout_mode = 2
+pad_color = 1
+is_loop_mode = false
+pad_background_image = ExtResource("34_4ogrn")
+volume_fade_time = 0.5
+pitch_random = 0.3
+label_text = "ID Scan Success"
+audio_layers = Array[AudioStream]([ExtResource("23_i2vmm")])
+
+[node name="Panel15" parent="GridContainer8" instance=ExtResource("1_fs2cw")]
+layout_mode = 2
+pad_color = 3
+is_loop_mode = false
+pad_background_image = ExtResource("32_8kprc")
+volume_fade_time = 0.5
+pitch_random = 0.3
+label_text = "Robot Welcome"
+audio_layers = Array[AudioStream]([ExtResource("24_h1yon")])
 
 [node name="GridContainer9" type="GridContainer" parent="."]
 layout_mode = 2
@@ -207,54 +258,29 @@ theme_override_constants/h_separation = 12
 theme_override_constants/v_separation = 12
 columns = 2
 
-[node name="Panel10" parent="GridContainer9" instance=ExtResource("1_fs2cw")]
+[node name="Panel16" parent="GridContainer9" instance=ExtResource("1_fs2cw")]
 layout_mode = 2
-pad_color = 4
-pad_background_image = ExtResource("13_k3g77")
+pad_color = 3
+is_loop_mode = false
 volume_fade_time = 0.5
 pitch_random = 0.3
-label_text = "Crying"
+label_text = "Door Open"
+audio_layers = Array[AudioStream]([ExtResource("25_xlp6y")])
 
-[node name="Panel11" parent="GridContainer9" instance=ExtResource("1_fs2cw")]
-layout_mode = 2
-pad_color = 4
-pad_background_image = ExtResource("13_k3g77")
-volume_fade_time = 0.5
-pitch_random = 0.3
-label_text = "Electrical Passby"
-
-[node name="Panel12" parent="GridContainer9" instance=ExtResource("1_fs2cw")]
-layout_mode = 2
-pad_color = 4
-pad_background_image = ExtResource("13_k3g77")
-volume_fade_time = 0.5
-pitch_random = 0.3
-label_text = "Helicopter Passby"
-
-[node name="Panel13" parent="GridContainer9" instance=ExtResource("1_fs2cw")]
-layout_mode = 2
-pad_color = 4
-pad_background_image = ExtResource("13_k3g77")
-volume_fade_time = 0.5
-pitch_random = 0.3
-label_text = "Hovercar Whizz"
-
-[node name="Panel5" parent="." instance=ExtResource("1_fs2cw")]
-custom_minimum_size = Vector2(190, 190)
+[node name="Panel17" parent="GridContainer9" instance=ExtResource("1_fs2cw")]
 layout_mode = 2
 pad_color = 5
-is_small = false
-is_loop_mode = true
-pad_background_image = ExtResource("2_amj6x")
-label_text = "Outside Nightclub"
-audio_layers = Array[AudioStream]([ExtResource("7_35wig"), ExtResource("8_qmt5e"), ExtResource("9_nvww7")])
+is_loop_mode = false
+volume_fade_time = 0.5
+pitch_random = 0.3
+label_text = "Door Close"
+audio_layers = Array[AudioStream]([ExtResource("26_wlani")])
 
 [node name="Panel6" parent="." instance=ExtResource("1_fs2cw")]
 custom_minimum_size = Vector2(190, 190)
 layout_mode = 2
 pad_color = 3
 is_small = false
-is_loop_mode = true
-pad_background_image = ExtResource("2_amj6x")
+pad_background_image = ExtResource("39_e7o5y")
 label_text = "Inside Nightclub"
-audio_layers = Array[AudioStream]([ExtResource("10_fs2cw")])
+audio_layers = Array[AudioStream]([ExtResource("27_2vht1"), ExtResource("10_fs2cw")])

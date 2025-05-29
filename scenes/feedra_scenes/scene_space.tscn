@@ -1,0 +1,174 @@
+[gd_scene load_steps=22 format=3 uid="uid://15bytnfggr3v"]
+
+[ext_resource type="PackedScene" uid="uid://e4oqu4618xa7" path="res://scenes/main_panel/panel.tscn" id="1_7a46m"]
+[ext_resource type="Texture2D" uid="uid://ckcxd26xma3rw" path="res://assets/graphics/temp/pad tests/scene2fantasy/forest.png" id="2_g2eji"]
+[ext_resource type="AudioStream" uid="uid://crkt4t7pdf5pc" path="res://assets/audio/space/amb-ominous_wind.ogg" id="3_e25sg"]
+[ext_resource type="AudioStream" uid="uid://dykmx6hc5ug32" path="res://assets/audio/space/amb-starship-hum.ogg" id="3_py0cf"]
+[ext_resource type="AudioStream" uid="uid://b31kwoeksbi1b" path="res://assets/audio/space/amb-starship-machinery.ogg" id="4_4axio"]
+[ext_resource type="AudioStream" uid="uid://d2qj27k4rptk4" path="res://assets/audio/space/amb-starship-resonate.ogg" id="5_tehkq"]
+[ext_resource type="AudioStream" uid="uid://14g2kqrjpjl4" path="res://assets/audio/space/amb-starship-drone.ogg" id="6_voqa2"]
+[ext_resource type="AudioStream" uid="uid://18hylheu1v1h" path="res://assets/audio/space/amb-starship-machinery_clicking.ogg" id="7_43vvl"]
+[ext_resource type="AudioStream" uid="uid://bwbkgqy1vx6bp" path="res://assets/audio/space/amb-starship-machinery_loud.ogg" id="8_8pg08"]
+[ext_resource type="AudioStream" uid="uid://ccm4f118ctgvp" path="res://assets/audio/space/amb-starship-bleeps.ogg" id="9_lcpj3"]
+[ext_resource type="AudioStream" uid="uid://wxlhadpeammh" path="res://assets/audio/space/amb-space_ghost.ogg" id="11_sqfd6"]
+[ext_resource type="AudioStream" uid="uid://b73et2esobwj" path="res://assets/audio/space/sfxloop-computer_idle.ogg" id="12_qmruo"]
+[ext_resource type="AudioStream" uid="uid://boxfkwcrwh3hw" path="res://assets/audio/space/sfx-computer_confirm.ogg" id="13_sqfd6"]
+[ext_resource type="AudioStream" uid="uid://bvgot41dl0sm6" path="res://assets/audio/space/sfx-computer_warning.ogg" id="14_jeipw"]
+[ext_resource type="Texture2D" uid="uid://dt0ex11nol3x2" path="res://assets/graphics/temp/pad tests/scene2fantasy/branch step.png" id="15_8sxwk"]
+[ext_resource type="AudioStream" uid="uid://bynyjrm0m2024" path="res://assets/audio/space/sfx-computer_success.ogg" id="15_qlqm5"]
+[ext_resource type="AudioStream" uid="uid://b6dkfyedlw0xt" path="res://assets/audio/space/sfx-computer_error.ogg" id="16_h0rgp"]
+[ext_resource type="AudioStream" uid="uid://be8wmgt3w3ihe" path="res://assets/audio/space/amb-airlock_open.ogg" id="18_h0rgp"]
+[ext_resource type="AudioStream" uid="uid://d01k5skas5l5" path="res://assets/audio/space/amb-airlock_close.ogg" id="19_b14n3"]
+[ext_resource type="AudioStream" uid="uid://inriwmqnvfi5" path="res://assets/audio/space/sfx-warpdrive.ogg" id="20_uogxh"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_b14n3"]
+streams_count = 2
+stream_0/stream = ExtResource("13_sqfd6")
+stream_1/stream = ExtResource("14_jeipw")
+
+[node name="SceneDragonBattle" type="GridContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -401.0
+offset_top = -187.0
+offset_right = 401.0
+offset_bottom = 207.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 4
+
+[node name="Panel5" parent="." instance=ExtResource("1_7a46m")]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+pad_color = 2
+is_small = false
+pad_background_image = ExtResource("2_g2eji")
+volume_fade_time = 4.0
+label_text = "Starship"
+audio_layers = Array[AudioStream]([ExtResource("3_py0cf"), ExtResource("4_4axio"), ExtResource("5_tehkq"), ExtResource("6_voqa2")])
+
+[node name="Panel3" parent="." instance=ExtResource("1_7a46m")]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+pad_color = 0
+is_small = false
+pad_background_image = ExtResource("2_g2eji")
+volume_fade_time = 4.0
+label_text = "Starship:        Engine Room"
+audio_layers = Array[AudioStream]([ExtResource("7_43vvl"), ExtResource("8_8pg08")])
+
+[node name="Panel4" parent="." instance=ExtResource("1_7a46m")]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+pad_color = 7
+is_small = false
+pad_background_image = ExtResource("2_g2eji")
+volume_fade_time = 4.0
+label_text = "Starship: Bridge"
+audio_layers = Array[AudioStream]([ExtResource("9_lcpj3")])
+
+[node name="Panel6" parent="." instance=ExtResource("1_7a46m")]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+pad_color = 9
+is_small = false
+pad_background_image = ExtResource("2_g2eji")
+volume_fade_time = 4.0
+label_text = "Solar Wind"
+audio_layers = Array[AudioStream]([ExtResource("3_e25sg")])
+
+[node name="Panel7" parent="." instance=ExtResource("1_7a46m")]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+pad_color = 5
+is_small = false
+pad_background_image = ExtResource("2_g2eji")
+volume_fade_time = 4.0
+label_text = "Space Ghost"
+audio_layers = Array[AudioStream]([ExtResource("11_sqfd6")])
+
+[node name="GridContainer5" type="GridContainer" parent="."]
+layout_mode = 2
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 2
+
+[node name="Panel10" parent="GridContainer5" instance=ExtResource("1_7a46m")]
+layout_mode = 2
+pad_color = 4
+pad_background_image = ExtResource("15_8sxwk")
+volume_fade_time = 0.1
+pitch_random = 0.3
+label_text = "Computer Idle"
+audio_layers = Array[AudioStream]([ExtResource("12_qmruo")])
+
+[node name="Panel11" parent="GridContainer5" instance=ExtResource("1_7a46m")]
+layout_mode = 2
+pad_color = 9
+is_loop_mode = false
+pad_background_image = ExtResource("15_8sxwk")
+volume_fade_time = 0.1
+pitch_random = 0.3
+label_text = "Computer Neutral"
+audio_layers = Array[AudioStream]([SubResource("AudioStreamRandomizer_b14n3")])
+
+[node name="Panel12" parent="GridContainer5" instance=ExtResource("1_7a46m")]
+layout_mode = 2
+pad_color = 1
+is_loop_mode = false
+pad_background_image = ExtResource("15_8sxwk")
+volume_fade_time = 0.1
+pitch_random = 0.3
+label_text = "Computer Success"
+audio_layers = Array[AudioStream]([ExtResource("15_qlqm5")])
+
+[node name="Panel13" parent="GridContainer5" instance=ExtResource("1_7a46m")]
+layout_mode = 2
+pad_color = 6
+is_loop_mode = false
+pad_background_image = ExtResource("15_8sxwk")
+volume_fade_time = 0.1
+pitch_random = 0.3
+label_text = "Computer Error"
+audio_layers = Array[AudioStream]([ExtResource("16_h0rgp")])
+
+[node name="GridContainer6" type="GridContainer" parent="."]
+layout_mode = 2
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 2
+
+[node name="Panel11" parent="GridContainer6" instance=ExtResource("1_7a46m")]
+layout_mode = 2
+pad_color = 0
+is_loop_mode = false
+pad_background_image = ExtResource("15_8sxwk")
+volume_fade_time = 0.1
+pitch_random = 0.3
+label_text = "Airlock   Exit"
+audio_layers = Array[AudioStream]([ExtResource("19_b14n3")])
+
+[node name="Panel10" parent="GridContainer6" instance=ExtResource("1_7a46m")]
+layout_mode = 2
+pad_color = 2
+is_loop_mode = false
+pad_background_image = ExtResource("15_8sxwk")
+volume_fade_time = 0.1
+pitch_random = 0.3
+label_text = "Airlock Enter"
+audio_layers = Array[AudioStream]([ExtResource("18_h0rgp")])
+
+[node name="Panel12" parent="GridContainer6" instance=ExtResource("1_7a46m")]
+layout_mode = 2
+pad_color = 5
+is_loop_mode = false
+pad_background_image = ExtResource("15_8sxwk")
+volume_fade_time = 0.1
+pitch_random = 0.3
+label_text = "Warpdrive"
+audio_layers = Array[AudioStream]([ExtResource("20_uogxh")])

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bbhaxuj8utvc4"]
+[gd_scene load_steps=19 format=3 uid="uid://bbhaxuj8utvc4"]
 
 [ext_resource type="Texture2D" uid="uid://bdtdifnfw5lak" path="res://assets/graphics/WindowBacking-1x2.svg" id="1_dt6o7"]
 [ext_resource type="Script" uid="uid://cc25c6t62gvsh" path="res://scenes/demo_ui.gd" id="1_lgqmu"]
@@ -8,7 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://byyf3iw8tlrn1" path="res://scenes/feedra_scenes/scene_haunted_farm.tscn" id="6_lgqmu"]
 [ext_resource type="PackedScene" uid="uid://26pet45rrg6t" path="res://scenes/feedra_scenes/scene_cyberpunk_stageshow.tscn" id="7_a78qw"]
 [ext_resource type="Texture2D" uid="uid://bkpfq4wk1nf8w" path="res://assets/graphics/interface/MasterVolume.svg" id="7_dt6o7"]
+[ext_resource type="PackedScene" uid="uid://lwdbe5iukaw6" path="res://scenes/feedra_scenes/scene_planetary_colony.tscn" id="8_8iqq7"]
 [ext_resource type="Texture2D" uid="uid://x5lb85k8xo8c" path="res://assets/graphics/interface/ModeButtonPlay.svg" id="8_lgqmu"]
+[ext_resource type="PackedScene" uid="uid://15bytnfggr3v" path="res://scenes/feedra_scenes/scene_space.tscn" id="9_50s3l"]
+[ext_resource type="PackedScene" uid="uid://dw8nh8gp5weg2" path="res://scenes/feedra_scenes/scene_electronic_music.tscn" id="10_11bop"]
+[ext_resource type="PackedScene" uid="uid://bm4jj77fdxo23" path="res://scenes/intro_popup.tscn" id="13_g52di"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a78qw"]
 
@@ -62,7 +66,10 @@ layout_mode = 1
 scenes = Dictionary[String, PackedScene]({
 "Cyberpunk Stageshow": ExtResource("7_a78qw"),
 "Dragon Battle": ExtResource("4_g74my"),
-"Haunted Farm": ExtResource("6_lgqmu")
+"Electronic Beats": ExtResource("10_11bop"),
+"Haunted Farm": ExtResource("6_lgqmu"),
+"Outer Space": ExtResource("9_50s3l"),
+"Planetary Colony": ExtResource("8_8iqq7")
 })
 scene_container = NodePath("../SceneScrollBox/VBoxContainer/Scenes")
 
@@ -155,3 +162,6 @@ offset_right = 95.0
 offset_bottom = 39.0
 mouse_filter = 2
 texture = ExtResource("7_dt6o7")
+
+[node name="IntroPopup" parent="." instance=ExtResource("13_g52di")]
+layout_mode = 1

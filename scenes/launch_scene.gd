@@ -1,7 +1,8 @@
 extends Control
 
 var main_scene_path: String = "res://scenes/demo_ui.tscn"
-
+var loaded_scene: PackedScene
+var has_played_animation: bool = false
 
 func _ready() -> void:
 	ResourceLoader.load_threaded_request(main_scene_path)
@@ -13,5 +14,5 @@ func _process(_delta: float) -> void:
 	%ProgressBar.value = progress[0]
 	
 	if progress[0] == 1.0:
-		var loaded_scene: PackedScene = ResourceLoader.load_threaded_get(main_scene_path)
+		loaded_scene = ResourceLoader.load_threaded_get(main_scene_path)
 		get_tree().change_scene_to_packed(loaded_scene)

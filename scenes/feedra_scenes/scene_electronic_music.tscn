@@ -1,0 +1,155 @@
+[gd_scene load_steps=22 format=3 uid="uid://dw8nh8gp5weg2"]
+
+[ext_resource type="PackedScene" uid="uid://e4oqu4618xa7" path="res://scenes/main_panel/panel.tscn" id="1_4rqli"]
+[ext_resource type="AudioStream" uid="uid://ci3a1bomoax5i" path="res://assets/audio/electronic music/loop-base_synth-01.wav" id="3_jtabf"]
+[ext_resource type="AudioStream" uid="uid://b6uc4eqc4n1eg" path="res://assets/audio/electronic music/loop-drumgroove-01.wav" id="4_4ei5f"]
+[ext_resource type="AudioStream" uid="uid://c1tolpxtum6s7" path="res://assets/audio/electronic music/loop-electric_rhythms-01.wav" id="5_w44m4"]
+[ext_resource type="AudioStream" uid="uid://bxxv3t83isc3m" path="res://assets/audio/electronic music/loop-reverse_cries-01.wav" id="6_iqn4l"]
+[ext_resource type="AudioStream" uid="uid://dt0mgcwkqisti" path="res://assets/audio/electronic music/loop-wubble-01.wav" id="7_au6xo"]
+[ext_resource type="AudioStream" uid="uid://2rl22o5kbo82" path="res://assets/audio/electronic music/sfx-bass_sweep-01.wav" id="9_gmtal"]
+[ext_resource type="AudioStream" uid="uid://d2gfy5ywn3sxw" path="res://assets/audio/electronic music/sfx-bass_sweep-02.wav" id="10_j5h08"]
+[ext_resource type="AudioStream" uid="uid://ctw8fo3nlkfgc" path="res://assets/audio/electronic music/sfx-delayed_snare-01.wav" id="11_1b1xf"]
+[ext_resource type="AudioStream" uid="uid://bva4qteh11wyh" path="res://assets/audio/electronic music/sfx-delayed_snare-02.wav" id="12_0t5ke"]
+[ext_resource type="AudioStream" uid="uid://duvatb2kijiqk" path="res://assets/audio/electronic music/sfx-delayed_snare-03.wav" id="13_qvg42"]
+[ext_resource type="AudioStream" uid="uid://ba3jkvu3norfp" path="res://assets/audio/electronic music/sfx-delayed_snare-04.wav" id="14_mh0c8"]
+[ext_resource type="AudioStream" uid="uid://c02qsajebs6lb" path="res://assets/audio/electronic music/sfx-dramatic_stab-01.wav" id="15_o5epm"]
+[ext_resource type="AudioStream" uid="uid://b1llyp8t2frxw" path="res://assets/audio/electronic music/sfx-dramatic_stab-02.wav" id="16_upxhm"]
+[ext_resource type="AudioStream" uid="uid://dvrdbximltcnb" path="res://assets/audio/electronic music/sfx-reverse_kick-01.wav" id="17_t2lga"]
+[ext_resource type="AudioStream" uid="uid://bd14h06fupsmg" path="res://assets/audio/electronic music/sfx-sad_flute-01.wav" id="18_1ghgj"]
+[ext_resource type="AudioStream" uid="uid://ca6md42ud7c18" path="res://assets/audio/electronic music/sfx-sad_flute-02.wav" id="19_a4teo"]
+[ext_resource type="AudioStream" uid="uid://dr3mtjw3uhhjw" path="res://assets/audio/electronic music/sfx-sad_flute-03.wav" id="20_0lney"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_8lwt7"]
+streams_count = 2
+stream_0/stream = ExtResource("9_gmtal")
+stream_1/stream = ExtResource("10_j5h08")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_e1gyh"]
+streams_count = 4
+stream_0/stream = ExtResource("11_1b1xf")
+stream_1/stream = ExtResource("12_0t5ke")
+stream_2/stream = ExtResource("13_qvg42")
+stream_3/stream = ExtResource("14_mh0c8")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_erbrf"]
+streams_count = 3
+stream_0/stream = ExtResource("18_1ghgj")
+stream_1/stream = ExtResource("19_a4teo")
+stream_2/stream = ExtResource("20_0lney")
+
+[node name="SceneDragonBattle" type="GridContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -401.0
+offset_top = -187.0
+offset_right = 401.0
+offset_bottom = 207.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 4
+
+[node name="Panel3" parent="." instance=ExtResource("1_4rqli")]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+is_small = false
+volume_fade_time = 4.0
+label_text = "Base Synth"
+audio_layers = Array[AudioStream]([ExtResource("3_jtabf")])
+
+[node name="Panel5" parent="." instance=ExtResource("1_4rqli")]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+pad_color = 4
+is_small = false
+volume_fade_time = 4.0
+label_text = "Drum Groove"
+audio_layers = Array[AudioStream]([ExtResource("4_4ei5f")])
+
+[node name="Panel4" parent="." instance=ExtResource("1_4rqli")]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+pad_color = 3
+is_small = false
+volume_fade_time = 4.0
+label_text = "Electric Rhythms"
+audio_layers = Array[AudioStream]([ExtResource("5_w44m4")])
+
+[node name="Panel6" parent="." instance=ExtResource("1_4rqli")]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+pad_color = 5
+is_small = false
+volume_fade_time = 4.0
+label_text = "Reverse Cries"
+audio_layers = Array[AudioStream]([ExtResource("6_iqn4l")])
+
+[node name="Panel7" parent="." instance=ExtResource("1_4rqli")]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+pad_color = 6
+is_small = false
+volume_fade_time = 4.0
+label_text = "Wubble"
+audio_layers = Array[AudioStream]([ExtResource("7_au6xo")])
+
+[node name="GridContainer5" type="GridContainer" parent="."]
+layout_mode = 2
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 2
+
+[node name="Panel10" parent="GridContainer5" instance=ExtResource("1_4rqli")]
+layout_mode = 2
+pad_color = 0
+is_loop_mode = false
+volume_fade_time = 0.1
+pitch_random = 0.3
+label_text = "Bass  Sweep"
+audio_layers = Array[AudioStream]([SubResource("AudioStreamRandomizer_8lwt7")])
+
+[node name="Panel11" parent="GridContainer5" instance=ExtResource("1_4rqli")]
+layout_mode = 2
+pad_color = 9
+is_loop_mode = false
+volume_fade_time = 0.1
+pitch_random = 0.3
+label_text = "Delayed Snare"
+audio_layers = Array[AudioStream]([SubResource("AudioStreamRandomizer_e1gyh")])
+
+[node name="Panel12" parent="GridContainer5" instance=ExtResource("1_4rqli")]
+layout_mode = 2
+pad_color = 3
+is_loop_mode = false
+volume_fade_time = 0.1
+pitch_random = 0.3
+label_text = "Dramatic Stab"
+audio_layers = Array[AudioStream]([ExtResource("15_o5epm"), ExtResource("16_upxhm")])
+
+[node name="Panel13" parent="GridContainer5" instance=ExtResource("1_4rqli")]
+layout_mode = 2
+pad_color = 2
+is_loop_mode = false
+volume_fade_time = 0.1
+pitch_random = 0.3
+label_text = "Reverse Kick"
+audio_layers = Array[AudioStream]([ExtResource("17_t2lga")])
+
+[node name="GridContainer6" type="GridContainer" parent="."]
+layout_mode = 2
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 2
+
+[node name="Panel10" parent="GridContainer6" instance=ExtResource("1_4rqli")]
+layout_mode = 2
+pad_color = 7
+is_loop_mode = false
+volume_fade_time = 0.1
+pitch_random = 0.3
+label_text = "Sad Flute"
+audio_layers = Array[AudioStream]([SubResource("AudioStreamRandomizer_erbrf")])

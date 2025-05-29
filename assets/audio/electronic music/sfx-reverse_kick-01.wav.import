@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dvrdbximltcnb"
+path="res://.godot/imported/sfx-reverse_kick-01.wav-f9dca84883a4993b7758922e2a298643.sample"
+
+[deps]
+
+source_file="res://assets/audio/electronic music/sfx-reverse_kick-01.wav"
+dest_files=["res://.godot/imported/sfx-reverse_kick-01.wav-f9dca84883a4993b7758922e2a298643.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

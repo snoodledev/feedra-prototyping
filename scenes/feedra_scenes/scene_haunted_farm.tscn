@@ -1,23 +1,30 @@
-[gd_scene load_steps=19 format=3 uid="uid://byyf3iw8tlrn1"]
+[gd_scene load_steps=26 format=3 uid="uid://byyf3iw8tlrn1"]
 
 [ext_resource type="PackedScene" uid="uid://e4oqu4618xa7" path="res://scenes/main_panel/panel.tscn" id="1_sis5c"]
-[ext_resource type="Texture2D" uid="uid://ckcxd26xma3rw" path="res://assets/graphics/temp/pad tests/scene2fantasy/forest.png" id="2_rjbb0"]
+[ext_resource type="Texture2D" uid="uid://dbnd3bae57ytp" path="res://assets/graphics/thumbnails/haunted farm/outside.png" id="2_yoh53"]
 [ext_resource type="AudioStream" uid="uid://dwt3ye5dac8ir" path="res://assets/audio/haunted farm/amb-exterior-crows.ogg" id="3_8s77h"]
 [ext_resource type="AudioStream" uid="uid://cbr5fs2xajfd5" path="res://assets/audio/haunted farm/amb-exterior-lowtone.ogg" id="4_cr0ts"]
 [ext_resource type="AudioStream" uid="uid://chuifq4v7lkej" path="res://assets/audio/haunted farm/amb-exterior-wind.ogg" id="5_lrrs8"]
+[ext_resource type="Texture2D" uid="uid://lqcd8v571824" path="res://assets/graphics/thumbnails/haunted farm/front door.png" id="6_eu24o"]
 [ext_resource type="AudioStream" uid="uid://b7cqades8kbjb" path="res://assets/audio/haunted farm/sfx-door_open.ogg" id="6_ulqdd"]
 [ext_resource type="AudioStream" uid="uid://cxf5ni2vs5qgr" path="res://assets/audio/haunted farm/amb-house-creaks.ogg" id="7_qdmjo"]
 [ext_resource type="AudioStream" uid="uid://bltbf6p0bhu2e" path="res://assets/audio/haunted farm/amb-discovery-drone.ogg" id="7_ybamu"]
-[ext_resource type="Texture2D" uid="uid://dt0ex11nol3x2" path="res://assets/graphics/temp/pad tests/scene2fantasy/branch step.png" id="7_yvhnr"]
 [ext_resource type="AudioStream" uid="uid://c2vt5hfx8rdb1" path="res://assets/audio/haunted farm/amb-house-muffled_crows.ogg" id="8_5836h"]
+[ext_resource type="Texture2D" uid="uid://cki7g770f4yip" path="res://assets/graphics/thumbnails/haunted farm/interior.png" id="8_cjih4"]
 [ext_resource type="AudioStream" uid="uid://cqv2rb5e6oxxr" path="res://assets/audio/haunted farm/amb-discovery-pianotone.ogg" id="8_ulqdd"]
 [ext_resource type="AudioStream" uid="uid://cehhxtl2d4pgr" path="res://assets/audio/haunted farm/amb-house-muffled_wind.ogg" id="9_mqpej"]
 [ext_resource type="AudioStream" uid="uid://dl5xbfmi3x2fo" path="res://assets/audio/haunted farm/amb-basement-dark_tone.ogg" id="10_5836h"]
 [ext_resource type="AudioStream" uid="uid://b8w128vf3cnoc" path="res://assets/audio/haunted farm/sfx-basement_door_open.ogg" id="10_mqpej"]
 [ext_resource type="AudioStream" uid="uid://pay8vk4maeol" path="res://assets/audio/haunted farm/amb-basement-haunting.ogg" id="11_mqpej"]
+[ext_resource type="Texture2D" uid="uid://7dl6ipanxme1" path="res://assets/graphics/thumbnails/haunted farm/basement dor.png" id="12_adeil"]
+[ext_resource type="AudioStream" uid="uid://bjrpne27sj8u3" path="res://assets/audio/haunted farm/amb-basement_climax-creaking.ogg" id="13_lbq4d"]
+[ext_resource type="Texture2D" uid="uid://beh3qumrdoqgb" path="res://assets/graphics/thumbnails/haunted farm/basement.png" id="14_d2nj2"]
 [ext_resource type="AudioStream" uid="uid://dtbxq6ykovai7" path="res://assets/audio/haunted farm/sfx-string_A.ogg" id="16_kn5gu"]
+[ext_resource type="Texture2D" uid="uid://ny1hvponwih7" path="res://assets/graphics/thumbnails/haunted farm/roots.png" id="17_5drvr"]
 [ext_resource type="AudioStream" uid="uid://ca7ftmu501gvm" path="res://assets/audio/haunted farm/sfx-string_B.ogg" id="17_lbq4d"]
 [ext_resource type="AudioStream" uid="uid://d0fs7v3ro74yc" path="res://assets/audio/haunted farm/sfx-string_C.ogg" id="18_ae4ul"]
+[ext_resource type="Texture2D" uid="uid://bf3m372365382" path="res://assets/graphics/thumbnails/haunted farm/ghost.png" id="19_h1v2m"]
+[ext_resource type="Texture2D" uid="uid://od6w6ddas1jc" path="res://assets/graphics/thumbnails/haunted farm/piano.png" id="22_lhq0h"]
 
 [node name="SceneDragonBattle" type="GridContainer"]
 anchors_preset = 8
@@ -39,8 +46,8 @@ columns = 4
 custom_minimum_size = Vector2(190, 190)
 layout_mode = 2
 is_small = false
-is_loop_mode = true
-pad_background_image = ExtResource("2_rjbb0")
+pad_background_image = ExtResource("2_yoh53")
+volume_fade_time = 4.0
 label_text = "Outside"
 audio_layers = Array[AudioStream]([ExtResource("3_8s77h"), ExtResource("4_cr0ts"), ExtResource("5_lrrs8")])
 
@@ -49,7 +56,8 @@ custom_minimum_size = Vector2(190, 190)
 layout_mode = 2
 pad_color = 9
 is_small = false
-pad_background_image = ExtResource("2_rjbb0")
+is_loop_mode = false
+pad_background_image = ExtResource("6_eu24o")
 volume_fade_time = 0.5
 label_text = "Front Door"
 audio_layers = Array[AudioStream]([ExtResource("6_ulqdd")])
@@ -59,9 +67,9 @@ custom_minimum_size = Vector2(190, 190)
 layout_mode = 2
 pad_color = 4
 is_small = false
-is_loop_mode = true
-pad_background_image = ExtResource("2_rjbb0")
-label_text = "Abandoned Farmhouse"
+pad_background_image = ExtResource("8_cjih4")
+volume_fade_time = 6.0
+label_text = "Farmhouse Interior"
 audio_layers = Array[AudioStream]([ExtResource("7_qdmjo"), ExtResource("8_5836h"), ExtResource("9_mqpej")])
 
 [node name="Panel6" parent="." instance=ExtResource("1_sis5c")]
@@ -69,7 +77,8 @@ custom_minimum_size = Vector2(190, 190)
 layout_mode = 2
 pad_color = 2
 is_small = false
-pad_background_image = ExtResource("2_rjbb0")
+is_loop_mode = false
+pad_background_image = ExtResource("12_adeil")
 volume_fade_time = 0.5
 label_text = "Basement Door"
 audio_layers = Array[AudioStream]([ExtResource("10_mqpej")])
@@ -79,18 +88,26 @@ custom_minimum_size = Vector2(190, 190)
 layout_mode = 2
 pad_color = 0
 is_small = false
-is_loop_mode = true
-pad_background_image = ExtResource("2_rjbb0")
+pad_background_image = ExtResource("14_d2nj2")
 label_text = "Basement"
 audio_layers = Array[AudioStream]([ExtResource("10_5836h"), ExtResource("11_mqpej")])
+
+[node name="Panel8" parent="." instance=ExtResource("1_sis5c")]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+pad_color = 3
+is_small = false
+pad_background_image = ExtResource("17_5drvr")
+volume_fade_time = 6.0
+label_text = "Roots"
+audio_layers = Array[AudioStream]([ExtResource("13_lbq4d")])
 
 [node name="Panel9" parent="." instance=ExtResource("1_sis5c")]
 custom_minimum_size = Vector2(190, 190)
 layout_mode = 2
 pad_color = 5
 is_small = false
-is_loop_mode = true
-pad_background_image = ExtResource("7_yvhnr")
+pad_background_image = ExtResource("19_h1v2m")
 volume_fade_time = 8.0
 pitch_random = 0.3
 label_text = "Discovery"
@@ -105,7 +122,8 @@ columns = 2
 [node name="Panel10" parent="GridContainer5" instance=ExtResource("1_sis5c")]
 layout_mode = 2
 pad_color = 4
-pad_background_image = ExtResource("7_yvhnr")
+is_loop_mode = false
+pad_background_image = ExtResource("22_lhq0h")
 volume_fade_time = 0.5
 pitch_random = 0.3
 label_text = "Sting 1"
@@ -114,22 +132,18 @@ audio_layers = Array[AudioStream]([ExtResource("16_kn5gu")])
 [node name="Panel11" parent="GridContainer5" instance=ExtResource("1_sis5c")]
 layout_mode = 2
 pad_color = 4
-pad_background_image = ExtResource("7_yvhnr")
+is_loop_mode = false
+pad_background_image = ExtResource("22_lhq0h")
 volume_fade_time = 0.5
 pitch_random = 0.3
 label_text = "Sting 2"
 audio_layers = Array[AudioStream]([ExtResource("17_lbq4d")])
 
-[node name="GridContainer6" type="GridContainer" parent="."]
-layout_mode = 2
-theme_override_constants/h_separation = 12
-theme_override_constants/v_separation = 12
-columns = 2
-
-[node name="Panel12" parent="GridContainer6" instance=ExtResource("1_sis5c")]
+[node name="Panel12" parent="GridContainer5" instance=ExtResource("1_sis5c")]
 layout_mode = 2
 pad_color = 4
-pad_background_image = ExtResource("7_yvhnr")
+is_loop_mode = false
+pad_background_image = ExtResource("22_lhq0h")
 volume_fade_time = 0.5
 pitch_random = 0.3
 label_text = "Sting 3"

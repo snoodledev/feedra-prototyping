@@ -10,10 +10,15 @@ config_version=5
 
 [application]
 
-config/name="feedra prototyping"
+config/name="Feedra Play Mode Prototype"
+config/description="Play mode prototype for the Feedra software, developed for the major project showcase."
+config/version="1.0.0"
 run/main_scene="uid://c1spqeosv324g"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/fullsize=false
+boot_splash/image="uid://dtw5mw4mtw7pb"
+config/icon="uid://dtw5mw4mtw7pb"
 
 [autoload]
 

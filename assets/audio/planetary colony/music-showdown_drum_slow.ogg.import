@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://y5e1s1teew7i"
+path="res://.godot/imported/music-showdown_drum_slow.ogg-47f4c51573ce15a5fdd875d416e69cb6.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/planetary colony/music-showdown_drum_slow.ogg"
+dest_files=["res://.godot/imported/music-showdown_drum_slow.ogg-47f4c51573ce15a5fdd875d416e69cb6.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

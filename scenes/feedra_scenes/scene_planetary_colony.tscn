@@ -1,0 +1,153 @@
+[gd_scene load_steps=25 format=3 uid="uid://lwdbe5iukaw6"]
+
+[ext_resource type="PackedScene" uid="uid://e4oqu4618xa7" path="res://scenes/main_panel/panel.tscn" id="1_uhhkw"]
+[ext_resource type="AudioStream" uid="uid://cwc20hrubcr32" path="res://assets/audio/planetary colony/amb-spaceport-crowd.ogg" id="3_k6hab"]
+[ext_resource type="AudioStream" uid="uid://ii00667yo2hx" path="res://assets/audio/planetary colony/amb-spaceport-hall_tone.ogg" id="4_78eg5"]
+[ext_resource type="AudioStream" uid="uid://ckm6s4v240yot" path="res://assets/audio/planetary colony/amb-spaceport-mechanical.ogg" id="5_nh5df"]
+[ext_resource type="AudioStream" uid="uid://b8rgwvyop2yto" path="res://assets/audio/planetary colony/amb-spaceport-robots.ogg" id="6_vfxxy"]
+[ext_resource type="AudioStream" uid="uid://dj6536lbrjh1" path="res://assets/audio/planetary colony/amb-spaceport-ship_pass.ogg" id="7_kcbl6"]
+[ext_resource type="AudioStream" uid="uid://bm8ibbum8syh8" path="res://assets/audio/planetary colony/amb-facility-dark_drone.ogg" id="8_nf2oj"]
+[ext_resource type="AudioStream" uid="uid://cv8ul52ah5v66" path="res://assets/audio/planetary colony/amb-facility-passerbys.ogg" id="9_12pvx"]
+[ext_resource type="AudioStream" uid="uid://ddl74pegaicoe" path="res://assets/audio/planetary colony/amb-facility-ventilation.ogg" id="10_cn1kv"]
+[ext_resource type="AudioStream" uid="uid://b1v37gwgvtw2x" path="res://assets/audio/planetary colony/amb-city-crowd.ogg" id="11_nbsjt"]
+[ext_resource type="AudioStream" uid="uid://dob6gmm0ktmjv" path="res://assets/audio/planetary colony/amb-city-mechtone.ogg" id="12_uhhkw"]
+[ext_resource type="AudioStream" uid="uid://o7ggt5vo1sxa" path="res://assets/audio/planetary colony/amb-city-ships.ogg" id="13_v38hu"]
+[ext_resource type="AudioStream" uid="uid://bf1noc03uv8ld" path="res://assets/audio/planetary colony/amb-city-wind.ogg" id="14_k6hab"]
+[ext_resource type="AudioStream" uid="uid://bxbg0rgvmioii" path="res://assets/audio/planetary colony/music-showdown_bass.ogg" id="16_12pvx"]
+[ext_resource type="AudioStream" uid="uid://bs8fblv632ixa" path="res://assets/audio/planetary colony/sfx-gun_blaster.ogg" id="16_vfxxy"]
+[ext_resource type="AudioStream" uid="uid://eqjya51l4x1o" path="res://assets/audio/planetary colony/sfx-gun_laser.ogg" id="17_kcbl6"]
+[ext_resource type="AudioStream" uid="uid://53eb4whkkm58" path="res://assets/audio/planetary colony/music-showdown_chord_pulse.ogg" id="17_nbsjt"]
+[ext_resource type="AudioStream" uid="uid://doqiw4t7incw7" path="res://assets/audio/planetary colony/sfx-gun_shotgun.ogg" id="18_drvkw"]
+[ext_resource type="AudioStream" uid="uid://b7fi6a88ogmuj" path="res://assets/audio/planetary colony/music-showdown_drum.ogg" id="18_uhhkw"]
+[ext_resource type="AudioStream" uid="uid://dw7vo4iqqsjsl" path="res://assets/audio/planetary colony/sfx-gun_smg.ogg" id="19_e6a16"]
+[ext_resource type="AudioStream" uid="uid://y5e1s1teew7i" path="res://assets/audio/planetary colony/music-showdown_drum_slow.ogg" id="19_uhhkw"]
+[ext_resource type="AudioStream" uid="uid://cljn1emnkgbr8" path="res://assets/audio/planetary colony/music-showdown_chord.ogg" id="19_v38hu"]
+[ext_resource type="AudioStream" uid="uid://bvj3yftv4dxt1" path="res://assets/audio/planetary colony/sfx-klaxon.ogg" id="20_kcbl6"]
+[ext_resource type="AudioStream" uid="uid://cmboll1ufo3cm" path="res://assets/audio/planetary colony/sfx-tool_medkit.ogg" id="25_ldks2"]
+
+[node name="SceneDragonBattle" type="GridContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -401.0
+offset_top = -187.0
+offset_right = 401.0
+offset_bottom = 207.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 4
+
+[node name="Panel3" parent="." instance=ExtResource("1_uhhkw")]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+pad_color = 2
+is_small = false
+volume_fade_time = 4.0
+label_text = "Spaceport"
+audio_layers = Array[AudioStream]([ExtResource("3_k6hab"), ExtResource("4_78eg5"), ExtResource("5_nh5df"), ExtResource("6_vfxxy"), ExtResource("7_kcbl6")])
+
+[node name="Panel4" parent="." instance=ExtResource("1_uhhkw")]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+pad_color = 5
+is_small = false
+volume_fade_time = 4.0
+label_text = "Facility"
+audio_layers = Array[AudioStream]([ExtResource("8_nf2oj"), ExtResource("9_12pvx"), ExtResource("10_cn1kv")])
+
+[node name="Panel5" parent="." instance=ExtResource("1_uhhkw")]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+pad_color = 1
+is_small = false
+volume_fade_time = 4.0
+label_text = "Colony City"
+audio_layers = Array[AudioStream]([ExtResource("11_nbsjt"), ExtResource("12_uhhkw"), ExtResource("13_v38hu"), ExtResource("14_k6hab")])
+
+[node name="GridContainer5" type="GridContainer" parent="."]
+layout_mode = 2
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 2
+
+[node name="Panel10" parent="GridContainer5" instance=ExtResource("1_uhhkw")]
+layout_mode = 2
+pad_color = 4
+is_loop_mode = false
+volume_fade_time = 0.1
+pitch_random = 0.3
+label_text = "Blaster"
+audio_layers = Array[AudioStream]([ExtResource("16_vfxxy")])
+
+[node name="Panel11" parent="GridContainer5" instance=ExtResource("1_uhhkw")]
+layout_mode = 2
+pad_color = 6
+is_loop_mode = false
+volume_fade_time = 0.1
+pitch_random = 0.3
+label_text = "Laser"
+audio_layers = Array[AudioStream]([ExtResource("17_kcbl6")])
+
+[node name="Panel12" parent="GridContainer5" instance=ExtResource("1_uhhkw")]
+layout_mode = 2
+pad_color = 9
+is_loop_mode = false
+volume_fade_time = 0.1
+pitch_random = 0.3
+label_text = "Shotgun"
+audio_layers = Array[AudioStream]([ExtResource("18_drvkw")])
+
+[node name="Panel13" parent="GridContainer5" instance=ExtResource("1_uhhkw")]
+layout_mode = 2
+pad_color = 0
+is_loop_mode = false
+volume_fade_time = 0.1
+pitch_random = 0.3
+label_text = "SMG"
+audio_layers = Array[AudioStream]([ExtResource("19_e6a16")])
+
+[node name="Panel12" parent="." instance=ExtResource("1_uhhkw")]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+pad_color = 6
+is_small = false
+volume_fade_time = 0.5
+pitch_random = 0.3
+label_text = "Klaxon Alarm"
+audio_layers = Array[AudioStream]([ExtResource("20_kcbl6")])
+randomise_loop_start = false
+
+[node name="Panel10" parent="." instance=ExtResource("1_uhhkw")]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+pad_color = 7
+is_small = false
+volume_fade_time = 0.5
+pitch_random = 0.3
+label_text = "Showdown Music"
+audio_layers = Array[AudioStream]([ExtResource("16_12pvx"), ExtResource("17_nbsjt"), ExtResource("18_uhhkw")])
+randomise_loop_start = false
+
+[node name="Panel11" parent="." instance=ExtResource("1_uhhkw")]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+pad_color = 7
+is_small = false
+volume_fade_time = 0.5
+pitch_random = 0.3
+label_text = "Showdown Slow"
+audio_layers = Array[AudioStream]([ExtResource("19_v38hu"), ExtResource("19_uhhkw")])
+randomise_loop_start = false
+
+[node name="Panel14" parent="." instance=ExtResource("1_uhhkw")]
+layout_mode = 2
+pad_color = 1
+is_loop_mode = false
+volume_fade_time = 0.1
+pitch_random = 0.3
+label_text = "Medkit"
+audio_layers = Array[AudioStream]([ExtResource("25_ldks2")])

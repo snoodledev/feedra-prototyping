@@ -1,45 +1,67 @@
-[gd_scene load_steps=47 format=3 uid="uid://bi2glqfyywxqb"]
+[gd_scene load_steps=69 format=3 uid="uid://bi2glqfyywxqb"]
 
 [ext_resource type="PackedScene" uid="uid://e4oqu4618xa7" path="res://scenes/main_panel/panel.tscn" id="1_3p2bx"]
-[ext_resource type="Texture2D" uid="uid://ckcxd26xma3rw" path="res://assets/graphics/temp/pad tests/scene2fantasy/forest.png" id="2_y83yv"]
+[ext_resource type="Texture2D" uid="uid://cfvi2pjcwfocc" path="res://assets/graphics/thumbnails/dragon battle/DeepCavern.jpg" id="2_604x2"]
 [ext_resource type="AudioStream" uid="uid://cld758slw5uph" path="res://assets/audio/dragon battle/Ambience/amb-deepcavern-lavabubbling.wav" id="3_4ghki"]
 [ext_resource type="AudioStream" uid="uid://cmpsy0hmpx4bw" path="res://assets/audio/dragon battle/Ambience/amb-deepcavern-roomtone.wav" id="4_ndnum"]
-[ext_resource type="Texture2D" uid="uid://d0h618rc1akbs" path="res://assets/graphics/temp/pad tests/scene2fantasy/forest rain.png" id="6_gc18y"]
+[ext_resource type="Texture2D" uid="uid://hkok3d0u7p23" path="res://assets/graphics/thumbnails/dragon battle/DistantRoar.jpg" id="5_2wg6n"]
 [ext_resource type="AudioStream" uid="uid://dol0l72b2o8dt" path="res://assets/audio/dragon battle/Ambience/sfx-Distant_Creature-01.wav" id="6_iv1os"]
+[ext_resource type="Texture2D" uid="uid://cgkxfi2tsr15k" path="res://assets/graphics/thumbnails/dragon battle/DragonApproach.jpg" id="7_kupyb"]
 [ext_resource type="AudioStream" uid="uid://bc6r1st4xebi6" path="res://assets/audio/dragon battle/Ambience/sfx-Dragon_Approach-01.wav" id="8_7a7hg"]
 [ext_resource type="AudioStream" uid="uid://djyqvsf6rwynr" path="res://assets/audio/dragon battle/Ambience/music-battlemusic_loop.wav" id="8_aj8xm"]
-[ext_resource type="Texture2D" uid="uid://dt0ex11nol3x2" path="res://assets/graphics/temp/pad tests/scene2fantasy/branch step.png" id="8_l220e"]
+[ext_resource type="Texture2D" uid="uid://qd5lbp7rbl8j" path="res://assets/graphics/thumbnails/dragon battle/DragonClaw.webp" id="9_2lf2s"]
 [ext_resource type="AudioStream" uid="uid://t8xmrhwnc8ma" path="res://assets/audio/dragon battle/Dragon/sfx-Dragon_Claw-01.wav" id="9_7a7hg"]
 [ext_resource type="AudioStream" uid="uid://bax55w7qbeoh2" path="res://assets/audio/dragon battle/Dragon/sfx-Dragon_FireBreath-01.wav" id="9_bgwkg"]
-[ext_resource type="Texture2D" uid="uid://5kyn0o34rsot" path="res://assets/graphics/temp/pad tests/scene2fantasy/PadImage03.png" id="10_2bt5r"]
 [ext_resource type="AudioStream" uid="uid://ch2t4hw8ko6j" path="res://assets/audio/dragon battle/Dragon/sfx-Dragon_Claw-02.wav" id="10_bgwkg"]
 [ext_resource type="AudioStream" uid="uid://pj8t8x50gbx0" path="res://assets/audio/dragon battle/Dragon/sfx-Dragon_Land-01.wav" id="10_pb5vk"]
 [ext_resource type="AudioStream" uid="uid://bi6if2jfrbg2g" path="res://assets/audio/dragon battle/Dragon/sfx-Dragon_MajorRoar-01.wav" id="11_wpbf0"]
 [ext_resource type="AudioStream" uid="uid://3ij8rs3jfill" path="res://assets/audio/dragon battle/Dragon/sfx-Dragon_MinorHurt-01.wav" id="12_5vcuu"]
+[ext_resource type="Texture2D" uid="uid://b782mwqib0upp" path="res://assets/graphics/thumbnails/dragon battle/DragonFireBreath.jpg" id="12_11aiv"]
 [ext_resource type="AudioStream" uid="uid://cssmcfo8pjh3w" path="res://assets/audio/dragon battle/Dragon/sfx-Dragon_MinorHurt-02.wav" id="13_86lo0"]
 [ext_resource type="AudioStream" uid="uid://coxir5ddu87pf" path="res://assets/audio/dragon battle/Dragon/sfx-Dragon_MinorHurt-03.wav" id="14_hx580"]
+[ext_resource type="Texture2D" uid="uid://c01hul3t2jiwh" path="res://assets/graphics/thumbnails/dragon battle/DragonLand.webp" id="14_qsnqw"]
 [ext_resource type="AudioStream" uid="uid://buubkachn0uwt" path="res://assets/audio/dragon battle/Dragon/sfx-Dragon_MinorHurt-04.wav" id="15_1g86m"]
+[ext_resource type="Texture2D" uid="uid://deocokxleyh58" path="res://assets/graphics/thumbnails/dragon battle/DragonRoar.jpeg" id="16_7ifbf"]
 [ext_resource type="AudioStream" uid="uid://byg3j75wet5eb" path="res://assets/audio/dragon battle/sfx-record_scratch_cartoon.wav" id="18_604x2"]
+[ext_resource type="Texture2D" uid="uid://brhxa1bffgmox" path="res://assets/graphics/thumbnails/dragon battle/DragonHurt.webp" id="18_j53cv"]
 [ext_resource type="AudioStream" uid="uid://nwxa7xtm4tb6" path="res://assets/audio/dragon battle/Barbarian/sfx-Greataxe_Success-01.wav" id="20_wpbf0"]
 [ext_resource type="AudioStream" uid="uid://bt2hhs1ywk57k" path="res://assets/audio/dragon battle/Barbarian/sfx-Greataxe_Fail-01.wav" id="21_5vcuu"]
 [ext_resource type="AudioStream" uid="uid://c8kmue3s1wp0" path="res://assets/audio/dragon battle/Barbarian/sfx-Rallying_Cry_Success-01.wav" id="22_86lo0"]
 [ext_resource type="AudioStream" uid="uid://bce7ttnc4glm7" path="res://assets/audio/dragon battle/Barbarian/sfx-Rallying_Cry_Success-02.wav" id="23_hx580"]
+[ext_resource type="Texture2D" uid="uid://dcpi4kv2hrwj5" path="res://assets/graphics/thumbnails/dragon battle/RecordScratch.jpg" id="23_omtt0"]
 [ext_resource type="AudioStream" uid="uid://bq5qmpuawmdhb" path="res://assets/audio/dragon battle/Barbarian/sfx-Rallying_Cry_Fail-01.wav" id="24_1g86m"]
 [ext_resource type="AudioStream" uid="uid://x12nh3thx8ay" path="res://assets/audio/dragon battle/Barbarian/sfx-Rallying_Cry_Fail-02.wav" id="25_48r67"]
+[ext_resource type="Texture2D" uid="uid://dpshkd4amgda1" path="res://assets/graphics/thumbnails/dragon battle/BattleMusic.png" id="25_lau0c"]
 [ext_resource type="AudioStream" uid="uid://cs73t1wb5jdws" path="res://assets/audio/dragon battle/Barbarian/sfx-Iron_Defence-01.wav" id="26_v3rlf"]
+[ext_resource type="Texture2D" uid="uid://bmgbd67x7ox0l" path="res://assets/graphics/thumbnails/dragon battle/GreataxeSuccess.webp" id="27_2u4ng"]
 [ext_resource type="AudioStream" uid="uid://cfpvos5thfu62" path="res://assets/audio/dragon battle/Bard/sfx-Insane_Mockery-01.wav" id="27_flg40"]
 [ext_resource type="AudioStream" uid="uid://bdjxqgu6kwf1n" path="res://assets/audio/dragon battle/Bard/sfx-Flurry_of_Knives_Success-01.wav" id="28_hx45n"]
 [ext_resource type="AudioStream" uid="uid://djjtwugbg8mgr" path="res://assets/audio/dragon battle/Bard/sfx-Flurry_of_Knives_Fail-01.wav" id="29_604x2"]
+[ext_resource type="Texture2D" uid="uid://dplvlct7do1sw" path="res://assets/graphics/thumbnails/dragon battle/GreataxeFAIL.png" id="29_efayx"]
 [ext_resource type="AudioStream" uid="uid://cvn7ekkfgdpc4" path="res://assets/audio/dragon battle/Bard/sfx-Seduce_Success-01.wav" id="30_xfuoj"]
+[ext_resource type="Texture2D" uid="uid://codaln7hmeqn" path="res://assets/graphics/thumbnails/dragon battle/RallyingCrySuccess.jpg" id="31_jje81"]
 [ext_resource type="AudioStream" uid="uid://bjc82ow3w3jwd" path="res://assets/audio/dragon battle/Bard/sfx-Seduce_Fail-01.wav" id="31_s13r8"]
 [ext_resource type="AudioStream" uid="uid://bebw58yafx1qc" path="res://assets/audio/dragon battle/Sorcerer/sfx-Crossbow_Fire_Success-01.wav" id="32_hx45n"]
 [ext_resource type="AudioStream" uid="uid://c4uomqe6ajkos" path="res://assets/audio/dragon battle/Sorcerer/sfx-Crossbow_Fire_Success-02.wav" id="33_604x2"]
+[ext_resource type="Texture2D" uid="uid://b4a7kctik6vat" path="res://assets/graphics/thumbnails/dragon battle/RallyingCryFAIL.png" id="34_322pk"]
 [ext_resource type="AudioStream" uid="uid://j38uetgwnojt" path="res://assets/audio/dragon battle/Sorcerer/sfx-Crossbow_Fire_Fail-01.wav" id="34_xfuoj"]
 [ext_resource type="AudioStream" uid="uid://bsfhdwljojamp" path="res://assets/audio/dragon battle/Sorcerer/sfx-Crossbow_Fire_Fail-02.wav" id="35_s13r8"]
 [ext_resource type="AudioStream" uid="uid://bhx7b7lwa2tus" path="res://assets/audio/dragon battle/Sorcerer/sfx-Ice_Shard_Success-01.wav" id="36_eyxhw"]
+[ext_resource type="Texture2D" uid="uid://nw8d6igm5hux" path="res://assets/graphics/thumbnails/dragon battle/IronDefence.jpg" id="37_e6vbd"]
 [ext_resource type="AudioStream" uid="uid://dwoouf38meq14" path="res://assets/audio/dragon battle/Sorcerer/sfx-Ice_Shard_Fail-01.wav" id="37_vul2g"]
 [ext_resource type="AudioStream" uid="uid://cro6iyicw3gmx" path="res://assets/audio/dragon battle/Sorcerer/sfx-Water_Orb-Success-01.wav" id="38_ujfff"]
 [ext_resource type="AudioStream" uid="uid://d3ou770obsalv" path="res://assets/audio/dragon battle/Sorcerer/sfx-Water_Orb-Fail-01.wav" id="39_28w2p"]
+[ext_resource type="Texture2D" uid="uid://cq70wqiiirsff" path="res://assets/graphics/thumbnails/dragon battle/Insane Mockery.jpg" id="39_eqevm"]
+[ext_resource type="Texture2D" uid="uid://bmwyteffbfqu" path="res://assets/graphics/thumbnails/dragon battle/FlurryofKnivesSuccess.jpeg" id="41_cnoxh"]
+[ext_resource type="Texture2D" uid="uid://ddimkp16f5xew" path="res://assets/graphics/thumbnails/dragon battle/FlurryofKnivesFAIL.jpg" id="43_6quef"]
+[ext_resource type="Texture2D" uid="uid://ddbb7x0t6tcgf" path="res://assets/graphics/thumbnails/dragon battle/SeduceSuccess.jpeg" id="45_qtn50"]
+[ext_resource type="Texture2D" uid="uid://dtwl447o07e3g" path="res://assets/graphics/thumbnails/dragon battle/SeduceFAIL.png" id="47_0qm8t"]
+[ext_resource type="Texture2D" uid="uid://b6gbt1h6gx6te" path="res://assets/graphics/thumbnails/dragon battle/CrossbowHit.png" id="49_5so7e"]
+[ext_resource type="Texture2D" uid="uid://bmqbq4f7lb13w" path="res://assets/graphics/thumbnails/dragon battle/CrossbowFAIL.png" id="52_qejo0"]
+[ext_resource type="Texture2D" uid="uid://bvapogbxiyp1x" path="res://assets/graphics/thumbnails/dragon battle/Ice Shard Success.webp" id="55_mliyk"]
+[ext_resource type="Texture2D" uid="uid://8w8kmf7esivq" path="res://assets/graphics/thumbnails/dragon battle/IceShardFAIL.png" id="57_23cae"]
+[ext_resource type="Texture2D" uid="uid://b13ur6ysao1ne" path="res://assets/graphics/thumbnails/dragon battle/WaterOrb.png" id="59_u10mw"]
+[ext_resource type="Texture2D" uid="uid://bhtujhlaksatf" path="res://assets/graphics/thumbnails/dragon battle/WaterOrbFAIL.png" id="61_ompfq"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_pb5vk"]
 streams_count = 2
@@ -94,8 +116,7 @@ custom_minimum_size = Vector2(190, 190)
 layout_mode = 2
 pad_color = 4
 is_small = false
-is_loop_mode = true
-pad_background_image = ExtResource("2_y83yv")
+pad_background_image = ExtResource("2_604x2")
 label_text = "Deep Cavern"
 audio_layers = Array[AudioStream]([ExtResource("3_4ghki"), ExtResource("4_ndnum")])
 
@@ -108,7 +129,8 @@ columns = 2
 [node name="Panel4" parent="GridContainer2" instance=ExtResource("1_3p2bx")]
 layout_mode = 2
 pad_color = 5
-pad_background_image = ExtResource("6_gc18y")
+is_loop_mode = false
+pad_background_image = ExtResource("5_2wg6n")
 volume_fade_time = 0.5
 label_text = "Distant Roar"
 audio_layers = Array[AudioStream]([ExtResource("6_iv1os")])
@@ -116,7 +138,8 @@ audio_layers = Array[AudioStream]([ExtResource("6_iv1os")])
 [node name="Panel8" parent="GridContainer2" instance=ExtResource("1_3p2bx")]
 layout_mode = 2
 pad_color = 6
-pad_background_image = ExtResource("8_l220e")
+is_loop_mode = false
+pad_background_image = ExtResource("7_kupyb")
 volume_fade_time = 0.1
 pitch_random = 0.3
 label_text = "Dragon Approach"
@@ -125,7 +148,8 @@ audio_layers = Array[AudioStream]([ExtResource("8_7a7hg")])
 [node name="Panel11" parent="GridContainer2" instance=ExtResource("1_3p2bx")]
 layout_mode = 2
 pad_color = 6
-pad_background_image = ExtResource("8_l220e")
+is_loop_mode = false
+pad_background_image = ExtResource("9_2lf2s")
 volume_fade_time = 0.1
 pitch_random = 0.3
 label_text = "Claw  Attack"
@@ -134,7 +158,8 @@ audio_layers = Array[AudioStream]([SubResource("AudioStreamRandomizer_pb5vk")])
 [node name="Panel10" parent="GridContainer2" instance=ExtResource("1_3p2bx")]
 layout_mode = 2
 pad_color = 4
-pad_background_image = ExtResource("8_l220e")
+is_loop_mode = false
+pad_background_image = ExtResource("12_11aiv")
 volume_fade_time = 0.1
 pitch_random = 0.3
 label_text = "Fire    Breath"
@@ -149,7 +174,8 @@ columns = 2
 [node name="Panel9" parent="GridContainer5" instance=ExtResource("1_3p2bx")]
 layout_mode = 2
 pad_color = 6
-pad_background_image = ExtResource("8_l220e")
+is_loop_mode = false
+pad_background_image = ExtResource("14_qsnqw")
 volume_fade_time = 0.1
 pitch_random = 0.3
 label_text = "Dragon Land"
@@ -158,7 +184,8 @@ audio_layers = Array[AudioStream]([ExtResource("10_pb5vk")])
 [node name="Panel5" parent="GridContainer5" instance=ExtResource("1_3p2bx")]
 layout_mode = 2
 pad_color = 5
-pad_background_image = ExtResource("6_gc18y")
+is_loop_mode = false
+pad_background_image = ExtResource("16_7ifbf")
 volume_fade_time = 0.1
 label_text = "Dragon Roar"
 audio_layers = Array[AudioStream]([ExtResource("11_wpbf0")])
@@ -166,7 +193,8 @@ audio_layers = Array[AudioStream]([ExtResource("11_wpbf0")])
 [node name="Panel6" parent="GridContainer5" instance=ExtResource("1_3p2bx")]
 layout_mode = 2
 pad_color = 5
-pad_background_image = ExtResource("6_gc18y")
+is_loop_mode = false
+pad_background_image = ExtResource("18_j53cv")
 volume_fade_time = 0.1
 label_text = "Dragon Hurt"
 audio_layers = Array[AudioStream]([SubResource("AudioStreamRandomizer_48r67")])
@@ -174,7 +202,8 @@ audio_layers = Array[AudioStream]([SubResource("AudioStreamRandomizer_48r67")])
 [node name="Panel7" parent="GridContainer5" instance=ExtResource("1_3p2bx")]
 layout_mode = 2
 pad_color = 7
-pad_background_image = ExtResource("6_gc18y")
+is_loop_mode = false
+pad_background_image = ExtResource("23_omtt0")
 volume_fade_time = 0.1
 label_text = "Record Scratch"
 audio_layers = Array[AudioStream]([ExtResource("18_604x2")])
@@ -184,8 +213,7 @@ custom_minimum_size = Vector2(190, 190)
 layout_mode = 2
 pad_color = 6
 is_small = false
-is_loop_mode = true
-pad_background_image = ExtResource("10_2bt5r")
+pad_background_image = ExtResource("25_lau0c")
 label_text = "Battle Music"
 audio_layers = Array[AudioStream]([ExtResource("8_aj8xm")])
 
@@ -198,7 +226,8 @@ columns = 2
 [node name="Panel4" parent="GridContainer3" instance=ExtResource("1_3p2bx")]
 layout_mode = 2
 pad_color = 0
-pad_background_image = ExtResource("6_gc18y")
+is_loop_mode = false
+pad_background_image = ExtResource("27_2u4ng")
 volume_fade_time = 0.5
 label_text = "Greataxe Success"
 audio_layers = Array[AudioStream]([ExtResource("20_wpbf0")])
@@ -206,7 +235,8 @@ audio_layers = Array[AudioStream]([ExtResource("20_wpbf0")])
 [node name="Panel5" parent="GridContainer3" instance=ExtResource("1_3p2bx")]
 layout_mode = 2
 pad_color = 6
-pad_background_image = ExtResource("6_gc18y")
+is_loop_mode = false
+pad_background_image = ExtResource("29_efayx")
 volume_fade_time = 0.5
 label_text = "Greataxe Fail"
 audio_layers = Array[AudioStream]([ExtResource("21_5vcuu")])
@@ -214,7 +244,8 @@ audio_layers = Array[AudioStream]([ExtResource("21_5vcuu")])
 [node name="Panel6" parent="GridContainer3" instance=ExtResource("1_3p2bx")]
 layout_mode = 2
 pad_color = 0
-pad_background_image = ExtResource("6_gc18y")
+is_loop_mode = false
+pad_background_image = ExtResource("31_jje81")
 volume_fade_time = 0.5
 label_text = "Rallying  Cry"
 audio_layers = Array[AudioStream]([SubResource("AudioStreamRandomizer_eyxhw")])
@@ -222,7 +253,8 @@ audio_layers = Array[AudioStream]([SubResource("AudioStreamRandomizer_eyxhw")])
 [node name="Panel7" parent="GridContainer3" instance=ExtResource("1_3p2bx")]
 layout_mode = 2
 pad_color = 6
-pad_background_image = ExtResource("6_gc18y")
+is_loop_mode = false
+pad_background_image = ExtResource("34_322pk")
 volume_fade_time = 0.5
 label_text = "Rallying  Cry Fail"
 audio_layers = Array[AudioStream]([SubResource("AudioStreamRandomizer_vul2g")])
@@ -236,7 +268,8 @@ columns = 2
 [node name="Panel4" parent="GridContainer4" instance=ExtResource("1_3p2bx")]
 layout_mode = 2
 pad_color = 0
-pad_background_image = ExtResource("6_gc18y")
+is_loop_mode = false
+pad_background_image = ExtResource("37_e6vbd")
 volume_fade_time = 0.5
 label_text = "Iron Defence"
 audio_layers = Array[AudioStream]([ExtResource("26_v3rlf")])
@@ -244,7 +277,8 @@ audio_layers = Array[AudioStream]([ExtResource("26_v3rlf")])
 [node name="Panel5" parent="GridContainer4" instance=ExtResource("1_3p2bx")]
 layout_mode = 2
 pad_color = 9
-pad_background_image = ExtResource("6_gc18y")
+is_loop_mode = false
+pad_background_image = ExtResource("39_eqevm")
 volume_fade_time = 0.5
 label_text = "Insane Mockery"
 audio_layers = Array[AudioStream]([ExtResource("27_flg40")])
@@ -252,7 +286,8 @@ audio_layers = Array[AudioStream]([ExtResource("27_flg40")])
 [node name="Panel7" parent="GridContainer4" instance=ExtResource("1_3p2bx")]
 layout_mode = 2
 pad_color = 9
-pad_background_image = ExtResource("6_gc18y")
+is_loop_mode = false
+pad_background_image = ExtResource("41_cnoxh")
 volume_fade_time = 0.5
 label_text = "Flurry of Knives"
 audio_layers = Array[AudioStream]([ExtResource("28_hx45n")])
@@ -260,7 +295,8 @@ audio_layers = Array[AudioStream]([ExtResource("28_hx45n")])
 [node name="Panel6" parent="GridContainer4" instance=ExtResource("1_3p2bx")]
 layout_mode = 2
 pad_color = 6
-pad_background_image = ExtResource("6_gc18y")
+is_loop_mode = false
+pad_background_image = ExtResource("43_6quef")
 volume_fade_time = 0.5
 label_text = "Flurry of Knives Fail"
 audio_layers = Array[AudioStream]([ExtResource("29_604x2")])
@@ -274,7 +310,8 @@ columns = 2
 [node name="Panel4" parent="GridContainer6" instance=ExtResource("1_3p2bx")]
 layout_mode = 2
 pad_color = 9
-pad_background_image = ExtResource("6_gc18y")
+is_loop_mode = false
+pad_background_image = ExtResource("45_qtn50")
 volume_fade_time = 0.5
 label_text = "Seduce"
 audio_layers = Array[AudioStream]([ExtResource("30_xfuoj")])
@@ -282,7 +319,8 @@ audio_layers = Array[AudioStream]([ExtResource("30_xfuoj")])
 [node name="Panel5" parent="GridContainer6" instance=ExtResource("1_3p2bx")]
 layout_mode = 2
 pad_color = 6
-pad_background_image = ExtResource("6_gc18y")
+is_loop_mode = false
+pad_background_image = ExtResource("47_0qm8t")
 volume_fade_time = 0.5
 label_text = "Seduce   Fail"
 audio_layers = Array[AudioStream]([ExtResource("31_s13r8")])
@@ -290,7 +328,8 @@ audio_layers = Array[AudioStream]([ExtResource("31_s13r8")])
 [node name="Panel6" parent="GridContainer6" instance=ExtResource("1_3p2bx")]
 layout_mode = 2
 pad_color = 1
-pad_background_image = ExtResource("6_gc18y")
+is_loop_mode = false
+pad_background_image = ExtResource("49_5so7e")
 volume_fade_time = 0.5
 label_text = "Crossbow Hit"
 audio_layers = Array[AudioStream]([SubResource("AudioStreamRandomizer_pkub8")])
@@ -298,7 +337,8 @@ audio_layers = Array[AudioStream]([SubResource("AudioStreamRandomizer_pkub8")])
 [node name="Panel7" parent="GridContainer6" instance=ExtResource("1_3p2bx")]
 layout_mode = 2
 pad_color = 6
-pad_background_image = ExtResource("6_gc18y")
+is_loop_mode = false
+pad_background_image = ExtResource("52_qejo0")
 volume_fade_time = 0.5
 label_text = "Crossbow Miss"
 audio_layers = Array[AudioStream]([SubResource("AudioStreamRandomizer_3lx24")])
@@ -312,7 +352,8 @@ columns = 2
 [node name="Panel6" parent="GridContainer7" instance=ExtResource("1_3p2bx")]
 layout_mode = 2
 pad_color = 1
-pad_background_image = ExtResource("6_gc18y")
+is_loop_mode = false
+pad_background_image = ExtResource("55_mliyk")
 volume_fade_time = 0.5
 label_text = "Ice Shard"
 audio_layers = Array[AudioStream]([ExtResource("36_eyxhw")])
@@ -320,7 +361,8 @@ audio_layers = Array[AudioStream]([ExtResource("36_eyxhw")])
 [node name="Panel7" parent="GridContainer7" instance=ExtResource("1_3p2bx")]
 layout_mode = 2
 pad_color = 6
-pad_background_image = ExtResource("6_gc18y")
+is_loop_mode = false
+pad_background_image = ExtResource("57_23cae")
 volume_fade_time = 0.5
 label_text = "Ice Shard Fail"
 audio_layers = Array[AudioStream]([ExtResource("37_vul2g")])
@@ -328,7 +370,8 @@ audio_layers = Array[AudioStream]([ExtResource("37_vul2g")])
 [node name="Panel8" parent="GridContainer7" instance=ExtResource("1_3p2bx")]
 layout_mode = 2
 pad_color = 1
-pad_background_image = ExtResource("6_gc18y")
+is_loop_mode = false
+pad_background_image = ExtResource("59_u10mw")
 volume_fade_time = 0.5
 label_text = "Water Orb"
 audio_layers = Array[AudioStream]([ExtResource("38_ujfff")])
@@ -336,7 +379,8 @@ audio_layers = Array[AudioStream]([ExtResource("38_ujfff")])
 [node name="Panel9" parent="GridContainer7" instance=ExtResource("1_3p2bx")]
 layout_mode = 2
 pad_color = 6
-pad_background_image = ExtResource("6_gc18y")
+is_loop_mode = false
+pad_background_image = ExtResource("61_ompfq")
 volume_fade_time = 0.5
 label_text = "Water Orb Fail"
 audio_layers = Array[AudioStream]([ExtResource("39_28w2p")])

@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/amb-street_ambience_inside_car-01.ogg-d789878
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

@@ -1,11 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://e4oqu4618xa7"]
+[gd_scene load_steps=15 format=3 uid="uid://e4oqu4618xa7"]
 
 [ext_resource type="Script" uid="uid://1wgmihnc5t1n" path="res://scenes/main_panel/panel.gd" id="1_yg36g"]
-[ext_resource type="Texture2D" uid="uid://c8io7lq4oyiex" path="res://assets/graphics/temp/pad tests/scene2fantasy/PadImage01.png" id="2_i7swf"]
 [ext_resource type="Texture2D" uid="uid://dxe0muksxt78j" path="res://assets/graphics/old/button_volume_control/FadeTint.png" id="3_m7nfc"]
 [ext_resource type="PackedScene" uid="uid://ctymp454risj5" path="res://scenes/layer_editor/layer_editor.tscn" id="3_ubf5s"]
-[ext_resource type="Texture2D" uid="uid://dli7232tpqqc5" path="res://assets/graphics/pad/PanelSmallSymbolOneshot.svg" id="4_7ihun"]
 [ext_resource type="Texture2D" uid="uid://b0e603nahwm5v" path="res://assets/graphics/temp/corner_fix_large.png" id="5_2wa6b"]
+[ext_resource type="Texture2D" uid="uid://c7e3q7gsekdpa" path="res://assets/graphics/pad/PanelSmallSymbolLoop.svg" id="5_ubf5s"]
 [ext_resource type="Texture2D" uid="uid://ydoaurt5t8hb" path="res://assets/graphics/pad/PanelSmallWhite.svg" id="6_uajb8"]
 [ext_resource type="FontFile" uid="uid://dbwjyseo5j4im" path="res://assets/fonts/Hubballi-Regular.ttf" id="7_8cvin"]
 [ext_resource type="Texture2D" uid="uid://tl5prwhvcw1p" path="res://assets/graphics/interface/PadEditButton.svg" id="7_13ukx"]
@@ -13,13 +12,21 @@
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ytvp3"]
 texture = ExtResource("3_m7nfc")
 
+[sub_resource type="Gradient" id="Gradient_ubf5s"]
+offsets = PackedFloat32Array(0, 0.4, 0.6, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_johvu"]
+gradient = SubResource("Gradient_ubf5s")
+width = 78
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ubf5s"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_johvu"]
 
 [sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_xc5pq"]
 
-[node name="Panel" type="Control" node_paths=PackedStringArray("button_border", "background_image", "background_image_container", "loop_icon", "label", "fade_tint", "fade_tint_constant", "image_border_cover")]
+[node name="Panel" type="Control" node_paths=PackedStringArray("button_border", "background_image", "background_flat_color", "background_image_container", "loop_icon", "label", "fade_tint", "fade_tint_constant", "image_border_cover", "divider_line")]
 custom_minimum_size = Vector2(90, 90)
 layout_mode = 3
 anchors_preset = 0
@@ -27,17 +34,21 @@ offset_right = 90.0
 offset_bottom = 90.0
 script = ExtResource("1_yg36g")
 is_small = true
-pad_background_image = ExtResource("2_i7swf")
+is_loop_mode = true
 volume_fade_time = 5.0
+label_text = "example"
+is_slider_vertical = true
 layer_editor_scene = ExtResource("3_ubf5s")
 button_border = NodePath("ButtonBorder")
 background_image = NodePath("BackgroundImageContainer/BackgroundImage")
+background_flat_color = NodePath("BackgroundImageContainer/BackgroundFlatColor")
 background_image_container = NodePath("BackgroundImageContainer")
 loop_icon = NodePath("LoopIcon")
 label = NodePath("Label")
 fade_tint = NodePath("FadeTint")
 fade_tint_constant = NodePath("FadeTintConstant")
 image_border_cover = NodePath("ImageBorderCover")
+divider_line = NodePath("DividerLine")
 
 [node name="BackgroundImageContainer" type="Control" parent="."]
 clip_contents = true
@@ -54,6 +65,23 @@ offset_bottom = 45.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="BackgroundFlatColor" type="ColorRect" parent="BackgroundImageContainer"]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = -45.0
+offset_right = 45.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.6, 0.6, 0.6, 0.6)
+
 [node name="BackgroundImage" type="TextureRect" parent="BackgroundImageContainer"]
 custom_minimum_size = Vector2(90, 90)
 layout_mode = 1
@@ -69,7 +97,6 @@ offset_bottom = 45.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("2_i7swf")
 expand_mode = 3
 stretch_mode = 4
 
@@ -107,6 +134,14 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_ytvp3")
 
+[node name="DividerLine" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 6.0
+offset_right = 84.0
+offset_bottom = 4.0
+texture = SubResource("GradientTexture1D_johvu")
+
 [node name="LoopIcon" type="TextureRect" parent="."]
 modulate = Color(1, 1, 1, 0.298039)
 layout_mode = 1
@@ -117,12 +152,12 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -29.0
 offset_top = -29.0
-offset_right = 29.0
-offset_bottom = 29.0
+offset_right = 25.0
+offset_bottom = 35.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("4_7ihun")
+texture = ExtResource("5_ubf5s")
 
 [node name="ImageBorderCover" type="TextureRect" parent="."]
 layout_mode = 1
@@ -150,6 +185,7 @@ texture = ExtResource("6_uajb8")
 
 [node name="ButtonEdit" type="Button" parent="."]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -187,8 +223,13 @@ offset_right = 45.0
 offset_bottom = 45.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.317647)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_outline_size = 8
 theme_override_fonts/font = ExtResource("7_8cvin")
 theme_override_font_sizes/font_size = 18
+text = "example"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
